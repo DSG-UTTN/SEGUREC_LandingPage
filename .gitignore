@@ -149,7 +149,7 @@ webpack-stats.json
 !public/css/tailwind.css.map
 
 # Ignore source CSS (should be tracked for rebuilds)
-src/input.css
+# src/input.css
 
 # Ignore .htaccess backup files
 public/.htaccess.*.bak
