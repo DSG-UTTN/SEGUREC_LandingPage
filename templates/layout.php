@@ -47,7 +47,7 @@ $seo = $seo ?? [];
         "description": "SEGUREC es una empresa nacional originaria de la ciudad Reynosa, Tamps; con más de 10 años de experiencia, dedicada a la prestación de servicios de Seguridad Integral.",
         "url": "<?= SITE_URL ?>",
         "logo": "<?= SITE_URL ?>/public/images/logo.svg",
-        "image": "<?= SITE_URL ?>/public/images/portada.jpg",
+        "image": "<?= SITE_URL ?>/public/images/portada.png",
         "telephone": "<?= CONTACT_PHONE ?>",
         "email": "<?= CONTACT_EMAIL ?>",
         "address": {

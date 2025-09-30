@@ -73,9 +73,9 @@ function renderFavicons() {
     <link rel="apple-touch-icon" sizes="152x152" href="<?= $faviconPath ?>apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="<?= $faviconPath ?>apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="<?= $faviconPath ?>android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= $faviconPath ?>favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="<?= $faviconPath ?>favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= $faviconPath ?>favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="<?= $faviconPath ?>favicon.ico">
+    <link rel="icon" sizes="96x96" href="<?= $faviconPath ?>favicon.ico">
+    <link rel="icon" sizes="16x16" href="<?= $faviconPath ?>favicon.ico">
     <link rel="manifest" href="<?= $faviconPath ?>manifest.json">
     <meta name="msapplication-TileColor" content="#0f172a">
     <meta name="msapplication-TileImage" content="<?= $faviconPath ?>ms-icon-144x144.png">
