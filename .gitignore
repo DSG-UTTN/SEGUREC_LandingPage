@@ -126,8 +126,11 @@ phpunit.xml
 # Sass cache
 .sass-cache/
 
-# PostCSS
+# PostCSS config (ignore all formats)
 .postcssrc.js
+.postcssrc.json
+.postcssrc.yaml
+.postcssrc.yml
 
 # Parcel cache
 .cache
@@ -141,3 +144,13 @@ phpunit.xml
 
 # Webpack
 webpack-stats.json
+
+## Do NOT ignore built CSS (needed for PHP-only hosting)
+!public/css/tailwind.css
+!public/css/tailwind.css.map
+
+# Ignore source CSS (should be tracked for rebuilds)
+src/input.css
+
+# Ignore .htaccess backup files
+public/.htaccess.*.bak
