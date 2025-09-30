@@ -1,25 +1,10 @@
-# ==============================================
-# SEGUREC Landing Page - Git Ignore Rules
-# ==============================================
-
-# ==========================================
-# Node.js Dependencies & Build Artifacts
-# ==========================================
+src/input.css
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
-
-# Package Manager Lock Files (keep only one)
-# Uncomment the ones you don't use:
-# yarn.lock
-# pnpm-lock.yaml
-
-# ==========================================
-# CSS Build Output (Generated Files)
-# ==========================================
 
 # Alternative build directories if used
 dist/
@@ -100,13 +85,6 @@ debug.log
 # PHP error logs
 php_errors.log
 error_log
-
-# ==========================================
-# Media & Upload Directories
-# ==========================================
-# Uncomment if you have user upload directories
-# uploads/
-# media/user-content/
 
 # ==========================================
 # Security & Sensitive Files
