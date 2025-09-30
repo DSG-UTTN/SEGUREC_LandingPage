@@ -1,4 +1,13 @@
 {
+  "name": "segurec-landing-page",
+  "version": "1.0.0",
+  "description": "SEGUREC Landing Page - PHP + TailwindCSS",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/css/tailwind.css --minify",
+    "dev:css": "tailwindcss -i ./src/input.css -o ./public/css/tailwind.css --watch",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./public/css/tailwind.css --watch",
+    "build": "npm run build:css"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
