@@ -25,7 +25,7 @@
           </a>
         </div>
         <div class="flex items-center space-x-4">
-          <span class="text-xs"><?= BUSINESS_HOURS ?></span>
+          <span class="text-xs">Oficinas: <?= BUSINESS_HOURS ?></span>
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@
     </div>
 
     <!-- Menú móvil -->
-    <div id="mobile-menu" class="lg:hidden hidden">
+    <div id="mobile-menu" class="lg:hidden" style="display: none;">
       <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200 mt-4">
         <a href="<?= url('#inicio') ?>" class="block px-3 py-2 text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md font-medium mobile-menu-link">
           Inicio
@@ -107,8 +107,9 @@
         </a>
         <div class="pt-4 pb-2">
           <a href="<?= url('contacto.php') ?>" class="btn-primary w-full justify-center">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"/>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
             </svg>
             Solicitar Cotización
           </a>
@@ -141,68 +142,89 @@
   document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = document.querySelector('.hamburger-icon');
-    const closeIcon = document.querySelector('.close-icon');
+    
+    console.log('Mobile menu elements:', { mobileMenuButton, mobileMenu });
 
-    mobileMenuButton?.addEventListener('click', () => {
-      const isOpen = mobileMenu?.classList.contains('hidden');
+    if (mobileMenuButton && mobileMenu) {
+      const hamburgerIcon = mobileMenuButton.querySelector('.hamburger-icon');
+      const closeIcon = mobileMenuButton.querySelector('.close-icon');
       
-      if (isOpen) {
-        mobileMenu?.classList.remove('hidden');
-        hamburgerIcon?.classList.add('hidden');
-        closeIcon?.classList.remove('hidden');
-        mobileMenuButton?.setAttribute('aria-expanded', 'true');
-      } else {
-        mobileMenu?.classList.add('hidden');
-        hamburgerIcon?.classList.remove('hidden');
-        closeIcon?.classList.add('hidden');
-        mobileMenuButton?.setAttribute('aria-expanded', 'false');
-      }
-    });
+      console.log('Icons found:', { hamburgerIcon, closeIcon });
 
-    // Cerrar menú al hacer clic en un enlace
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu?.classList.add('hidden');
-        hamburgerIcon?.classList.remove('hidden');
-        closeIcon?.classList.add('hidden');
-        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+      mobileMenuButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('Menu button clicked');
+        
+        const isHidden = mobileMenu.style.display === 'none' || mobileMenu.style.display === '';
+        console.log('Menu is currently hidden:', isHidden);
+        
+        if (isHidden) {
+          // Mostrar menú
+          mobileMenu.style.display = 'block';
+          if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
+          if (closeIcon) closeIcon.classList.remove('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'true');
+          console.log('Menu opened');
+        } else {
+          // Ocultar menú
+          mobileMenu.style.display = 'none';
+          if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+          if (closeIcon) closeIcon.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          console.log('Menu closed');
+        }
       });
-    });
+
+      // Cerrar menú al hacer clic en un enlace
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+      mobileMenuLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.style.display = 'none';
+          if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+          if (closeIcon) closeIcon.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        });
+      });
+    } else {
+      console.error('Mobile menu elements not found');
+    }
 
     // Cambiar apariencia del header al hacer scroll
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (window.scrollY > 100) {
-        header?.classList.add('shadow-xl');
-      } else {
-        header?.classList.remove('shadow-xl');
-      }
-    });
+    const header = document.getElementById('header');
+    if (header) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          header.classList.add('shadow-xl');
+        } else {
+          header.classList.remove('shadow-xl');
+        }
+      });
+    }
 
     // Highlighting del enlace activo
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
+    if (sections.length > 0 && navLinks.length > 0) {
+      window.addEventListener('scroll', function() {
+        let current = '';
+        sections.forEach(function(section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+          }
+        });
 
-      navLinks.forEach(link => {
-        link.classList.remove('text-gold-600');
-        link.classList.add('text-gray-700');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.remove('text-gray-700');
-          link.classList.add('text-gold-600');
-        }
+        navLinks.forEach(function(link) {
+          link.classList.remove('text-gold-600');
+          link.classList.add('text-gray-700');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.remove('text-gray-700');
+            link.classList.add('text-gold-600');
+          }
+        });
       });
-    });
+    }
   });
 </script>

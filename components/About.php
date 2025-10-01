@@ -103,20 +103,43 @@
         <p class="text-gray-600">Respaldados por las autoridades competentes</p>
       </div>
       
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-items-center opacity-75 hover:opacity-100 transition-opacity">
-        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl hover:bg-navy-800 transition-colors">
-          <img src="<?= publicUrl('images/repse.png') ?>" alt="Registro REPSE" class="h-16 w-auto mb-2" loading="lazy" />
-          <span class="text-xs text-gold-300 font-medium">REPSE</span>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch max-w-4xl mx-auto px-4">
+        <!-- Primera fila -->
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/repse.png') ?>" alt="Registro REPSE" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">REPSE</span>
         </div>
         
-        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl hover:bg-navy-800 transition-colors">
-          <img src="<?= publicUrl('images/amesp.png') ?>" alt="AMESP" class="h-16 w-auto mb-2" loading="lazy" />
-          <span class="text-xs text-gold-300 font-medium">AMESP</span>
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/amesp.png') ?>" alt="AMESP" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">AMESP</span>
         </div>
         
-        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl hover:bg-navy-800 transition-colors col-span-2 md:col-span-1">
-          <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-16 w-auto mb-2" loading="lazy" />
-          <span class="text-xs text-gold-300 font-medium">Policía Federal</span>
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">Policía Federal</span>
+        </div>
+        
+        <!-- Segunda fila -->
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/oea.svg') ?>" alt="OEA" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">OEA</span>
+        </div>
+        
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/stps.svg') ?>" alt="STPS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">STPS</span>
+        </div>
+        
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/iso_9001.svg') ?>" alt="ISO 9001" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">ISO 9001</span>
+        </div>
+        
+        <!-- Tercera fila - CTPAT ocupando todo el ancho de la cuadrícula -->
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 h-32 sm:h-36 justify-center col-span-2 sm:col-span-3 lg:col-span-3 w-full">
+          <img src="<?= publicUrl('images/ctpat.svg') ?>" alt="CTPAT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">CTPAT</span>
         </div>
       </div>
     </div>
