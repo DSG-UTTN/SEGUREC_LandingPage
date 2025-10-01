@@ -29,7 +29,7 @@ $quickLinks = [
           <img src="<?= publicUrl('images/logo.svg') ?>" alt="SEGUREC Logo" class="h-16 w-auto mb-4" />
           <h3 class="text-2xl font-bold text-gold-400 mb-4">SEGUREC</h3>
           <p class="text-gray-300 leading-relaxed max-w-md">
-            Empresa nacional originaria de Reynosa, Tamaulipas, con más de 10 años de experiencia 
+            Con más de 10 años de experiencia 
             en servicios de seguridad integral. Brindamos confianza y protección garantizada las 24 horas del día.
           </p>
         </div>
@@ -157,30 +157,6 @@ $quickLinks = [
       </div>
     </div>
 
-    <!-- Newsletter/CTA section -->
-    <div class="mt-12 pt-8 border-t border-white/10">
-      <div class="bg-white/5 rounded-2xl p-8 text-center backdrop-blur-sm border border-white/10">
-        <h4 class="text-xl font-bold text-white mb-2">¿Necesitas protección inmediata?</h4>
-        <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
-          No esperes más. Contacta con nuestros expertos en seguridad y obtén una cotización personalizada 
-          para proteger lo que más valoras.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="<?= url('contacto.php') ?>" class="btn-primary">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
-            </svg>
-            Solicitar Cotización Gratuita
-          </a>
-          <a href="tel:<?= CONTACT_PHONE ?>" class="btn-secondary">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-            </svg>
-            Llamada de Emergencia
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- Bottom bar -->
@@ -190,11 +166,11 @@ $quickLinks = [
         <div class="mb-4 md:mb-0">
           <p>&copy; <?= date('Y') ?> SEGUREC. Todos los derechos reservados.</p>
         </div>
-        <div class="flex items-center space-x-6">
+        <!-- <div class="flex items-center space-x-6">
           <a href="#" class="hover:text-gold-400 transition-colors">Política de Privacidad</a>
           <span class="text-gold-500">•</span>
           <a href="#" class="hover:text-gold-400 transition-colors">Términos de Servicio</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

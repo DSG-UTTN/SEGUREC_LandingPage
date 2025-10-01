@@ -10,29 +10,14 @@ $services = [
         'description' => 'Personal capacitado y certificado para la protección de instalaciones, personas y bienes.'
     ],
     [
-        'icon' => 'M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z',
-        'title' => 'Patrullaje',
-        'description' => 'Servicio de vigilancia móvil para monitoreo preventivo y respuesta rápida ante incidencias.'
-    ],
-    [
         'icon' => 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
         'title' => 'Monitoreo 24/7',
         'description' => 'Vigilancia continua con sistemas de monitoreo avanzados y respuesta inmediata.'
     ],
     [
-        'icon' => 'M9 17v-2.118a3 3 0 00-.879-2.121L5 9.739V9a1 1 0 01.707-.293l4-4a1 1 0 011.414 1.414L8 9.293V15a1 1 0 11-2 0zM15 15v-4.261l-2.121 2.121A3 3 0 0012 15.118V17a1 1 0 01-2 0v-1.882a3 3 0 00.879-2.121L13 9.739V9a1 1 0 01.707-.293l4-4a1 1 0 011.414 1.414L16 9.293V15a1 1 0 11-2 0z',
-        'title' => 'Análisis de Riesgos',
-        'description' => 'Evaluación profesional de vulnerabilidades y diseño de estrategias de seguridad.'
-    ],
-    [
-        'icon' => 'M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z',
-        'title' => 'Control de Acceso',
-        'description' => 'Sistemas de control y registro de entrada y salida de personal y visitantes.'
-    ],
-    [
-        'icon' => 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-        'title' => 'Consultoría',
-        'description' => 'Asesoramiento especializado en seguridad integral y planes de contingencia.'
+        'icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
+        'title' => 'Supervisión Constante',
+        'description' => 'Eliminación de ausencias con nuestra supervisión constante la cual organiza horas antes los cambios de turno y asistencias del personal.'
     ]
 ];
 ?>
@@ -68,7 +53,7 @@ $services = [
     </div>
 
     <!-- CTA Section -->
-    <div class="mt-16 text-center" data-animate="fade-in">
+    <!-- <div class="mt-16 text-center" data-animate="fade-in">
         <div class="bg-gradient-to-r from-gold-50 to-gold-100 p-8 rounded-2xl border border-gold-200">
             <h3 class="text-2xl font-bold text-navy-900 mb-4">¿Necesitas un servicio personalizado?</h3>
             <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
@@ -82,5 +67,5 @@ $services = [
                 Solicitar Cotización Personalizada
             </a>
         </div>
-    </div>
+    </div> -->
 </div>

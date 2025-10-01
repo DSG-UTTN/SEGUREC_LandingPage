@@ -10,7 +10,7 @@
             Nuestra <span class="text-gold-600">Filosofía</span>
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Más de 10 años protegiendo empresas y familias en Reynosa, Tamaulipas con los más altos estándares de calidad y profesionalismo.
+            Más de 10 años protegiendo empresas con los más altos estándares de calidad y profesionalismo.
         </p>
     </div>
 
@@ -24,8 +24,7 @@
             </div>
             <h3 class="text-2xl font-bold text-navy-900 mb-4">Misión</h3>
             <p class="text-gray-600 leading-relaxed">
-                Brindar servicios integrales de seguridad privada con los más altos estándares de calidad, 
-                protegiendo personas, bienes y activos de nuestros clientes con profesionalismo y compromiso.
+                Generar lugares seguros, previniendo cualquier riesgo y controlando accesos para proteger a nuestros clientes y brindarle una mayor confianza a la hora de desempeñar sus funciones.
             </p>
         </div>
 
@@ -39,8 +38,7 @@
             </div>
             <h3 class="text-2xl font-bold text-navy-900 mb-4">Visión</h3>
             <p class="text-gray-600 leading-relaxed">
-                Ser la empresa líder en servicios de seguridad privada en el noreste de México, 
-                reconocida por nuestra excelencia, innovación y compromiso con la protección integral.
+                Ser una de las mejores empresas de seguridad privada, a nivel nacional e internacional, trabajando día con día con la mejor tecnología operativa y humana para brindar un servicio de calidad.
             </p>
         </div>
 
@@ -53,8 +51,8 @@
             </div>
             <h3 class="text-2xl font-bold text-navy-900 mb-4">Valores</h3>
             <p class="text-gray-600 leading-relaxed">
-                Integridad, compromiso, excelencia, responsabilidad y respeto. 
-                Principios que guían cada una de nuestras acciones en el servicio de protección y seguridad.
+                Trabajo en equipo. Confianza. Servicio y protección. Compromiso con los resultados. Eficacia. Integridad. Honestidad. Respeto.
+                Principios que guían cada nuestras acciones.
             </p>
         </div>
     </div>
