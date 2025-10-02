@@ -116,7 +116,6 @@ ob_start();
                                 <p class="text-gray-600 text-sm">
                                     Lun - Vie: 8:00 AM - 6:00 PM<br>
                                     Sáb: 9:00 AM - 2:00 PM<br>
-                                    <span class="text-green-600 font-semibold">Emergencias: 24/7</span>
                                 </p>
                             </div>
                         </div>
@@ -263,7 +262,8 @@ ob_start();
             <h2 class="text-3xl font-bold text-navy-900 mb-8" data-animate="fade-in">
                 Confían en Nosotros
             </h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8" data-animate="slide-up">
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto" data-animate="slide-up">
                 <div class="text-center">
                     <div class="text-3xl font-bold text-gold-600 mb-2">24h</div>
                     <div class="text-sm text-gray-600">Tiempo de respuesta máximo</div>
@@ -275,10 +275,6 @@ ob_start();
                 <div class="text-center">
                     <div class="text-3xl font-bold text-gold-600 mb-2">10+</div>
                     <div class="text-sm text-gray-600">Años de experiencia</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-gold-600 mb-2">500+</div>
-                    <div class="text-sm text-gray-600">Clientes satisfechos</div>
                 </div>
             </div>
         </div>
