@@ -11,7 +11,7 @@ require_once __DIR__ . '/includes/functions.php';
 
 // Page-specific SEO data
 $seo = [
-    'title' => 'Contacto - SEGUREC Servicios de Seguridad',
+    'title' => 'SEGUREC',
     'description' => 'Contáctanos para solicitar una cotización gratuita de nuestros servicios de seguridad privada en Reynosa, Tamaulipas. Respuesta garantizada en 24 horas.',
     'keywords' => 'contacto seguridad reynosa, cotización seguridad privada, SEGUREC contacto, servicios seguridad tamaulipas',
     'image' => publicUrl('images/contacto.jpg')

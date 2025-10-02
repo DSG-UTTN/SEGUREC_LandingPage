@@ -11,7 +11,7 @@ require_once __DIR__ . '/includes/functions.php';
 
 // Page-specific SEO data
 $seo = [
-    'title' => 'SEGUREC - Servicios Integrales de Seguridad en Reynosa, Tamaulipas',
+    'title' => 'SEGUREC',
     'description' => 'Empresa líder en servicios de seguridad privada en Reynosa, Tamaulipas. Ofrecemos guardias capacitados, patrullaje, monitoreo 24/7 y soluciones integrales de protección.',
     'keywords' => SITE_KEYWORDS,
     'image' => publicUrl('images/portada.png')

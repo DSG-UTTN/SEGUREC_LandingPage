@@ -11,7 +11,7 @@ require_once __DIR__ . '/includes/functions.php';
 
 // Page-specific SEO data
 $seo = [
-    'title' => 'Tecnología e Innovación - SEGUREC | Desarrollo de Software para Seguridad',
+    'title' => 'SEGUREC',
     'description' => 'Conoce el departamento de desarrollo de software y tecnología de SEGUREC. Innovamos creando herramientas que mejoran y facilitan el trabajo de nuestros guardias de seguridad.',
     'keywords' => 'desarrollo software seguridad, tecnología SEGUREC, innovación seguridad privada, herramientas guardias, Track Vigilante, departamento tecnología',
     'image' => publicUrl('images/tecnologia-banner.jpg')
