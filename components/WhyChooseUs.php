@@ -67,9 +67,116 @@ $reasons = [
         <div class="text-center mt-12">
             <h3 class="text-2xl font-bold mb-4">Únete a las empresas que confían en nosotros</h3>
             <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                Cientos de empresas y familias en Reynosa ya disfrutan de la tranquilidad que brinda 
+                Empieza a disfrutar de la tranquilidad que brinda 
                 contar con el mejor servicio de seguridad privada.
             </p>
+            
+            <!-- Clientes Carousel dentro del CTA -->
+            <div class="mb-8">
+                <p class="text-gold-300 text-sm mb-4 font-medium">
+                    Empresas que ya confían en nosotros:
+                </p>
+                
+                <!-- Carousel Container -->
+                <div class="relative max-w-full overflow-hidden">
+                    <div id="clients-container" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 overflow-hidden max-w-full">
+                        <div id="clients-track" class="flex space-x-6 animate-scroll-clients" style="width: max-content;">
+                            <!-- Set 1 (Original) -->
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/smp.svg') ?>" alt="SMP" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">SMP</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/logimex.svg') ?>" alt="Logimex" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Logimex</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/almacenes_ibarra.svg') ?>" alt="Almacenes Ibarra" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Almacenes Ibarra</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/kenworth.svg') ?>" alt="Kenworth" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Kenworth</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/su_bodega.svg') ?>" alt="Su Bodega" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Su Bodega</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/maseca.svg') ?>" alt="Maseca" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Maseca</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/de_coss.svg') ?>" alt="De Coss" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">De Coss</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/jac.svg') ?>" alt="JAC" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">JAC</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/mazda.svg') ?>" alt="Mazda" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Mazda</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/chirey.svg') ?>" alt="Chirey" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Chirey</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/mg.svg') ?>" alt="MG" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">MG</span>
+                            </div>
+                            
+                            <!-- Set 2 (Duplicado para loop infinito) -->
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/smp.svg') ?>" alt="SMP" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">SMP</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/logimex.svg') ?>" alt="Logimex" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Logimex</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/almacenes_ibarra.svg') ?>" alt="Almacenes Ibarra" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Almacenes Ibarra</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/kenworth.svg') ?>" alt="Kenworth" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Kenworth</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/su_bodega.svg') ?>" alt="Su Bodega" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Su Bodega</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/maseca.svg') ?>" alt="Maseca" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Maseca</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/de_coss.svg') ?>" alt="De Coss" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">De Coss</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/jac.svg') ?>" alt="JAC" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">JAC</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/mazda.svg') ?>" alt="Mazda" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Mazda</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/chirey.svg') ?>" alt="Chirey" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Chirey</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/mg.svg') ?>" alt="MG" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">MG</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <a href="<?= url('contacto.php') ?>" class="btn-primary">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
@@ -79,3 +186,110 @@ $reasons = [
         </div>
     </div>
 </div>
+
+<style>
+  .animate-scroll-clients {
+    animation: scroll-clients 30s linear infinite;
+  }
+
+  @keyframes scroll-clients {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .clients-paused {
+    animation-play-state: paused !important;
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('clients-container');
+  const track = document.getElementById('clients-track');
+  
+  if (!container || !track) return;
+  
+  let currentTranslate = 0;
+  let animationPaused = false;
+  let isTransitioning = false;
+  const totalItems = 22; // 11 logos x 2 sets
+  const itemsPerSet = 11;
+  
+  // Calcular ancho de elemento dinámicamente
+  function getItemWidth() {
+    const items = track.querySelectorAll('.client-item');
+    if (items.length === 0) return 200;
+    
+    const firstItem = items[0];
+    const styles = window.getComputedStyle(firstItem);
+    const gap = parseInt(window.getComputedStyle(track).gap) || 32;
+    return firstItem.offsetWidth + gap;
+  }
+  
+  // Función para actualizar posición con loop infinito
+  function updateCarousel(smooth = true) {
+    if (isTransitioning && smooth) return;
+    
+    const itemWidth = getItemWidth();
+    
+    if (smooth) {
+      isTransitioning = true;
+      track.style.transition = 'transform 0.4s ease-out';
+    } else {
+      track.style.transition = 'none';
+    }
+    
+    track.style.transform = `translateX(${currentTranslate}px)`;
+    
+    if (smooth) {
+      setTimeout(() => {
+        // Verificar si necesitamos resetear para loop infinito
+        const oneSetWidth = itemWidth * itemsPerSet;
+        
+        // Si hemos pasado más allá del primer set (hacia la derecha)
+        if (Math.abs(currentTranslate) >= oneSetWidth * 1.5) {
+          track.style.transition = 'none';
+          currentTranslate = 0; // Volver al primer set
+          track.style.transform = `translateX(${currentTranslate}px)`;
+        }
+        
+        isTransitioning = false;
+      }, 400);
+    }
+  }
+  
+  // Función para pausar/reanudar animación CSS
+  function toggleAnimation() {
+    if (animationPaused) {
+      track.classList.remove('clients-paused');
+      animationPaused = false;
+    } else {
+      track.classList.add('clients-paused');
+      animationPaused = true;
+    }
+  }
+  
+  // Pausar en hover, reanudar en mouse leave
+  container.addEventListener('mouseenter', () => {
+    track.classList.add('clients-paused');
+    animationPaused = true;
+  });
+  
+  container.addEventListener('mouseleave', () => {
+    track.classList.remove('clients-paused');
+    animationPaused = false;
+  });
+  
+  // Inicializar
+  updateCarousel(false);
+  
+  // Recalcular en resize
+  window.addEventListener('resize', () => {
+    updateCarousel(false);
+  });
+});
+</script>
