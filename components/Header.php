@@ -55,6 +55,9 @@
         <a href="<?= url('#por-que-elegirnos') ?>" class="nav-link text-gray-700 hover:text-gold-600 font-medium transition-colors">
           ¿Por qué elegirnos?
         </a>
+        <a href="<?= url('tecnologia.php') ?>" class="nav-link text-gray-700 hover:text-gold-600 font-medium transition-colors">
+          Tecnología
+        </a>
         <a href="<?= url('contacto.php') ?>" class="nav-link text-gray-700 hover:text-gold-600 font-medium transition-colors">
           Contacto
         </a>

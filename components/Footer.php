@@ -147,9 +147,8 @@ $quickLinks = [
               </svg>
             </div>
             <div>
-              <p class="text-gray-300 text-sm">
+              <p class="text-gray-300">
                 <span>Oficinas: <?= BUSINESS_HOURS ?></span>
-                <span class="text-green-400 font-semibold">Emergencias: 24/7</span>
               </p>
             </div>
           </div>

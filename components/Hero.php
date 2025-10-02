@@ -66,24 +66,32 @@
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">AMESP</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Federal</span>
-              </div>
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/oea.svg') ?>" alt="OEA" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">OEA</span>
+                <img src="<?= publicUrl('images/iso_9001.svg') ?>" alt="ISO 9001" class="h-10 w-auto mb-2" loading="lazy" />
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">ISO 9001</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
                 <img src="<?= publicUrl('images/ctpat.svg') ?>" alt="CTPAT" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">CTPAT</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/iso_9001.svg') ?>" alt="ISO 9001" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">ISO 9001</span>
+                <img src="<?= publicUrl('images/oea.svg') ?>" alt="OEA" class="h-10 w-auto mb-2" loading="lazy" />
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">OEA</span>
+              </div>
+              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
+                <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Federal</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
                 <img src="<?= publicUrl('images/stps.svg') ?>" alt="STPS" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">STPS</span>
+              </div>
+              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
+                <img src="<?= publicUrl('images/imss.svg') ?>" alt="IMSS" class="h-10 w-auto mb-2" loading="lazy" />
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">IMSS</span>
+              </div>
+              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
+                <img src="<?= publicUrl('images/infonavit.svg') ?>" alt="INFONAVIT" class="h-10 w-auto mb-2" loading="lazy" />
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">INFONAVIT</span>
               </div>
               
               <!-- Set completo 2 (duplicado para loop infinito) -->
@@ -115,6 +123,14 @@
                 <img src="<?= publicUrl('images/stps.svg') ?>" alt="STPS" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">STPS</span>
               </div>
+              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
+                <img src="<?= publicUrl('images/imss.svg') ?>" alt="IMSS" class="h-10 w-auto mb-2" loading="lazy" />
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">IMSS</span>
+              </div>
+              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
+                <img src="<?= publicUrl('images/infonavit.svg') ?>" alt="INFONAVIT" class="h-10 w-auto mb-2" loading="lazy" />
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">INFONAVIT</span>
+              </div>
               
               <!-- Set completo 3 (segundo duplicado para navegación fluida) -->
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
@@ -145,13 +161,21 @@
                 <img src="<?= publicUrl('images/stps.svg') ?>" alt="STPS" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">STPS</span>
               </div>
+              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
+                <img src="<?= publicUrl('images/imss.svg') ?>" alt="IMSS" class="h-10 w-auto mb-2" loading="lazy" />
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">IMSS</span>
+              </div>
+              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
+                <img src="<?= publicUrl('images/infonavit.svg') ?>" alt="INFONAVIT" class="h-10 w-auto mb-2" loading="lazy" />
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">INFONAVIT</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Call to Actions corporativos -->
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 w-full max-w-full overflow-hidden" data-animate="slide-left">
-          <a href="<?= url('contacto.php') ?>" class="bg-gold-500 text-navy-900 px-3 sm:px-4 py-3 sm:py-4 rounded-lg font-semibold text-center hover:bg-gold-400 transition-all shadow-lg flex items-center justify-center group text-xs sm:text-sm w-full sm:flex-1 min-w-0">
+          <a href="<?= url('contacto.php') ?>" class="bg-gold-500 text-navy-900 px-3 sm:px-4 py-3 sm:py-4 rounded-lg font-semibold text-center hover:bg-gold-400 transition-all shadow-lg flex items-center justify-center group text-sm sm:text-base w-full sm:flex-1 min-w-0">
             <svg class="w-4 h-4 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
@@ -159,7 +183,7 @@
             <span class="truncate">Solicitar Consultoría</span>
           </a>
           
-          <a href="tel:<?= CONTACT_PHONE ?>" class="bg-transparent text-white px-3 sm:px-4 py-3 sm:py-4 rounded-lg font-semibold text-center border-2 border-white/30 hover:border-gold-500 hover:text-gold-400 transition-all flex items-center justify-center group text-xs sm:text-sm w-full sm:flex-1 min-w-0">
+          <a href="tel:<?= CONTACT_PHONE ?>" class="bg-transparent text-white px-3 sm:px-4 py-3 sm:py-4 rounded-lg font-semibold text-center border-2 border-white/30 hover:border-gold-500 hover:text-gold-400 transition-all flex items-center justify-center group text-sm sm:text-base w-full sm:flex-1 min-w-0">
             <svg class="w-4 h-4 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
             </svg>
@@ -174,7 +198,7 @@
         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-16 border border-white/20">
           <img 
             src="<?= publicUrl('images/logo_completo.svg') ?>" 
-            alt="SEGUREC - Sistemas Corporativos de Seguridad" 
+            alt="SEGUREC Seguridad Privada" 
             class="w-96 lg:w-[28rem] xl:w-[32rem] h-auto filter drop-shadow-lg"
           />
         </div>
@@ -185,7 +209,7 @@
 
 <style>
   .particles div {
-    animation: float 6s ease-in-out infinite;
+    animation: float 25s ease-in-out infinite;
   }
   
   @keyframes float {
@@ -213,7 +237,7 @@
   }
 
   .animate-scroll-credentials {
-    animation: scroll-credentials 20s linear infinite;
+    animation: scroll-credentials 40s linear infinite;
   }
 
   @keyframes scroll-credentials {

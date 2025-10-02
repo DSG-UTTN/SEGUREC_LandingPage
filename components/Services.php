@@ -28,7 +28,7 @@ $services = [
             Nuestros <span class="text-gold-600">Servicios</span>
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ofrecemos una amplia gama de servicios de seguridad profesional adaptados a las necesidades específicas de cada cliente.
+            Brindamos servicios de seguridad de la más alta calidad, con personal altamente capacitado para cada cliente.
         </p>
     </div>
 

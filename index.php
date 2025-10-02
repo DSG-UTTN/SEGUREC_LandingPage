@@ -73,14 +73,10 @@ ob_start();
                 </p>
                 
                 <!-- Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
                     <div class="text-center" data-animate="slide-up">
                         <div class="text-3xl md:text-4xl font-bold text-gold-400 mb-2">10+</div>
                         <div class="text-sm text-gray-300">Años de Experiencia</div>
-                    </div>
-                    <div class="text-center" data-animate="slide-up">
-                        <div class="text-3xl md:text-4xl font-bold text-gold-400 mb-2">500+</div>
-                        <div class="text-sm text-gray-300">Clientes Satisfechos</div>
                     </div>
                     <div class="text-center" data-animate="slide-up">
                         <div class="text-3xl md:text-4xl font-bold text-gold-400 mb-2">24/7</div>
@@ -94,19 +90,15 @@ ob_start();
                 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="slide-up">
-                    <a href="<?= url('contacto.php') ?>" class="btn-primary text-lg px-8 py-4">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M20.87 10.48a9 9 0 1 0 -7.876 10.465" />
-                            <path d="M9 10h.01" />
-                            <path d="M15 10h.01" />
-                            <path d="M9.5 15c.658 .64 1.56 1 2.5 1c.357 0 .709 -.052 1.043 -.151" />
-                            <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5" />
-                            <path d="M19 21v1m0 -8v1" />
+                    <a href="<?= url('contacto.php') ?>" class="bg-gold-500 text-navy-900 px-8 py-4 rounded-xl font-semibold text-lg text-center hover:bg-gold-400 transition-all shadow-lg flex items-center justify-center group">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                         </svg>
                         Solicitar Cotización Gratuita
                     </a>
-                    <a href="tel:<?= CONTACT_PHONE ?>" class="btn-secondary text-lg px-8 py-4">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <a href="tel:<?= CONTACT_PHONE ?>" class="bg-transparent text-white px-8 py-4 rounded-xl font-semibold text-lg text-center border-2 border-white/30 hover:border-gold-500 hover:text-gold-400 transition-all flex items-center justify-center group">
+                        <svg class="w-6 h-6 mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                         </svg>
                         Llamar Ahora: (899) 113-5304

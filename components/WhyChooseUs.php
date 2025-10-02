@@ -7,32 +7,32 @@ $reasons = [
     [
         'icon' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
         'title' => 'Experiencia Comprobada',
-        'description' => 'Más de 10 años protegiendo empresas con resultados excepcionales.'
+        'description' => 'Más de 10 años protegiendo empresas con resultados excepcionales y un historial comprobado de éxito.'
     ],
     [
         'icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
         'title' => 'Personal Certificado',
-        'description' => 'Todo nuestro equipo cuenta con certificaciones y capacitación continua.'
+        'description' => 'Todo nuestro equipo cuenta con certificaciones oficiales y capacitación continua especializada.'
     ],
     [
         'icon' => 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
         'title' => 'Disponibilidad 24/7',
-        'description' => 'Servicio ininterrumpido los 365 días del año para tu tranquilidad total.'
+        'description' => 'Servicio ininterrumpido los 365 días del año para tu tranquilidad total sin excepciones.'
     ],
     [
         'icon' => 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
         'title' => 'Innovación Tecnológica',
-        'description' => 'Desarrollamos nuestras propias soluciones tecnológicas para brindar el mejor servicio de seguridad.'
+        'description' => 'Desarrollamos nuestras propias soluciones tecnológicas como Track Vigilante para brindar el mejor servicio.'
     ],
     [
-        'icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
-        'title' => 'Equipo Especializado',
-        'description' => 'Profesionales con experiencia en diferentes sectores y tipos de seguridad.'
+        'icon' => 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
+        'title' => 'Atención Personalizada al Cliente',
+        'description' => 'Cada cliente recibe un servicio adaptado a sus necesidades específicas con atención directa y profesional.'
     ],
     [
-        'icon' => 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-        'title' => 'Respuesta Inmediata',
-        'description' => 'Protocolos de respuesta rápida ante cualquier situación de emergencia.'
+        'icon' => 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
+        'title' => 'Patrullaje de Supervisión Continuo',
+        'description' => 'Sistema de patrullaje constante que garantiza supervisión efectiva y prevención de incidentes.'
     ]
 ];
 ?>
@@ -62,27 +62,8 @@ $reasons = [
         <?php endforeach; ?>
     </div>
 
-    <!-- Stats Section -->
+    <!-- CTA Section -->
     <div class="bg-gradient-to-r from-navy-900 to-navy-800 rounded-3xl p-8 md:p-12 text-white" data-animate="fade-in">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="text-4xl md:text-5xl font-bold text-gold-400 mb-2">10+</div>
-                <div class="text-gray-300">Años de Experiencia</div>
-            </div>
-            <div>
-                <div class="text-4xl md:text-5xl font-bold text-gold-400 mb-2">500+</div>
-                <div class="text-gray-300">Clientes Satisfechos</div>
-            </div>
-            <div>
-                <div class="text-4xl md:text-5xl font-bold text-gold-400 mb-2">24/7</div>
-                <div class="text-gray-300">Disponibilidad</div>
-            </div>
-            <div>
-                <div class="text-4xl md:text-5xl font-bold text-gold-400 mb-2">100%</div>
-                <div class="text-gray-300">Garantía</div>
-            </div>
-        </div>
-        
         <div class="text-center mt-12">
             <h3 class="text-2xl font-bold mb-4">Únete a las empresas que confían en nosotros</h3>
             <p class="text-gray-300 mb-8 max-w-2xl mx-auto">

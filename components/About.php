@@ -86,6 +86,77 @@
       </div>
     </div>
 
+    <!-- Banner Track Vigilante -->
+    <div class="mt-16 mb-12 px-4 sm:px-6 lg:px-8" data-animate="fade-in">
+      <div class="max-w-6xl mx-auto">
+        <div class="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-700 rounded-2xl p-6 sm:p-8 md:p-12 relative overflow-hidden shadow-2xl">
+          <!-- Elementos decorativos de fondo -->
+          <div class="absolute inset-0 bg-gradient-to-br from-navy-900/95 to-navy-700/90"></div>
+          <div class="absolute top-0 right-0 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-gold-500/10 rounded-full -translate-y-16 sm:-translate-y-24 md:-translate-y-32 translate-x-16 sm:translate-x-24 md:translate-x-32"></div>
+          <div class="absolute bottom-0 left-0 w-24 sm:w-36 md:w-48 h-24 sm:h-36 md:h-48 bg-gold-500/10 rounded-full translate-y-12 sm:translate-y-18 md:translate-y-24 -translate-x-12 sm:-translate-x-18 md:-translate-x-24"></div>
+          
+          <div class="relative z-10">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
+              
+              <!-- Contenido -->
+              <div class="text-white order-2 lg:order-1">
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight">
+                  Potenciados por<br>
+                  <span class="text-gold-400">Track Vigilante</span>
+                </h3>
+                
+                <p class="text-gray-300 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 leading-relaxed">
+                  SEGUREC utiliza <strong class="text-white">Track Vigilante</strong>, el software líder en gestión de seguridad privada, 
+                  para optimizar nuestros servicios con control de rondines en tiempo real, geolocalización de guardias, 
+                  reportes digitales y monitoreo 24/7.
+                </p>
+                
+                <div class="space-y-2 sm:space-y-3">
+                  <div class="flex items-start text-gray-300 text-sm sm:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gold-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Control de rondines y patrullajes en tiempo real</span>
+                  </div>
+                  <div class="flex items-start text-gray-300 text-sm sm:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gold-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Geolocalización precisa de todo el personal</span>
+                  </div>
+                  <div class="flex items-start text-gray-300 text-sm sm:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gold-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Reportes digitales automatizados y evidencias</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Logo/Imagen -->
+              <div class="flex justify-center lg:justify-end order-1 lg:order-2">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 w-full max-w-xs sm:max-w-sm border border-white/20">
+                  <div class="rounded-lg p-4 sm:p-6 mb-3 sm:mb-4">
+                    <img 
+                      src="<?= publicUrl('images/track_vigilante.svg') ?>" 
+                      alt="Track Vigilante - Software de Seguridad Privada" 
+                      class="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="text-center">
+                    <p class="text-gray-300 text-xs sm:text-sm font-medium">Software de Gestión</p>
+                    <p class="text-white text-sm sm:text-base lg:text-lg font-bold">de Seguridad Privada</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Barra de certificaciones -->
     <div class="mt-16 pt-16 border-t border-gray-200" data-animate="fade-in">
       <div class="text-center mb-8">
@@ -95,6 +166,23 @@
       
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch max-w-4xl mx-auto px-4">
         <!-- Primera fila -->
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/ctpat.svg') ?>" alt="CTPAT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">CTPAT</span>
+        </div>
+
+         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/oea.svg') ?>" alt="OEA" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">OEA</span>
+        </div>
+        
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">Policía Federal</span>
+        </div>
+        
+        <!-- Segunda fila -->
+        
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
           <img src="<?= publicUrl('images/repse.png') ?>" alt="Registro REPSE" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">REPSE</span>
@@ -106,31 +194,26 @@
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
-          <span class="text-xs text-gold-300 font-medium text-center">Policía Federal</span>
+          <img src="<?= publicUrl('images/iso_9001.svg') ?>" alt="ISO 9001" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">ISO 9001</span>
         </div>
         
-        <!-- Segunda fila -->
-        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/oea.svg') ?>" alt="OEA" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
-          <span class="text-xs text-gold-300 font-medium text-center">OEA</span>
-        </div>
-        
+        <!-- Tercera fila -->
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
           <img src="<?= publicUrl('images/stps.svg') ?>" alt="STPS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">STPS</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/iso_9001.svg') ?>" alt="ISO 9001" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
-          <span class="text-xs text-gold-300 font-medium text-center">ISO 9001</span>
+          <img src="<?= publicUrl('images/imss.svg') ?>" alt="IMSS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">IMSS</span>
         </div>
         
-        <!-- Tercera fila - CTPAT ocupando todo el ancho de la cuadrícula -->
-        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 h-32 sm:h-36 justify-center col-span-2 sm:col-span-3 lg:col-span-3 w-full">
-          <img src="<?= publicUrl('images/ctpat.svg') ?>" alt="CTPAT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
-          <span class="text-xs text-gold-300 font-medium text-center">CTPAT</span>
+        <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
+          <img src="<?= publicUrl('images/infonavit.svg') ?>" alt="INFONAVIT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <span class="text-xs text-gold-300 font-medium text-center">INFONAVIT</span>
         </div>
+
       </div>
     </div>
   </div>
