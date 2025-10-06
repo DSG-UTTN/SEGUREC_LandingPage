@@ -8,6 +8,7 @@ $quickLinks = [
     ['text' => 'Nosotros', 'href' => '#nosotros'],
     ['text' => 'Servicios', 'href' => '#servicios'],
     ['text' => '¿Por qué elegirnos?', 'href' => '#por-que-elegirnos'],
+    ['text' => 'Tecnología', 'href' => 'tecnologia.php'],
     ['text' => 'Contacto', 'href' => url('contacto.php')]
 ];
 ?>

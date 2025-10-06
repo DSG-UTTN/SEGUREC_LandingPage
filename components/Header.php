@@ -105,6 +105,9 @@
         <a href="<?= url('#por-que-elegirnos') ?>" class="block px-3 py-2 text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md font-medium mobile-menu-link">
           ¿Por qué elegirnos?
         </a>
+        <a href="<?= url('tecnologia.php') ?>" class="block px-3 py-2 text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md font-medium mobile-menu-link">
+          Tecnología
+        </a>
         <a href="<?= url('contacto.php') ?>" class="block px-3 py-2 text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md font-medium mobile-menu-link">
           Contacto
         </a>
