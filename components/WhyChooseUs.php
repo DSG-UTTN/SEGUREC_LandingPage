@@ -43,23 +43,148 @@ $reasons = [
             ¿Por qué elegir <span class="text-gold-600">SEGUREC</span>?
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Somos líderes en seguridad privada porque combinamos experiencia, profesionalismo y tecnología 
-            para brindarte la mejor protección.
+            El objetivo principal de nuestro trabajo responde a la necesidad de prevenir todo daño a inmuebles, 
+            así como la sustracción de bienes materiales y todo tipo de actos delictivos.
         </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <?php foreach($reasons as $index => $reason): ?>
-            <div class="text-center group" data-animate="slide-up">
-                <div class="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?= $reason['icon'] ?>"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-navy-900 mb-4"><?= e($reason['title']) ?></h3>
-                <p class="text-gray-600 leading-relaxed"><?= e($reason['description']) ?></p>
+    <!-- Layout con video central en desktop, vertical en móvil -->
+    <div class="mb-20">
+        <!-- Desktop Layout: Grid with video in center -->
+        <div class="hidden lg:grid lg:grid-cols-5 gap-8 items-center">
+            <!-- Columna izquierda: 3 reasons -->
+            <div class="lg:col-span-2 space-y-6">
+                <?php for($i = 0; $i < 3; $i++): ?>
+                    <div class="text-right group" data-animate="slide-right">
+                        <div class="flex items-center justify-end mb-4">
+                            <div class="mr-4">
+                                <h3 class="text-lg font-bold text-navy-900 mb-2"><?= e($reasons[$i]['title']) ?></h3>
+                                <p class="text-gray-600 text-sm leading-relaxed"><?= e($reasons[$i]['description']) ?></p>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?= $reasons[$i]['icon'] ?>"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                <?php endfor; ?>
             </div>
-        <?php endforeach; ?>
+
+            <!-- Video central -->
+            <div class="lg:col-span-1 flex justify-center" data-animate="fade-in">
+                <div class="relative group">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <video 
+                            id="why-choose-video"
+                            class="w-full h-96 object-cover"
+                            poster="<?= publicUrl('images/video.mp4') ?>"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        >
+                            <source src="<?= publicUrl('images/video.mp4') ?>" type="video/mp4">
+                            <p class="text-gray-600">Tu navegador no soporta video HTML5.</p>
+                        </video>
+                        
+                        <!-- Video overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-navy-900/20 pointer-events-none"></div>
+                        
+                    </div>
+                    
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-3 -right-3 w-16 h-16 bg-gold-500 rounded-xl -z-10 opacity-20"></div>
+                    <div class="absolute -bottom-3 -left-3 w-20 h-20 bg-navy-500 rounded-xl -z-10 opacity-20"></div>
+                </div>
+            </div>
+
+            <!-- Columna derecha: 3 reasons -->
+            <div class="lg:col-span-2 space-y-6">
+                <?php for($i = 3; $i < 6; $i++): ?>
+                    <div class="text-left group" data-animate="slide-left">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0 mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?= $reasons[$i]['icon'] ?>"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-navy-900 mb-2"><?= e($reasons[$i]['title']) ?></h3>
+                                <p class="text-gray-600 text-sm leading-relaxed"><?= e($reasons[$i]['description']) ?></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endfor; ?>
+            </div>
+        </div>
+
+        <!-- Mobile Layout: Vertical stack -->
+        <div class="lg:hidden space-y-8">
+            <!-- Video first on mobile -->
+            <div class="flex justify-center" data-animate="fade-in">
+                <div class="relative group max-w-sm w-full">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <video 
+                            id="why-choose-video-mobile"
+                            class="w-full h-96 object-cover"
+                            poster="<?= publicUrl('images/video.mp4') ?>"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        >
+                            <source src="<?= publicUrl('images/video.mp44') ?>" type="video/mp4">
+                            <p class="text-gray-600">Tu navegador no soporta video HTML5.</p>
+                        </video>
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-navy-900/20 pointer-events-none"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All reasons in mobile grid -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <?php foreach($reasons as $index => $reason): ?>
+                    <div class="text-center group" data-animate="slide-up">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?= $reason['icon'] ?>"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-3"><?= e($reason['title']) ?></h3>
+                        <p class="text-gray-600 leading-relaxed text-sm"><?= e($reason['description']) ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nuestro Equipo en Acción Section - Integrada -->
+    <div class="mb-20" data-animate="fade-in">
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center px-4 py-2 bg-gold-100 text-gold-800 rounded-full text-sm font-semibold mb-6">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Personal Certificado
+            </div>
+            
+            <h3 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+                Nuestro <span class="text-gold-600">Equipo en Acción</span>
+            </h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Conoce a los profesionales que hacen posible la <strong class="text-navy-900">seguridad de clase mundial</strong> 
+                que caracteriza a SEGUREC.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+            
+
+        </div>
     </div>
 
     <!-- CTA Section -->
@@ -204,10 +329,169 @@ $reasons = [
   .clients-paused {
     animation-play-state: paused !important;
   }
+
+  /* Video and team styles */
+  #why-choose-video,
+  #why-choose-video-mobile,
+  #team-action-video {
+    border-radius: 1rem;
+    /* Ensure vertical orientation and proper aspect ratio */
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Hide video controls since we're using autoplay */
+  #why-choose-video::-webkit-media-controls,
+  #why-choose-video-mobile::-webkit-media-controls,
+  #team-action-video::-webkit-media-controls {
+    display: none !important;
+  }
+
+  /* Additional mobile-specific styles for vertical orientation */
+  @media (max-width: 1024px) {
+    #why-choose-video-mobile {
+      /* Maintain vertical aspect ratio on mobile */
+      height: 24rem !important; /* h-96 equivalent */
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    
+    /* Ensure mobile video container maintains proportion */
+    .lg\:hidden .relative.group.max-w-sm {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  /* Desktop video central positioning */
+  @media (min-width: 1024px) {
+    #why-choose-video {
+      /* Ensure consistent vertical sizing on desktop */
+      height: 24rem; /* h-96 */
+      width: 100%;
+      max-width: 250px;
+    }
+  }
+
+  /* Stats cards animation */
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Hover effects for image grid */
+  .group:hover img {
+    filter: brightness(1.1);
+  }
+
+  /* Custom responsive grid adjustments */
+  @media (max-width: 1024px) {
+    .lg\:grid-cols-5 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Smooth transitions for desktop layout */
+  .lg\:col-span-2 > div,
+  .lg\:col-span-1 > div {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .lg\:col-span-2 > div:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Video container enhancements */
+  .relative.group video {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .relative.group:hover video {
+    transform: scale(1.02);
+  }
+
+  /* Reason cards responsive adjustments */
+  @media (min-width: 1024px) {
+    .text-right .w-12,
+    .text-left .w-12 {
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .text-right:hover .w-12,
+    .text-left:hover .w-12 {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    }
+  }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Video handling for multiple videos
+  const videos = ['why-choose-video', 'why-choose-video-mobile', 'team-action-video'];
+  
+  videos.forEach(videoId => {
+    const video = document.getElementById(videoId);
+    if (video) {
+      // Ensure autoplay works properly
+      video.addEventListener('loadedmetadata', function() {
+        // Attempt to play video when loaded
+        video.play().catch(function(error) {
+          console.log('Video autoplay prevented for ' + videoId + ':', error);
+          // If autoplay fails, the poster will be shown
+        });
+      });
+      
+      // Intersection observer for better performance
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (video.paused) {
+              video.play().catch(error => {
+                console.log('Video play failed for ' + videoId + ':', error);
+              });
+            }
+          } else {
+            // Pause video when out of view to save bandwidth
+            if (!video.paused) {
+              video.pause();
+            }
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+      
+      videoObserver.observe(video);
+      
+      // Handle video errors
+      video.addEventListener('error', function(e) {
+        console.log('Video loading error for ' + videoId + ':', e);
+        // Show poster image on error
+        video.style.opacity = '0';
+      });
+      
+      // Ensure loop continues properly
+      video.addEventListener('ended', function() {
+        video.currentTime = 0;
+        video.play().catch(error => {
+          console.log('Video loop restart failed for ' + videoId + ':', error);
+        });
+      });
+    }
+  });
+
+  // Clients carousel functionality
   const container = document.getElementById('clients-container');
   const track = document.getElementById('clients-track');
   
@@ -290,6 +574,22 @@ document.addEventListener('DOMContentLoaded', function() {
   // Recalcular en resize
   window.addEventListener('resize', () => {
     updateCarousel(false);
+  });
+  
+  // Animate statistics when they come into view
+  const statsCards = document.querySelectorAll('.text-center.bg-white');
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'bounce-in 0.6s ease-out';
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+  
+  statsCards.forEach(card => {
+    statsObserver.observe(card);
   });
 });
 </script>

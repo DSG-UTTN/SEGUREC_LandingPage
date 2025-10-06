@@ -256,6 +256,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Credentials carousel functionality
   const container = document.getElementById('credentials-container');
   const track = document.getElementById('credentials-track');
   
