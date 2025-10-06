@@ -58,11 +58,11 @@
             <div id="credentials-track" class="flex space-x-3 sm:space-x-6 animate-scroll-credentials" style="width: max-content;">
               <!-- Set completo 1 (con imágenes) -->
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/repse.png') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/repse.svg') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">REPSE</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/amesp.png') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/amesp.svg') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">AMESP</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
@@ -78,7 +78,7 @@
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">OEA</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/policia.svg') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Federal</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
@@ -96,15 +96,15 @@
               
               <!-- Set completo 2 (duplicado para loop infinito) -->
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/repse.png') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/repse.svg') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">REPSE</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/amesp.png') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/amesp.svg') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">AMESP</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/policia.svg') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Federal</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
@@ -134,15 +134,15 @@
               
               <!-- Set completo 3 (segundo duplicado para navegación fluida) -->
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/repse.png') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/repse.svg') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">REPSE</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/amesp.png') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/amesp.svg') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">AMESP</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/policia.svg') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Federal</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">

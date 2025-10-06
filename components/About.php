@@ -177,19 +177,19 @@
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/logo-policia.png') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/policia.svg') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">Policía Federal</span>
         </div>
         
         <!-- Segunda fila -->
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/repse.png') ?>" alt="Registro REPSE" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/repse.svg') ?>" alt="Registro REPSE" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">REPSE</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/amesp.png') ?>" alt="AMESP" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/amesp.svg') ?>" alt="AMESP" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">AMESP</span>
         </div>
         
