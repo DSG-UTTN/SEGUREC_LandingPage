@@ -13,7 +13,7 @@ define('SITE_KEYWORDS', 'Servicios de guardia capacitados, Patrullaje continuo, 
 
 // Contact Information
 define('CONTACT_PHONE', '+528991135304');
-define('CONTACT_EMAIL', 'dsg.segurec@gmail.com');
+define('CONTACT_EMAIL', 'gerencia@segurec.com.mx,ventas@segurec.com.mx');
 define('BUSINESS_HOURS', 'Lunes a Viernes 7:00-19:00');
 
 // Path Configuration

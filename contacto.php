@@ -46,6 +46,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'honeypot' => validateHoneypot($_POST['website'] ?? '') // Hidden honeypot field
         ];
         
+        // Debug logging for Railway (can be removed later)
+        if (!isDevelopmentEnvironment()) {
+            error_log("Security checks results: " . json_encode($security_checks));
+            error_log("HTTP_HOST: " . ($_SERVER['HTTP_HOST'] ?? 'not set'));
+            error_log("HTTP_REFERER: " . ($_SERVER['HTTP_REFERER'] ?? 'not set'));
+            error_log("Client IP: " . $clientIP);
+        }
+        
         // Check security validations
         if (!$security_checks['csrf']) {
             $form_errors['csrf'] = 'Token de seguridad inválido. Por favor, intenta nuevamente.';
@@ -100,7 +108,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $response_message = 'Por favor, corrige los errores en el formulario.';
             }
         } else {
-            $response_message = 'Error de seguridad. Por favor, intenta nuevamente.';
+            // Create a more specific error message based on which security check failed
+            if (!$security_checks['csrf']) {
+                $response_message = 'Token de seguridad inválido. Por favor, recarga la página e intenta nuevamente.';
+            } elseif (!$security_checks['rate_limit']) {
+                $response_message = 'Demasiados intentos. Por favor, espera unos minutos antes de intentar nuevamente.';
+            } elseif (!$security_checks['referrer']) {
+                $response_message = 'Solicitud no válida. Por favor, envía el formulario desde nuestro sitio web.';
+            } elseif (!$security_checks['honeypot']) {
+                $response_message = 'Solicitud sospechosa detectada.';
+            } else {
+                $response_message = 'Error de seguridad. Por favor, intenta nuevamente.';
+            }
         }
         
     } catch (Exception $e) {

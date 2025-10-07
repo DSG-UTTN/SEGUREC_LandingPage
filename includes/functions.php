@@ -259,7 +259,7 @@ function sendContactEmail($data) {
         $headers = array(
             'MIME-Version' => '1.0',
             'Content-type' => 'text/html; charset=UTF-8',
-            'From' => 'dsg.segurec@gmail.com',
+            'From' => 'gerencia@segurec.com.mx',
             'Reply-To' => $data['email'],
             'X-Mailer' => 'PHP/' . phpversion()
         );
@@ -317,10 +317,13 @@ function isDevelopmentEnvironment() {
         '127.0.0.1'
     ]);
     
-    // Force development mode for local testing (can be removed in production)
-    $isLocalDevelopment = $isCLI || $isLocalhost || $isLocalServer || 
-                         strpos(__DIR__, 'localhost') !== false ||
-                         strpos(__DIR__, 'DevHub') !== false; // Your local dev path
+    // Check for Railway deployment (should NOT be considered development)
+    $isRailway = strpos($_SERVER['HTTP_HOST'] ?? '', '.up.railway.app') !== false;
+    
+    // Force development mode for local testing only
+    $isLocalDevelopment = ($isCLI || $isLocalhost || $isLocalServer || 
+                          strpos(__DIR__, 'localhost') !== false ||
+                          strpos(__DIR__, 'DevHub') !== false) && !$isRailway;
     
     return $isLocalDevelopment;
 }
@@ -431,7 +434,7 @@ function sendConfirmationEmail($data) {
     $headers = array(
         'MIME-Version' => '1.0',
         'Content-type' => 'text/html; charset=UTF-8',
-        'From' => 'dsg.segurec@gmail.com',
+        'From' => 'gerencia@segurec.com.mx',
         'X-Mailer' => 'PHP/' . phpversion()
     );
     
@@ -559,6 +562,9 @@ function validateReferrer() {
         'localhost:3000'
     ];
     
+    // Add Railway domain pattern (Railway generates URLs like: project-name.up.railway.app)
+    $railwayPattern = '/\.up\.railway\.app$/';
+    
     if (!isset($_SERVER['HTTP_REFERER']) || empty($_SERVER['HTTP_REFERER'])) {
         return true; // Allow empty referrer for direct access and some AJAX requests
     }
@@ -572,7 +578,13 @@ function validateReferrer() {
         $fullReferrer .= ':' . $referrerPort;
     }
     
-    return in_array($referrerHost, $validDomains) || in_array($fullReferrer, $validDomains);
+    // Check against valid domains
+    $isValidDomain = in_array($referrerHost, $validDomains) || in_array($fullReferrer, $validDomains);
+    
+    // Check if it's a Railway domain
+    $isRailwayDomain = preg_match($railwayPattern, $referrerHost);
+    
+    return $isValidDomain || $isRailwayDomain;
 }
 
 /**
