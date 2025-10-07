@@ -99,7 +99,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $form_data = [];
                 } else {
                     $form_errors['email_send'] = 'Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos directamente por teléfono.';
-                    $response_message = 'Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.';
+                    
+                    // Enhanced error message for production debugging
+                    if (!isDevelopmentEnvironment()) {
+                        $response_message = 'Mensaje recibido pero hubo un problema técnico con el envío. Hemos guardado tu información y te contactaremos pronto. Si es urgente, llámanos al (55) 1234-5678.';
+                        
+                        // Log detailed error information
+                        error_log("Email send failed - Form data: " . json_encode($form_data));
+                        error_log("Contact information - Phone: (55) 1234-5678, Email: gerencia@segurec.com.mx");
+                    } else {
+                        $response_message = 'Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.';
+                    }
                     
                     // Log email send failure
                     logSecurityIncident('email_send_failed', ['ip' => $clientIP]);

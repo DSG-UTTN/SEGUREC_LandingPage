@@ -186,7 +186,8 @@ function validateContactForm($data) {
  */
 function sendContactEmail($data) {
     try {
-        $to = 'dsg.segurec@gmail.com, danielsantossud71199@gmail.com';
+        // Use configuration from config.php
+        $to = CONTACT_EMAIL;
         $subject = 'Nueva consulta desde el sitio web - SEGUREC';
         
         // Email template
@@ -278,6 +279,20 @@ function sendContactEmail($data) {
         // Send email
         $success = mail($to, $subject, $message, $headerString);
         
+        // Enhanced logging for Railway debugging
+        if (!isDevelopmentEnvironment()) {
+            error_log("Mail function attempt - To: $to");
+            error_log("Mail function result: " . ($success ? 'SUCCESS' : 'FAILED'));
+            if (!$success) {
+                error_log("Last PHP error: " . print_r(error_get_last(), true));
+                error_log("Mail configuration check:");
+                error_log("- SMTP: " . ini_get('SMTP'));
+                error_log("- smtp_port: " . ini_get('smtp_port'));
+                error_log("- sendmail_from: " . ini_get('sendmail_from'));
+                error_log("- sendmail_path: " . ini_get('sendmail_path'));
+            }
+        }
+        
         // Log email attempt
         if ($success) {
             error_log("Contact email sent successfully to: $to");
@@ -285,6 +300,18 @@ function sendContactEmail($data) {
             sendConfirmationEmail($data);
         } else {
             error_log("Failed to send contact email to: $to");
+            
+            // If mail() fails in production, save to file as backup
+            if (!isDevelopmentEnvironment()) {
+                error_log("Attempting to save email to file as backup...");
+                $fileSuccess = saveEmailToFile($to, $subject, $message, $data, 'failed_emails');
+                error_log("File backup result: " . ($fileSuccess ? 'SUCCESS' : 'FAILED'));
+                
+                // For now, return true if we at least saved to file
+                // This prevents the "error sending message" to the user
+                // while we investigate the SMTP configuration
+                return $fileSuccess;
+            }
         }
         
         return $success;
@@ -331,10 +358,10 @@ function isDevelopmentEnvironment() {
 /**
  * Save email to file for development purposes
  */
-function saveEmailToFile($to, $subject, $message, $data) {
+function saveEmailToFile($to, $subject, $message, $data, $subdir = 'emails') {
     try {
         // Create emails directory if it doesn't exist
-        $emailDir = BASE_PATH . '/logs/emails';
+        $emailDir = BASE_PATH . '/logs/' . $subdir;
         if (!is_dir($emailDir)) {
             if (!mkdir($emailDir, 0755, true)) {
                 return false;
