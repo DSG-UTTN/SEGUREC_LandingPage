@@ -163,7 +163,7 @@ $reasons = [
     </div>
 
     <!-- Nuestro Equipo en Acción Section - Integrada -->
-    <div class="mb-20" data-animate="fade-in">
+    <div class="mb-20 pb-8" data-animate="fade-in">
         <div class="text-center mb-12">
             <div class="inline-flex items-center px-4 py-2 bg-gold-100 text-gold-800 rounded-full text-sm font-semibold mb-6">
                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -182,8 +182,95 @@ $reasons = [
         </div>
 
         <div class="grid lg:grid-cols-12 gap-8 items-center">
-            
+            <!-- LinkedIn Posts Carousel -->
+            <div class="lg:col-span-12">
+                <div class="relative overflow-hidden">
+                    <!-- Carousel Container -->
+                    <div id="linkedin-container" class="relative">
+                        <!-- Navigation Buttons -->
+                        <button id="linkedin-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button id="linkedin-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
 
+                        <!-- Carousel Track -->
+                        <div id="linkedin-track" class="flex transition-transform duration-500 ease-in-out gap-6">
+                            <!-- LinkedIn Post 1 - Real Post -->
+                            <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                                <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-96">
+                                    <iframe 
+                                        src="https://www.linkedin.com/embed/feed/update/urn:li:share:7369046421716574209?collapsed=1" 
+                                        height="100%" 
+                                        width="100%" 
+                                        frameborder="0" 
+                                        allowfullscreen="" 
+                                        title="Publicación SEGUREC LinkedIn"
+                                        class="rounded-2xl">
+                                    </iframe>
+                                </div>
+                            </div>
+
+                            <!-- LinkedIn Post 2 - Pendiente URL real -->
+                            <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                                <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-96">
+                                    <iframe 
+                                      src="https://www.linkedin.com/embed/feed/update/urn:li:share:7369046624351780866?collapsed=1" 
+                                      height="100%" 
+                                      width="100%" 
+                                      frameborder="0" 
+                                      allowfullscreen="" 
+                                      title="Publicación SEGUREC LinkedIn"
+                                      class="rounded-2xl">
+                                    </iframe>
+                                </div>
+                            </div>
+
+                            <!-- LinkedIn Post 3 - Pendiente URL real -->
+                            <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                                <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-96">
+                                  <iframe 
+                                    src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7358546899462725633?collapsed=1" 
+                                    height="100%" 
+                                    width="100%" 
+                                    frameborder="0" 
+                                    allowfullscreen="" 
+                                    title="Publicación SEGUREC LinkedIn" 
+                                    class="rounded-2xl">
+                                  </iframe>
+                                </div>
+                            </div>
+
+                            <!-- LinkedIn Post 4 - Pendiente URL real -->
+                            <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                                <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-96">
+                                  <iframe 
+                                  src="https://www.linkedin.com/embed/feed/update/urn:li:share:7377345702160674816?collapsed=1"
+                                  height="100%" 
+                                  width="100%" 
+                                  frameborder="0" 
+                                  allowfullscreen="" 
+                                  title="Publicación SEGUREC LinkedIn"
+                                  class="rounded-2xl">
+                                </iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Indicators -->
+                        <div class="linkedin-indicators-container flex justify-center mt-8 mb-4 space-x-2">
+                            <button class="linkedin-indicator w-3 h-3 rounded-full bg-gold-500 transition-all duration-300" data-slide="0"></button>
+                            <button class="linkedin-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gold-400 transition-all duration-300" data-slide="1"></button>
+                            <button class="linkedin-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gold-400 transition-all duration-300" data-slide="2"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -328,6 +415,196 @@ $reasons = [
 
   .clients-paused {
     animation-play-state: paused !important;
+  }
+
+  /* LinkedIn Carousel Styles */
+  #linkedin-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 60px; /* Space for navigation buttons */
+    max-width: 100%;
+  }
+
+  #linkedin-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  /* Base post styling */
+  #linkedin-track > div {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* Desktop: 3 posts visible */
+  @media (min-width: 1024px) {
+    #linkedin-track > div {
+      width: calc(33.333% - 1rem);
+      min-width: calc(33.333% - 1rem);
+      flex: 0 0 calc(33.333% - 1rem);
+    }
+    
+    #linkedin-container {
+      padding: 0 60px;
+    }
+  }
+
+  /* Tablet: 2 posts visible */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #linkedin-track > div {
+      width: calc(50% - 0.75rem);
+      min-width: calc(50% - 0.75rem);
+      flex: 0 0 calc(50% - 0.75rem);
+    }
+    
+    #linkedin-container {
+      padding: 0 50px;
+    }
+    
+    #linkedin-track {
+      gap: 1.5rem;
+    }
+  }
+
+  /* Mobile: 1 post visible */
+  @media (max-width: 767px) {
+    #linkedin-container {
+      padding: 0 40px;
+    }
+    
+    #linkedin-track > div {
+      width: 100%;
+      min-width: 100%;
+      flex: 0 0 100%;
+    }
+    
+    #linkedin-track {
+      gap: 1rem;
+    }
+  }
+
+  /* Very small screens */
+  @media (max-width: 480px) {
+    #linkedin-container {
+      padding: 0 20px;
+    }
+  }
+
+  /* Navigation buttons */
+  #linkedin-prev,
+  #linkedin-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+    backdrop-filter: blur(8px);
+  }
+
+  #linkedin-prev {
+    left: 10px;
+  }
+
+  #linkedin-next {
+    right: 10px;
+  }
+
+  #linkedin-prev:hover,
+  #linkedin-next:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+  }
+
+  /* Hide navigation on mobile - use swipe instead */
+  @media (max-width: 767px) {
+    #linkedin-prev,
+    #linkedin-next {
+      width: 40px;
+      height: 40px;
+    }
+    
+    #linkedin-prev {
+      left: 5px;
+    }
+    
+    #linkedin-next {
+      right: 5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #linkedin-prev,
+    #linkedin-next {
+      display: none;
+    }
+  }
+
+  /* Indicators */
+  .linkedin-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #d1d5db;
+    margin: 4px 0; /* Add vertical margin to prevent clipping */
+  }
+
+  .linkedin-indicator.active {
+    background-color: #f59e0b !important;
+    transform: scale(1.3);
+  }
+
+  .linkedin-indicator:not(.active):hover {
+    background-color: #d97706;
+    transform: scale(1.1);
+  }
+
+  /* Responsive indicators */
+  @media (max-width: 767px) {
+    .linkedin-indicator {
+      width: 10px;
+      height: 10px;
+      margin: 6px 0; /* More margin on mobile */
+    }
+  }
+
+  /* Ensure indicators container has enough space */
+  .linkedin-indicators-container {
+    padding: 8px 0;
+    min-height: 32px;
+  }
+
+  /* LinkedIn embed responsive styling */
+  .linkedin-post-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  .linkedin-post-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 1rem;
   }
 
   /* Video and team styles */
@@ -591,5 +868,180 @@ document.addEventListener('DOMContentLoaded', function() {
   statsCards.forEach(card => {
     statsObserver.observe(card);
   });
+
+  // LinkedIn Carousel functionality
+  const linkedinContainer = document.getElementById('linkedin-container');
+  const linkedinTrack = document.getElementById('linkedin-track');
+  const linkedinPrev = document.getElementById('linkedin-prev');
+  const linkedinNext = document.getElementById('linkedin-next');
+  const linkedinIndicators = document.querySelectorAll('.linkedin-indicator');
+  
+  if (linkedinTrack && linkedinPrev && linkedinNext) {
+    let currentSlide = 0;
+    let totalPosts = linkedinTrack.children.length;
+    
+    function getVisibleSlides() {
+      if (window.innerWidth >= 1024) return 3; // Desktop: 3 posts
+      if (window.innerWidth >= 768) return 2;  // Tablet: 2 posts
+      return 1; // Mobile: 1 post
+    }
+    
+    function getTotalSlides() {
+      const visibleSlides = getVisibleSlides();
+      return Math.max(1, totalPosts - visibleSlides + 1);
+    }
+    
+    function updateCarousel() {
+      const visibleSlides = getVisibleSlides();
+      const slideWidth = 100 / visibleSlides;
+      const translateX = -(currentSlide * slideWidth);
+      
+      linkedinTrack.style.transform = `translateX(${translateX}%)`;
+      
+      // Update indicators
+      const totalSlidesForIndicators = getTotalSlides();
+      linkedinIndicators.forEach((indicator, index) => {
+        if (index < totalSlidesForIndicators) {
+          indicator.style.display = 'block';
+          indicator.classList.toggle('active', index === currentSlide);
+        } else {
+          indicator.style.display = 'none';
+        }
+      });
+      
+      // Update button states
+      const totalSlidesForButtons = getTotalSlides();
+      if (linkedinPrev) {
+        linkedinPrev.style.opacity = currentSlide === 0 ? '0.5' : '1';
+        linkedinPrev.style.pointerEvents = currentSlide === 0 ? 'none' : 'auto';
+      }
+      if (linkedinNext) {
+        linkedinNext.style.opacity = currentSlide >= totalSlidesForButtons - 1 ? '0.5' : '1';
+        linkedinNext.style.pointerEvents = currentSlide >= totalSlidesForButtons - 1 ? 'none' : 'auto';
+      }
+    }
+    
+    function nextSlide() {
+      const maxSlides = getTotalSlides();
+      if (currentSlide < maxSlides - 1) {
+        currentSlide++;
+        updateCarousel();
+      }
+    }
+    
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateCarousel();
+      }
+    }
+    
+    function goToSlide(slideIndex) {
+      const totalSlides = getTotalSlides();
+      if (slideIndex >= 0 && slideIndex < totalSlides) {
+        currentSlide = slideIndex;
+        updateCarousel();
+      }
+    }
+    
+    // Event listeners
+    if (linkedinNext) linkedinNext.addEventListener('click', nextSlide);
+    if (linkedinPrev) linkedinPrev.addEventListener('click', prevSlide);
+    
+    // Indicator clicks
+    linkedinIndicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        goToSlide(index);
+      });
+    });
+    
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let hasMoved = false;
+    
+    linkedinTrack.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      currentX = startX;
+      isDragging = true;
+      hasMoved = false;
+    }, { passive: true });
+    
+    linkedinTrack.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      currentX = e.touches[0].clientX;
+      const diff = currentX - startX;
+      if (Math.abs(diff) > 5) {
+        hasMoved = true;
+      }
+    }, { passive: true });
+    
+    linkedinTrack.addEventListener('touchend', () => {
+      if (!isDragging || !hasMoved) return;
+      isDragging = false;
+      
+      const diff = startX - currentX;
+      const threshold = 50;
+      
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }, { passive: true });
+    
+    // Prevent click events when swiping
+    linkedinTrack.addEventListener('click', (e) => {
+      if (hasMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextSlide();
+      }
+    });
+    
+    // Responsive recalculation
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const previousVisibleSlides = getVisibleSlides();
+        const maxSlide = getTotalSlides() - 1;
+        if (currentSlide > maxSlide) {
+          currentSlide = Math.max(0, maxSlide);
+        }
+        updateCarousel();
+      }, 250);
+    });
+    
+    // Initialize
+    updateCarousel();
+    
+    // Auto-advance carousel (optional)
+    /*
+    setInterval(() => {
+      const totalSlides = getTotalSlides();
+      if (currentSlide >= totalSlides - 1) {
+        currentSlide = 0;
+      } else {
+        currentSlide++;
+      }
+      updateCarousel();
+    }, 5000);
+    */
+  }
 });
 </script>
