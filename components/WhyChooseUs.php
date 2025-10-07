@@ -136,7 +136,7 @@ $reasons = [
                             playsinline
                             preload="metadata"
                         >
-                            <source src="<?= publicUrl('images/video.mp44') ?>" type="video/mp4">
+                            <source src="<?= publicUrl('images/video.mp4') ?>" type="video/mp4">
                             <p class="text-gray-600">Tu navegador no soporta video HTML5.</p>
                         </video>
                         

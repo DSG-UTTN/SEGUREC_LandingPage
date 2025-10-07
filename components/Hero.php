@@ -131,44 +131,6 @@
                 <img src="<?= publicUrl('images/infonavit.svg') ?>" alt="INFONAVIT" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">INFONAVIT</span>
               </div>
-              
-              <!-- Set completo 3 (segundo duplicado para navegación fluida) -->
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/repse.svg') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">REPSE</span>
-              </div>
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/amesp.svg') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">AMESP</span>
-              </div>
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/policia.svg') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Federal</span>
-              </div>
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/oea.svg') ?>" alt="OEA" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">OEA</span>
-              </div>
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/ctpat.svg') ?>" alt="CTPAT" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">CTPAT</span>
-              </div>
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/iso_9001.svg') ?>" alt="ISO 9001" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">ISO 9001</span>
-              </div>
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/stps.svg') ?>" alt="STPS" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">STPS</span>
-              </div>
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/imss.svg') ?>" alt="IMSS" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">IMSS</span>
-              </div>
-              <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/infonavit.svg') ?>" alt="INFONAVIT" class="h-10 w-auto mb-2" loading="lazy" />
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">INFONAVIT</span>
-              </div>
             </div>
           </div>
         </div>
@@ -237,7 +199,7 @@
   }
 
   .animate-scroll-credentials {
-    animation: scroll-credentials 40s linear infinite;
+    animation: scroll-credentials 30s linear infinite;
   }
 
   @keyframes scroll-credentials {
@@ -245,7 +207,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
   }
 
@@ -256,66 +218,15 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Credentials carousel functionality
+  // Credentials carousel functionality - Same as clients carousel
   const container = document.getElementById('credentials-container');
   const track = document.getElementById('credentials-track');
   
   if (!container || !track) return;
   
-  let currentTranslate = 0;
   let animationPaused = false;
-  let isTransitioning = false;
-  const totalItems = 9; // 3 sets de 3 elementos cada uno
-  const itemsPerSet = 3;
-  
-  // Calcular ancho de elemento dinámicamente
-  function getItemWidth() {
-    const items = track.querySelectorAll('.credential-item');
-    if (items.length === 0) return 250;
-    
-    const firstItem = items[0];
-    const styles = window.getComputedStyle(firstItem);
-    const gap = parseInt(window.getComputedStyle(track).gap) || 12;
-    return firstItem.offsetWidth + gap;
-  }
-  
-  // Función para actualizar posición con loop infinito
-  function updateCarousel(smooth = true) {
-    if (isTransitioning && smooth) return;
-    
-    const itemWidth = getItemWidth();
-    
-    if (smooth) {
-      isTransitioning = true;
-      track.style.transition = 'transform 0.4s ease-out';
-    } else {
-      track.style.transition = 'none';
-    }
-    
-    track.style.transform = `translateX(${currentTranslate}px)`;
-    
-    if (smooth) {
-      setTimeout(() => {
-        // Verificar si necesitamos resetear para loop infinito
-        const oneSetWidth = itemWidth * itemsPerSet;
-        
-        // Si hemos pasado más allá del primer set (hacia la derecha)
-        if (Math.abs(currentTranslate) >= oneSetWidth * 2) {
-          track.style.transition = 'none';
-          currentTranslate = -oneSetWidth; // Volver al segundo set
-          track.style.transform = `translateX(${currentTranslate}px)`;
-        }
-        // Si hemos ido antes del segundo set (hacia la izquierda)
-        else if (currentTranslate > 0) {
-          track.style.transition = 'none';
-          currentTranslate = -oneSetWidth; // Ir al segundo set
-          track.style.transform = `translateX(${currentTranslate}px)`;
-        }
-        
-        isTransitioning = false;
-      }, 400);
-    }
-  }
+  const totalItems = 18; // 9 credentials x 2 sets
+  const itemsPerSet = 9;
   
   // Función para pausar/reanudar animación CSS
   function toggleAnimation() {
@@ -328,21 +239,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Cambiar hover por click para pausar/reanudar
-  container.addEventListener('click', (e) => {
-    toggleAnimation();
+  // Pausar en hover, reanudar en mouse leave (como el carrusel de clientes)
+  container.addEventListener('mouseenter', () => {
+    track.classList.add('credentials-paused');
+    animationPaused = true;
   });
   
-  // Inicializar en el set del medio para navegación infinita
-  const itemWidth = getItemWidth();
-  currentTranslate = -itemWidth * itemsPerSet; // Empezar en el segundo set
-  updateCarousel(false);
-  
-  // Recalcular en resize
-  window.addEventListener('resize', () => {
-    const newItemWidth = getItemWidth();
-    currentTranslate = -newItemWidth * itemsPerSet;
-    updateCarousel(false);
+  container.addEventListener('mouseleave', () => {
+    track.classList.remove('credentials-paused');
+    animationPaused = false;
   });
+  
+  // Inicializar - sin configuración especial, deja que CSS maneje todo
+  // El carrusel funciona automáticamente con la animación CSS
 });
 </script>

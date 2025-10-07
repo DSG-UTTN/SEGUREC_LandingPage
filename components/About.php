@@ -14,51 +14,131 @@
           <!-- Carrusel de imágenes reales SEGUREC -->
           <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
             <div class="segurec-carousel relative w-full h-80 md:h-96">
-              <!-- Imagen 1 - Guardia en acción -->
+              <!-- Imagen 1 - SEGUREC about1 -->
               <div class="carousel-slide active absolute inset-0 w-full h-full">
                 <img 
-                  src="<?= publicUrl('images/carro.svg') ?>" 
-                  alt="Guardia de seguridad SEGUREC en servicio" 
+                  src="<?= publicUrl('images/about1.jpeg') ?>" 
+                  alt="Servicios de seguridad SEGUREC - Personal en acción" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
               
-              <!-- Imagen 2 - Equipo profesional -->
+              <!-- Imagen 2 - SEGUREC about2 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/3.jpg') ?>" 
-                  alt="Equipo de seguridad SEGUREC" 
+                  src="<?= publicUrl('images/about2.jpeg') ?>" 
+                  alt="Equipo de seguridad SEGUREC profesional" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
               
-              <!-- Imagen 3 - Tecnología y monitoreo -->
+              <!-- Imagen 3 - SEGUREC about3 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/9.png') ?>" 
-                  alt="Monitoreo y tecnología SEGUREC" 
+                  src="<?= publicUrl('images/about3.jpeg') ?>" 
+                  alt="Tecnología y monitoreo SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
               
-              <!-- Imagen 4 - Patrullaje -->
+              <!-- Imagen 4 - SEGUREC about4 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/6.png') ?>" 
+                  src="<?= publicUrl('images/about4.jpeg') ?>" 
                   alt="Servicios de patrullaje SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
 
-              <!-- Imagen 4 - Patrullaje -->
+              <!-- Imagen 5 - SEGUREC about5 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/1.png') ?>" 
-                  alt="Servicios de patrullaje SEGUREC" 
+                  src="<?= publicUrl('images/about5.jpeg') ?>" 
+                  alt="Personal certificado SEGUREC" 
+                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Imagen 6 - SEGUREC about6 -->
+              <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
+                <img 
+                  src="<?= publicUrl('images/about6.png') ?>" 
+                  alt="Instalaciones y equipo SEGUREC" 
+                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Imagen 7 - SEGUREC about7 -->
+              <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
+                <img 
+                  src="<?= publicUrl('images/about7.png') ?>" 
+                  alt="Operaciones de seguridad SEGUREC" 
+                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Imagen 8 - SEGUREC about8 -->
+              <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
+                <img 
+                  src="<?= publicUrl('images/about8.jpg') ?>" 
+                  alt="Control y monitoreo SEGUREC" 
+                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Imagen 9 - SEGUREC about10 -->
+              <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
+                <img 
+                  src="<?= publicUrl('images/about10.png') ?>" 
+                  alt="Sistemas de seguridad SEGUREC" 
+                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Imagen 10 - SEGUREC about11 -->
+              <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
+                <img 
+                  src="<?= publicUrl('images/about11.png') ?>" 
+                  alt="Capacitación y entrenamiento SEGUREC" 
+                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Imagen 11 - SEGUREC about12 -->
+              <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
+                <img 
+                  src="<?= publicUrl('images/about12.png') ?>" 
+                  alt="Servicios especializados SEGUREC" 
+                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Imagen 12 - SEGUREC about14 -->
+              <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
+                <img 
+                  src="<?= publicUrl('images/about14.jpg') ?>" 
+                  alt="Personal de élite SEGUREC" 
+                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Imagen 13 - SEGUREC about15 -->
+              <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
+                <img 
+                  src="<?= publicUrl('images/about15.svg') ?>" 
+                  alt="Certificaciones y reconocimientos SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
@@ -66,24 +146,33 @@
               
               <!-- Controles del carrusel -->
               <div class="absolute top-4 right-4 flex space-x-2">
-                <button id="prev-slide" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 rounded-full transition-all">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                <button id="prev-slide" class="bg-black/40 backdrop-blur-md hover:bg-black/60 text-white p-3 rounded-full transition-all duration-300 shadow-lg border border-white/20 hover:border-white/40 hover:scale-110">
+                  <svg class="w-4 h-4 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
                   </svg>
                 </button>
-                <button id="next-slide" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 rounded-full transition-all">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                <button id="next-slide" class="bg-black/40 backdrop-blur-md hover:bg-black/60 text-white p-3 rounded-full transition-all duration-300 shadow-lg border border-white/20 hover:border-white/40 hover:scale-110">
+                  <svg class="w-4 h-4 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                   </svg>
                 </button>
               </div>
               
               <!-- Indicadores -->
-              <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                <button class="slide-indicator active w-2 h-2 rounded-full bg-white transition-all" data-slide="0"></button>
-                <button class="slide-indicator w-2 h-2 rounded-full bg-white/50 transition-all" data-slide="1"></button>
-                <button class="slide-indicator w-2 h-2 rounded-full bg-white/50 transition-all" data-slide="2"></button>
-                <button class="slide-indicator w-2 h-2 rounded-full bg-white/50 transition-all" data-slide="3"></button>
+              <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 bg-black/30 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
+                <button class="slide-indicator active w-3 h-3 rounded-full bg-white shadow-md transition-all duration-300 hover:scale-125" data-slide="0"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="1"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="2"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="3"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="4"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="5"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="6"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="7"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="8"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="9"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="10"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="11"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="12"></button>
               </div>
             </div>
           </div>
@@ -297,11 +386,25 @@
   
   .slide-indicator.active {
     background-color: #f59e0b !important;
-    transform: scale(1.2);
+    transform: scale(1.4);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.3);
+  }
+  
+  .slide-indicator:hover {
+    background-color: #d97706 !important;
   }
   
   .segurec-carousel:hover .carousel-slide img {
     transform: scale(1.02);
+  }
+  
+  /* Enhanced button styles for better visibility */
+  #prev-slide, #next-slide {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  #prev-slide:hover, #next-slide:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3);
   }
 </style>
 
@@ -354,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function startAutoSlide() {
-    slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+    slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
   }
   
   function stopAutoSlide() {
@@ -388,13 +491,6 @@ document.addEventListener('DOMContentLoaded', function() {
       startAutoSlide();
     });
   });
-  
-  // Pause on hover
-  const carousel = document.querySelector('.segurec-carousel');
-  if (carousel) {
-    carousel.addEventListener('mouseenter', stopAutoSlide);
-    carousel.addEventListener('mouseleave', startAutoSlide);
-  }
   
   // Initialize
   showSlide(0);
