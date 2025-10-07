@@ -9,6 +9,131 @@
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/includes/functions.php';
 
+// Initialize session for CSRF protection
+session_start();
+
+// Initialize variables
+$form_submitted = false;
+$form_success = false;
+$form_errors = [];
+$form_data = [];
+$response_message = '';
+
+// Process form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $form_submitted = true;
+    
+    // Check if this is an AJAX request
+    $is_ajax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && 
+               strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+    
+    // For AJAX requests, capture any output and handle errors properly
+    if ($is_ajax) {
+        ob_start();
+        error_reporting(0); // Suppress error output for AJAX
+        ini_set('display_errors', 0);
+    }
+    
+    try {
+        // Get client IP for rate limiting
+        $clientIP = getClientIP();
+        
+        // Security checks
+        $security_checks = [
+            'csrf' => validateCSRFToken($_POST['csrf_token'] ?? ''),
+            'rate_limit' => checkRateLimit($clientIP, 3, 300), // 3 attempts per 5 minutes
+            'referrer' => $is_ajax || validateReferrer(), // Skip referrer check for AJAX
+            'honeypot' => validateHoneypot($_POST['website'] ?? '') // Hidden honeypot field
+        ];
+        
+        // Check security validations
+        if (!$security_checks['csrf']) {
+            $form_errors['csrf'] = 'Token de seguridad inválido. Por favor, intenta nuevamente.';
+            logSecurityIncident('csrf_validation_failed', ['ip' => $clientIP]);
+        }
+        
+        if (!$security_checks['rate_limit']) {
+            $form_errors['rate_limit'] = 'Demasiados intentos. Por favor, espera unos minutos antes de intentar nuevamente.';
+            logSecurityIncident('rate_limit_exceeded', ['ip' => $clientIP]);
+        }
+        
+        if (!$security_checks['referrer']) {
+            $form_errors['referrer'] = 'Solicitud no válida. Por favor, envía el formulario desde nuestro sitio web.';
+            logSecurityIncident('invalid_referrer', ['ip' => $clientIP, 'referrer' => $_SERVER['HTTP_REFERER'] ?? 'none']);
+        }
+        
+        if (!$security_checks['honeypot']) {
+            $form_errors['honeypot'] = 'Solicitud sospechosa detectada.';
+            logSecurityIncident('honeypot_filled', ['ip' => $clientIP]);
+        }
+        
+        // If security checks pass, proceed with form validation
+        if (empty($form_errors)) {
+            // Validate form data
+            $validation = validateContactForm($_POST);
+            $form_errors = array_merge($form_errors, $validation['errors']);
+            $form_data = $validation['data'];
+            
+            if ($validation['valid']) {
+                // Attempt to send email
+                if (sendContactEmail($form_data)) {
+                    $form_success = true;
+                    $response_message = '¡Gracias por contactarnos! Hemos recibido tu solicitud y nos pondremos en contacto contigo en menos de 24 horas.';
+                    
+                    // Log successful submission
+                    logSecurityIncident('form_submission_success', [
+                        'ip' => $clientIP,
+                        'email' => $form_data['email'],
+                        'name' => $form_data['nombre']
+                    ]);
+                    
+                    // Clear form data on success
+                    $form_data = [];
+                } else {
+                    $form_errors['email_send'] = 'Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos directamente por teléfono.';
+                    $response_message = 'Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.';
+                    
+                    // Log email send failure
+                    logSecurityIncident('email_send_failed', ['ip' => $clientIP]);
+                }
+            } else {
+                $response_message = 'Por favor, corrige los errores en el formulario.';
+            }
+        } else {
+            $response_message = 'Error de seguridad. Por favor, intenta nuevamente.';
+        }
+        
+    } catch (Exception $e) {
+        $form_errors['system'] = 'Error del sistema. Por favor, intenta nuevamente.';
+        $response_message = 'Error del sistema. Por favor, intenta nuevamente.';
+        
+        // Log the exception
+        error_log('Contact form error: ' . $e->getMessage());
+    }
+    
+    // Handle AJAX requests
+    if ($is_ajax) {
+        // Clean any output that might have been generated
+        $unwanted_output = ob_get_clean();
+        
+        // Ensure clean JSON response
+        header('Content-Type: application/json; charset=UTF-8');
+        http_response_code(200);
+        
+        $response = [
+            'success' => $form_success,
+            'message' => $response_message,
+            'errors' => $form_errors
+        ];
+        
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+}
+
+// Generate CSRF token
+$csrf_token = generateCSRFToken();
+
 // Page-specific SEO data
 $seo = [
     'title' => 'SEGUREC',
@@ -145,7 +270,23 @@ ob_start();
                         <h2 class="text-3xl font-bold text-navy-900 mb-2">Solicita tu Cotización</h2>
                         <p class="text-gray-600 mb-8">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
                         
-                        <form action="#" method="POST" class="space-y-6">
+                        <!-- Success/Error Messages -->
+                        <?php if ($form_submitted): ?>
+                            <div id="form-message" class="mb-6 p-4 rounded-lg <?= $form_success ? 'bg-green-100 border border-green-200 text-green-700' : 'bg-red-100 border border-red-200 text-red-700' ?>">
+                                <?= htmlspecialchars($response_message) ?>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <form id="contact-form" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST" class="space-y-6" novalidate>
+                            <!-- CSRF Token -->
+                            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token) ?>">
+                            
+                            <!-- Honeypot field (hidden from users, but visible to bots) -->
+                            <div style="display: none;">
+                                <label for="website">Website (leave blank):</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>>
+                            
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="nombre" class="block text-sm font-semibold text-gray-700 mb-2">Nombre Completo *</label>
@@ -154,9 +295,13 @@ ob_start();
                                         id="nombre" 
                                         name="nombre" 
                                         required
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
+                                        value="<?= htmlspecialchars($form_data['nombre'] ?? '') ?>"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors <?= isset($form_errors['nombre']) ? 'border-red-500' : '' ?>"
                                         placeholder="Tu nombre completo"
                                     >
+                                    <?php if (isset($form_errors['nombre'])): ?>
+                                        <p class="mt-1 text-sm text-red-600"><?= htmlspecialchars($form_errors['nombre']) ?></p>
+                                    <?php endif; ?>
                                 </div>
                                 <div>
                                     <label for="empresa" class="block text-sm font-semibold text-gray-700 mb-2">Empresa</label>
@@ -164,6 +309,7 @@ ob_start();
                                         type="text" 
                                         id="empresa" 
                                         name="empresa" 
+                                        value="<?= htmlspecialchars($form_data['empresa'] ?? '') ?>"
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
                                         placeholder="Nombre de tu empresa"
                                     >
@@ -178,9 +324,13 @@ ob_start();
                                         id="email" 
                                         name="email" 
                                         required
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
+                                        value="<?= htmlspecialchars($form_data['email'] ?? '') ?>"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors <?= isset($form_errors['email']) ? 'border-red-500' : '' ?>"
                                         placeholder="tu@email.com"
                                     >
+                                    <?php if (isset($form_errors['email'])): ?>
+                                        <p class="mt-1 text-sm text-red-600"><?= htmlspecialchars($form_errors['email']) ?></p>
+                                    <?php endif; ?>
                                 </div>
                                 <div>
                                     <label for="telefono" class="block text-sm font-semibold text-gray-700 mb-2">Teléfono *</label>
@@ -189,9 +339,13 @@ ob_start();
                                         id="telefono" 
                                         name="telefono" 
                                         required
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
+                                        value="<?= htmlspecialchars($form_data['telefono'] ?? '') ?>"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors <?= isset($form_errors['telefono']) ? 'border-red-500' : '' ?>"
                                         placeholder="(899) 123-4567"
                                     >
+                                    <?php if (isset($form_errors['telefono'])): ?>
+                                        <p class="mt-1 text-sm text-red-600"><?= htmlspecialchars($form_errors['telefono']) ?></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
@@ -203,13 +357,13 @@ ob_start();
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
                                 >
                                     <option value="">Selecciona un servicio</option>
-                                    <option value="guardia">Guardia de Seguridad</option>
-                                    <option value="patrullaje">Patrullaje</option>
-                                    <option value="monitoreo">Monitoreo 24/7</option>
-                                    <option value="analisis">Análisis de Riesgos</option>
-                                    <option value="control">Control de Acceso</option>
-                                    <option value="consultoria">Consultoría</option>
-                                    <option value="otro">Otro</option>
+                                    <option value="guardia" <?= ($form_data['servicio'] ?? '') === 'guardia' ? 'selected' : '' ?>>Guardia de Seguridad</option>
+                                    <option value="patrullaje" <?= ($form_data['servicio'] ?? '') === 'patrullaje' ? 'selected' : '' ?>>Patrullaje</option>
+                                    <option value="monitoreo" <?= ($form_data['servicio'] ?? '') === 'monitoreo' ? 'selected' : '' ?>>Monitoreo 24/7</option>
+                                    <option value="analisis" <?= ($form_data['servicio'] ?? '') === 'analisis' ? 'selected' : '' ?>>Análisis de Riesgos</option>
+                                    <option value="control" <?= ($form_data['servicio'] ?? '') === 'control' ? 'selected' : '' ?>>Control de Acceso</option>
+                                    <option value="consultoria" <?= ($form_data['servicio'] ?? '') === 'consultoria' ? 'selected' : '' ?>>Consultoría</option>
+                                    <option value="otro" <?= ($form_data['servicio'] ?? '') === 'otro' ? 'selected' : '' ?>>Otro</option>
                                 </select>
                             </div>
 
@@ -220,9 +374,12 @@ ob_start();
                                     name="mensaje" 
                                     rows="5" 
                                     required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors resize-vertical"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors resize-vertical <?= isset($form_errors['mensaje']) ? 'border-red-500' : '' ?>"
                                     placeholder="Cuéntanos sobre tus necesidades de seguridad..."
-                                ></textarea>
+                                ><?= htmlspecialchars($form_data['mensaje'] ?? '') ?></textarea>
+                                <?php if (isset($form_errors['mensaje'])): ?>
+                                    <p class="mt-1 text-sm text-red-600"><?= htmlspecialchars($form_errors['mensaje']) ?></p>
+                                <?php endif; ?>
                             </div>
 
                             <div class="flex items-start">
@@ -231,23 +388,39 @@ ob_start();
                                     id="acepto" 
                                     name="acepto" 
                                     required
-                                    class="mt-1 w-4 h-4 text-gold-600 border-gray-300 rounded focus:ring-gold-500"
+                                    class="mt-1 w-4 h-4 text-gold-600 border-gray-300 rounded focus:ring-gold-500 <?= isset($form_errors['acepto']) ? 'border-red-500' : '' ?>"
                                 >
                                 <label for="acepto" class="ml-3 text-sm text-gray-600">
                                     Acepto la <a href="#" class="text-gold-600 hover:text-gold-700">política de privacidad</a> 
                                     y autorizo el tratamiento de mis datos personales *
                                 </label>
                             </div>
+                            <?php if (isset($form_errors['acepto'])): ?>
+                                <p class="text-sm text-red-600"><?= htmlspecialchars($form_errors['acepto']) ?></p>
+                            <?php endif; ?>
+
+                            <!-- General form errors -->
+                            <?php if (isset($form_errors['csrf']) || isset($form_errors['email_send'])): ?>
+                                <div class="p-4 bg-red-100 border border-red-200 rounded-lg">
+                                    <?php if (isset($form_errors['csrf'])): ?>
+                                        <p class="text-sm text-red-600"><?= htmlspecialchars($form_errors['csrf']) ?></p>
+                                    <?php endif; ?>
+                                    <?php if (isset($form_errors['email_send'])): ?>
+                                        <p class="text-sm text-red-600"><?= htmlspecialchars($form_errors['email_send']) ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
 
                             <button 
                                 type="submit" 
+                                id="submit-btn"
                                 class="w-full btn-primary text-lg py-4 justify-center"
                             >
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                                 </svg>
-                                Enviar Solicitud
+                                <span id="submit-text">Enviar Solicitud</span>
                             </button>
                         </form>
                     </div>
@@ -286,6 +459,235 @@ ob_start();
 
 <!-- Include Floating Buttons Component -->
 <?php includeComponent('FloatingButtons'); ?>
+
+<!-- Contact Form JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitText.textContent = 'Enviando...';
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            
+            // Clear previous error states
+            clearErrorStates();
+            
+            // Create FormData object
+            const formData = new FormData(form);
+            
+            // Send AJAX request
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => {
+                // Check if response is ok
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                // Check content type
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    return response.text().then(text => {
+                        console.error('Expected JSON but received:', text);
+                        throw new Error('El servidor devolvió una respuesta no válida');
+                    });
+                }
+                
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    showMessage(data.message, 'success');
+                    form.reset();
+                } else {
+                    showMessage(data.message, 'error');
+                    
+                    // Show field-specific errors
+                    if (data.errors) {
+                        Object.keys(data.errors).forEach(field => {
+                            showFieldError(field, data.errors[field]);
+                        });
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage('Error de conexión. Por favor, intenta nuevamente.', 'error');
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitText.textContent = 'Enviar Solicitud';
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            });
+        });
+    }
+    
+    // Function to show messages
+    function showMessage(message, type) {
+        // Remove existing message
+        const existingMessage = document.getElementById('form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Create new message element
+        const messageDiv = document.createElement('div');
+        messageDiv.id = 'form-message';
+        messageDiv.className = `mb-6 p-4 rounded-lg ${
+            type === 'success' 
+                ? 'bg-green-100 border border-green-200 text-green-700' 
+                : 'bg-red-100 border border-red-200 text-red-700'
+        }`;
+        messageDiv.textContent = message;
+        
+        // Insert message before form
+        form.parentNode.insertBefore(messageDiv, form);
+        
+        // Scroll to message
+        messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Auto-hide success message after 5 seconds
+        if (type === 'success') {
+            setTimeout(() => {
+                messageDiv.style.transition = 'opacity 0.5s ease-out';
+                messageDiv.style.opacity = '0';
+                setTimeout(() => messageDiv.remove(), 500);
+            }, 5000);
+        }
+    }
+    
+    // Function to show field-specific errors
+    function showFieldError(fieldName, errorMessage) {
+        const field = document.getElementById(fieldName);
+        if (!field) return;
+        
+        // Add error styling to field
+        field.classList.add('border-red-500');
+        
+        // Remove existing error message
+        const existingError = field.parentNode.querySelector('.text-red-600');
+        if (existingError) {
+            existingError.remove();
+        }
+        
+        // Add new error message
+        const errorP = document.createElement('p');
+        errorP.className = 'mt-1 text-sm text-red-600';
+        errorP.textContent = errorMessage;
+        field.parentNode.appendChild(errorP);
+    }
+    
+    // Function to clear all error states
+    function clearErrorStates() {
+        // Remove error borders
+        form.querySelectorAll('.border-red-500').forEach(field => {
+            field.classList.remove('border-red-500');
+        });
+        
+        // Remove error messages
+        form.querySelectorAll('.text-red-600').forEach(error => {
+            error.remove();
+        });
+    }
+    
+    // Real-time validation
+    const requiredFields = ['nombre', 'email', 'telefono', 'mensaje'];
+    
+    requiredFields.forEach(fieldName => {
+        const field = document.getElementById(fieldName);
+        if (field) {
+            field.addEventListener('blur', function() {
+                validateField(fieldName, this.value.trim());
+            });
+            
+            field.addEventListener('input', function() {
+                // Remove error state on input
+                this.classList.remove('border-red-500');
+                const errorMsg = this.parentNode.querySelector('.text-red-600');
+                if (errorMsg) {
+                    errorMsg.remove();
+                }
+            });
+        }
+    });
+    
+    // Email specific validation
+    const emailField = document.getElementById('email');
+    if (emailField) {
+        emailField.addEventListener('blur', function() {
+            const email = this.value.trim();
+            if (email && !isValidEmail(email)) {
+                showFieldError('email', 'El formato del email no es válido');
+            }
+        });
+    }
+    
+    // Function to validate individual fields
+    function validateField(fieldName, value) {
+        switch (fieldName) {
+            case 'nombre':
+                if (!value) {
+                    showFieldError(fieldName, 'El nombre es obligatorio');
+                } else if (value.length < 2) {
+                    showFieldError(fieldName, 'El nombre debe tener al menos 2 caracteres');
+                }
+                break;
+            case 'email':
+                if (!value) {
+                    showFieldError(fieldName, 'El email es obligatorio');
+                } else if (!isValidEmail(value)) {
+                    showFieldError(fieldName, 'El formato del email no es válido');
+                }
+                break;
+            case 'telefono':
+                if (!value) {
+                    showFieldError(fieldName, 'El teléfono es obligatorio');
+                } else if (value.replace(/[^0-9]/g, '').length < 10) {
+                    showFieldError(fieldName, 'El teléfono debe tener al menos 10 dígitos');
+                }
+                break;
+            case 'mensaje':
+                if (!value) {
+                    showFieldError(fieldName, 'El mensaje es obligatorio');
+                } else if (value.length < 10) {
+                    showFieldError(fieldName, 'El mensaje debe tener al menos 10 caracteres');
+                }
+                break;
+        }
+    }
+    
+    // Email validation helper
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    // Format phone number on input
+    const phoneField = document.getElementById('telefono');
+    if (phoneField) {
+        phoneField.addEventListener('input', function() {
+            let value = this.value.replace(/[^\d]/g, '');
+            if (value.length >= 10) {
+                value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+            }
+            this.value = value;
+        });
+    }
+});
+</script>
 
 <?php
 // Capture page content
