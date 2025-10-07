@@ -260,7 +260,7 @@ function sendContactEmail($data) {
         $headers = array(
             'MIME-Version' => '1.0',
             'Content-type' => 'text/html; charset=UTF-8',
-            'From' => 'gerencia@segurec.com.mx',
+            'From' => 'dsg.segurec@gmail.com',
             'Reply-To' => $data['email'],
             'X-Mailer' => 'PHP/' . phpversion()
         );
@@ -461,7 +461,7 @@ function sendConfirmationEmail($data) {
     $headers = array(
         'MIME-Version' => '1.0',
         'Content-type' => 'text/html; charset=UTF-8',
-        'From' => 'gerencia@segurec.com.mx',
+        'From' => 'dsg.segurec@gmail.com',
         'X-Mailer' => 'PHP/' . phpversion()
     );
     
