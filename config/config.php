@@ -1,6 +1,23 @@
 <?php
 /**
- * SEGUREC Landing Page - Configuration File
+ * SEG# Path Configuration
+define('BASE_PATH', dirname(__DIR__));
+define('PUBLIC_PATH', BASE_PATH . '/public');
+define('INCLUDES_PATH', BASE_PATH . '/includes');
+define('COMPONENTS_PATH', BASE_PATH . '/components');
+define('TEMPLATES_PATH', BASE_PATH . '/templates');
+
+// Production Server Detection
+define('IS_PRODUCTION', !in_array($_SERVER['HTTP_HOST'] ?? '', [
+    'localhost',
+    'localhost:8000',
+    'localhost:8080',
+    '127.0.0.1'
+]) && !isset($_SERVER['RAILWAY_ENVIRONMENT']));
+
+// URL Configuration
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost:8002';ng Page - Configuration File
  * 
  * Main configuration file for the PHP version of SEGUREC landing page
  */
@@ -13,7 +30,7 @@ define('SITE_KEYWORDS', 'Servicios de guardia capacitados, Patrullaje continuo, 
 
 // Contact Information
 define('CONTACT_PHONE', '+528991135304');
-define('CONTACT_EMAIL', 'dsg.segurec@gmail.com');
+define('CONTACT_EMAIL', 'ventas@segurec.com.mx');
 define('BUSINESS_HOURS', 'Lunes a Viernes 7:00-19:00');
 
 // Path Configuration

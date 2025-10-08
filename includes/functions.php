@@ -182,7 +182,7 @@ function validateContactForm($data) {
 }
 
 /**
- * Send contact email
+ * Send contact email - Enhanced version compatible with original configuration
  */
 function sendContactEmail($data) {
     try {
@@ -190,98 +190,158 @@ function sendContactEmail($data) {
         $to = CONTACT_EMAIL;
         $subject = 'Nueva consulta desde el sitio web - SEGUREC';
         
-        // Email template
-        $message = "
+        // Get sender information
+        $fromName = htmlspecialchars($data['nombre']);
+        $fromEmail = CONTACT_EMAIL; // Use our domain email as sender
+        $replyToEmail = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
+        
+        // Create HTML email content (similar to original envio_formulario.php)
+        $htmlContent = "
+        <!DOCTYPE html>
         <html>
         <head>
+            <meta charset='UTF-8'>
             <title>Nueva consulta desde el sitio web</title>
             <style>
-                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-                .header { background-color: #0f172a; color: #d4af37; padding: 20px; text-align: center; }
-                .content { padding: 20px; background-color: #f9f9f9; }
-                .field { margin-bottom: 15px; }
-                .label { font-weight: bold; color: #0f172a; }
-                .value { margin-top: 5px; padding: 10px; background-color: white; border-radius: 5px; }
+                body { 
+                    font-family: 'Arial', sans-serif; 
+                    line-height: 1.6; 
+                    color: #333; 
+                    margin: 0; 
+                    padding: 0; 
+                    background-color: #f3f3f3; 
+                }
+                .container {
+                    margin: 0 auto;
+                    width: 90%;
+                    max-width: 600px;
+                    background-color: #ffffff;
+                    margin-top: 20px;
+                }
+                .header { 
+                    background-color: #0f172a; 
+                    color: #d4af37; 
+                    padding: 20px; 
+                    text-align: center; 
+                    border-radius: 5px 5px 0 0;
+                }
+                .content { 
+                    padding: 40px; 
+                    background-color: #ffffff; 
+                    border-radius: 0 0 5px 5px;
+                }
+                .field { 
+                    margin-bottom: 15px; 
+                }
+                .label { 
+                    font-weight: bold; 
+                    color: #0f172a; 
+                    display: block;
+                    margin-bottom: 5px;
+                }
+                .value { 
+                    padding: 10px; 
+                    background-color: #f9f9f9; 
+                    border-radius: 5px; 
+                    border-left: 4px solid #d4af37;
+                }
+                .logo {
+                    max-width: 150px;
+                    height: auto;
+                }
             </style>
         </head>
         <body>
-            <div class='header'>
-                <h2>SEGUREC - Nueva Consulta</h2>
-            </div>
-            <div class='content'>
-                <p>Se ha recibido una nueva consulta desde el sitio web:</p>
-                
-                <div class='field'>
-                    <div class='label'>Nombre:</div>
-                    <div class='value'>" . htmlspecialchars($data['nombre']) . "</div>
+            <div class='container'>
+                <div class='header'>
+                    <h2>SEGUREC - Nueva Consulta Web</h2>
+                    <p style='margin: 0; font-size: 14px;'>Formulario de contacto del sitio web</p>
                 </div>
-                
-                <div class='field'>
-                    <div class='label'>Email:</div>
-                    <div class='value'>" . htmlspecialchars($data['email']) . "</div>
-                </div>
-                
-                <div class='field'>
-                    <div class='label'>Teléfono:</div>
-                    <div class='value'>" . htmlspecialchars($data['telefono']) . "</div>
-                </div>";
+                <div class='content'>
+                    <p>Se ha recibido una nueva consulta desde el sitio web:</p>
+                    
+                    <div class='field'>
+                        <span class='label'>Nombre:</span>
+                        <div class='value'>" . htmlspecialchars($data['nombre']) . "</div>
+                    </div>
+                    
+                    <div class='field'>
+                        <span class='label'>Correo Electrónico:</span>
+                        <div class='value'>" . htmlspecialchars($data['email']) . "</div>
+                    </div>
+                    
+                    <div class='field'>
+                        <span class='label'>Teléfono:</span>
+                        <div class='value'>" . htmlspecialchars($data['telefono']) . "</div>
+                    </div>";
         
         if (!empty($data['empresa'])) {
-            $message .= "
-                <div class='field'>
-                    <div class='label'>Empresa:</div>
-                    <div class='value'>" . htmlspecialchars($data['empresa']) . "</div>
-                </div>";
+            $htmlContent .= "
+                    <div class='field'>
+                        <span class='label'>Empresa:</span>
+                        <div class='value'>" . htmlspecialchars($data['empresa']) . "</div>
+                    </div>";
         }
         
         if (!empty($data['servicio'])) {
-            $message .= "
-                <div class='field'>
-                    <div class='label'>Servicio de Interés:</div>
-                    <div class='value'>" . htmlspecialchars($data['servicio']) . "</div>
-                </div>";
+            $htmlContent .= "
+                    <div class='field'>
+                        <span class='label'>Servicio de Interés:</span>
+                        <div class='value'>" . htmlspecialchars($data['servicio']) . "</div>
+                    </div>";
         }
         
-        $message .= "
-                <div class='field'>
-                    <div class='label'>Mensaje:</div>
-                    <div class='value'>" . nl2br(htmlspecialchars($data['mensaje'])) . "</div>
-                </div>
-                
-                <div class='field'>
-                    <div class='label'>Fecha:</div>
-                    <div class='value'>" . date('d/m/Y H:i:s') . "</div>
+        $htmlContent .= "
+                    <div class='field'>
+                        <span class='label'>Mensaje:</span>
+                        <div class='value'>" . nl2br(htmlspecialchars($data['mensaje'])) . "</div>
+                    </div>
+                    
+                    <div class='field'>
+                        <span class='label'>Fecha y Hora:</span>
+                        <div class='value'>" . date('d/m/Y H:i:s') . "</div>
+                    </div>
+                    
+                    <hr style='margin: 30px 0; border: none; border-top: 1px solid #ddd;'>
+                    <p style='font-size: 12px; color: #666; text-align: center;'>
+                        Este mensaje fue enviado desde el formulario de contacto en segurec.com.mx
+                    </p>
                 </div>
             </div>
         </body>
         </html>";
         
-        // Headers for HTML email
-        $headers = array(
-            'MIME-Version' => '1.0',
-            'Content-type' => 'text/html; charset=UTF-8',
-            'From' => 'dsg.segurec@gmail.com',
-            'Reply-To' => $data['email'],
-            'X-Mailer' => 'PHP/' . phpversion()
-        );
+        // Enhanced headers similar to original version
+        $semi_rand = md5(time()); 
+        $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
         
-        // Convert headers array to string
-        $headerString = '';
-        foreach ($headers as $key => $value) {
-            $headerString .= $key . ': ' . $value . "\r\n";
-        }
+        $headers = "From: $fromName <$fromEmail>\r\n";
+        $headers .= "Reply-To: $replyToEmail\r\n";
+        $headers .= "Return-Path: $fromEmail\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: multipart/mixed; boundary=\"{$mime_boundary}\"\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+        
+        // Multipart message body
+        $message = "--{$mime_boundary}\r\n";
+        $message .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $message .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+        $message .= $htmlContent . "\r\n\r\n";
+        $message .= "--{$mime_boundary}--";
+        
+        $returnpath = "-f" . $fromEmail;
         
         // In development environment, save email to file instead of sending
         if (isDevelopmentEnvironment()) {
             return saveEmailToFile($to, $subject, $message, $data);
         }
         
-        // Send email
-        $success = mail($to, $subject, $message, $headerString);
+        // Send email using mail() function like original version
+        $success = @mail($to, $subject, $message, $headers, $returnpath);
         
-        // Enhanced logging for Railway debugging
+        // Enhanced logging for debugging
         if (!isDevelopmentEnvironment()) {
-            error_log("Mail function attempt - To: $to");
+            error_log("Email attempt - To: $to, From: $fromEmail, Reply-To: $replyToEmail");
             error_log("Mail function result: " . ($success ? 'SUCCESS' : 'FAILED'));
             if (!$success) {
                 error_log("Last PHP error: " . print_r(error_get_last(), true));
@@ -308,16 +368,19 @@ function sendContactEmail($data) {
                 error_log("File backup result: " . ($fileSuccess ? 'SUCCESS' : 'FAILED'));
                 
                 // For now, return true if we at least saved to file
-                // This prevents the "error sending message" to the user
-                // while we investigate the SMTP configuration
+                // This prevents the user from seeing an error when hosting doesn't support mail()
                 return $fileSuccess;
             }
         }
         
         return $success;
+    } catch (Exception $e) {
+        error_log("Exception in sendContactEmail: " . $e->getMessage());
+        return false;
+        return $success;
         
     } catch (Exception $e) {
-        error_log("Contact email error: " . $e->getMessage());
+        error_log("Exception in sendContactEmail: " . $e->getMessage());
         return false;
     }
 }
@@ -461,7 +524,8 @@ function sendConfirmationEmail($data) {
     $headers = array(
         'MIME-Version' => '1.0',
         'Content-type' => 'text/html; charset=UTF-8',
-        'From' => 'dsg.segurec@gmail.com',
+        'From' => 'ventas@segurec.com.mx',
+        'Return-Path' => 'ventas@segurec.com.mx',
         'X-Mailer' => 'PHP/' . phpversion()
     );
     
