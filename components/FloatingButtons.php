@@ -7,7 +7,7 @@
 <!-- Botón de WhatsApp flotante -->
 <div class="fixed bottom-6 right-6 z-50">
   <a 
-    href="https://wa.me/+5218991248906?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20seguridad%20de%20SEGUREC"
+    href="https://wa.me/+528991077423?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20seguridad%20de%20SEGUREC"
     target="_blank"
     rel="noopener noreferrer"
     class="group flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-110 animate-bounce-slow"

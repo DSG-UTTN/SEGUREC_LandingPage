@@ -9,14 +9,24 @@
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/includes/functions.php';
 
+// Helper function for backward compatibility
+function getValue($array, $key, $default = '') {
+    return isset($array[$key]) ? $array[$key] : $default;
+}
+
+// Helper function for select options
+function isSelected($array, $key, $value) {
+    return getValue($array, $key) === $value ? 'selected' : '';
+}
+
 // Initialize session for CSRF protection
 session_start();
 
 // Initialize variables
 $form_submitted = false;
 $form_success = false;
-$form_errors = [];
-$form_data = [];
+$form_errors = array();
+$form_data = array();
 $response_message = '';
 
 // Process form submission
@@ -38,19 +48,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Get client IP for rate limiting
         $clientIP = getClientIP();
         
-        // Security checks
-        $security_checks = [
-            'csrf' => validateCSRFToken($_POST['csrf_token'] ?? ''),
+        // Security checks - Compatible con PHP 5.6
+        $security_checks = array(
+            'csrf' => validateCSRFToken(isset($_POST['csrf_token']) ? $_POST['csrf_token'] : ''),
             'rate_limit' => checkRateLimit($clientIP, 3, 300), // 3 attempts per 5 minutes
             'referrer' => $is_ajax || validateReferrer(), // Skip referrer check for AJAX
-            'honeypot' => validateHoneypot($_POST['website'] ?? '') // Hidden honeypot field
-        ];
+            'honeypot' => validateHoneypot(isset($_POST['website']) ? $_POST['website'] : '') // Hidden honeypot field
+        );
         
         // Debug logging for Railway (can be removed later)
         if (!isDevelopmentEnvironment()) {
             error_log("Security checks results: " . json_encode($security_checks));
-            error_log("HTTP_HOST: " . ($_SERVER['HTTP_HOST'] ?? 'not set'));
-            error_log("HTTP_REFERER: " . ($_SERVER['HTTP_REFERER'] ?? 'not set'));
+            error_log("HTTP_HOST: " . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'not set'));
+            error_log("HTTP_REFERER: " . (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'not set'));
             error_log("Client IP: " . $clientIP);
         }
         
@@ -62,17 +72,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if (!$security_checks['rate_limit']) {
             $form_errors['rate_limit'] = 'Demasiados intentos. Por favor, espera unos minutos antes de intentar nuevamente.';
-            logSecurityIncident('rate_limit_exceeded', ['ip' => $clientIP]);
+            logSecurityIncident('rate_limit_exceeded', array('ip' => $clientIP));
         }
         
         if (!$security_checks['referrer']) {
             $form_errors['referrer'] = 'Solicitud no válida. Por favor, envía el formulario desde nuestro sitio web.';
-            logSecurityIncident('invalid_referrer', ['ip' => $clientIP, 'referrer' => $_SERVER['HTTP_REFERER'] ?? 'none']);
+            logSecurityIncident('invalid_referrer', array('ip' => $clientIP, 'referrer' => isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'none'));
         }
         
         if (!$security_checks['honeypot']) {
             $form_errors['honeypot'] = 'Solicitud sospechosa detectada.';
-            logSecurityIncident('honeypot_filled', ['ip' => $clientIP]);
+            logSecurityIncident('honeypot_filled', array('ip' => $clientIP));
         }
         
         // If security checks pass, proceed with form validation
@@ -89,14 +99,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $response_message = '¡Gracias por contactarnos! Hemos recibido tu solicitud y nos pondremos en contacto contigo en menos de 24 horas.';
                     
                     // Log successful submission
-                    logSecurityIncident('form_submission_success', [
+                    logSecurityIncident('form_submission_success', array(
                         'ip' => $clientIP,
                         'email' => $form_data['email'],
                         'name' => $form_data['nombre']
-                    ]);
+                    ));
                     
                     // Clear form data on success
-                    $form_data = [];
+                    $form_data = array();
                 } else {
                     $form_errors['email_send'] = 'Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos directamente por teléfono.';
                     
@@ -219,7 +229,7 @@ ob_start();
                             <div>
                                 <h3 class="font-semibold text-navy-900 mb-1">Teléfono</h3>
                                 <a href="tel:<?= CONTACT_PHONE ?>" class="text-gold-600 hover:text-gold-700 font-medium">
-                                    (899) 113-5304
+                                    (899) 107-7423
                                 </a>
                                 <p class="text-sm text-gray-600">Disponible 24/7</p>
                             </div>
@@ -268,8 +278,8 @@ ob_start();
                             <div>
                                 <h3 class="font-semibold text-navy-900 mb-1">Horarios</h3>
                                 <p class="text-gray-600 text-sm">
-                                    Lun - Vie: 8:00 AM - 6:00 PM<br>
-                                    Sáb: 9:00 AM - 2:00 PM<br>
+                                    Lun - Dom: 7:00 AM - 7:00 PM<br>
+                                    Servicio continuo toda la semana<br>
                                 </p>
                             </div>
                         </div>
@@ -280,7 +290,7 @@ ob_start();
                         <h3 class="font-semibold text-green-800 mb-2">¿Necesitas atención inmediata?</h3>
                         <p class="text-sm text-green-700 mb-4">Chatea con nosotros por WhatsApp</p>
                         <a 
-                            href="https://wa.me/+5218991248906?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20seguridad%20de%20SEGUREC"
+                            href="https://wa.me/+528991077423?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20seguridad%20de%20SEGUREC"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors"
@@ -324,7 +334,7 @@ ob_start();
                                         id="nombre" 
                                         name="nombre" 
                                         required
-                                        value="<?= htmlspecialchars($form_data['nombre'] ?? '') ?>"
+                                        value="<?= htmlspecialchars(getValue($form_data, 'nombre')) ?>"
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors <?= isset($form_errors['nombre']) ? 'border-red-500' : '' ?>"
                                         placeholder="Tu nombre completo"
                                     >
@@ -338,7 +348,7 @@ ob_start();
                                         type="text" 
                                         id="empresa" 
                                         name="empresa" 
-                                        value="<?= htmlspecialchars($form_data['empresa'] ?? '') ?>"
+                                        value="<?= htmlspecialchars(getValue($form_data, 'empresa')) ?>"
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
                                         placeholder="Nombre de tu empresa"
                                     >
@@ -353,7 +363,7 @@ ob_start();
                                         id="email" 
                                         name="email" 
                                         required
-                                        value="<?= htmlspecialchars($form_data['email'] ?? '') ?>"
+                                        value="<?= htmlspecialchars(getValue($form_data, 'email')) ?>"
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors <?= isset($form_errors['email']) ? 'border-red-500' : '' ?>"
                                         placeholder="tu@email.com"
                                     >
@@ -368,9 +378,9 @@ ob_start();
                                         id="telefono" 
                                         name="telefono" 
                                         required
-                                        value="<?= htmlspecialchars($form_data['telefono'] ?? '') ?>"
+                                        value="<?= htmlspecialchars(getValue($form_data, 'telefono')) ?>"
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors <?= isset($form_errors['telefono']) ? 'border-red-500' : '' ?>"
-                                        placeholder="(899) 123-4567"
+                                        placeholder="(899) 107-7423"
                                     >
                                     <?php if (isset($form_errors['telefono'])): ?>
                                         <p class="mt-1 text-sm text-red-600"><?= htmlspecialchars($form_errors['telefono']) ?></p>
@@ -386,13 +396,13 @@ ob_start();
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
                                 >
                                     <option value="">Selecciona un servicio</option>
-                                    <option value="guardia" <?= ($form_data['servicio'] ?? '') === 'guardia' ? 'selected' : '' ?>>Guardia de Seguridad</option>
-                                    <option value="patrullaje" <?= ($form_data['servicio'] ?? '') === 'patrullaje' ? 'selected' : '' ?>>Patrullaje</option>
-                                    <option value="monitoreo" <?= ($form_data['servicio'] ?? '') === 'monitoreo' ? 'selected' : '' ?>>Monitoreo 24/7</option>
-                                    <option value="analisis" <?= ($form_data['servicio'] ?? '') === 'analisis' ? 'selected' : '' ?>>Análisis de Riesgos</option>
-                                    <option value="control" <?= ($form_data['servicio'] ?? '') === 'control' ? 'selected' : '' ?>>Control de Acceso</option>
-                                    <option value="consultoria" <?= ($form_data['servicio'] ?? '') === 'consultoria' ? 'selected' : '' ?>>Consultoría</option>
-                                    <option value="otro" <?= ($form_data['servicio'] ?? '') === 'otro' ? 'selected' : '' ?>>Otro</option>
+                                    <option value="guardia" <?= isSelected($form_data, 'servicio', 'guardia') ?>>Guardia de Seguridad</option>
+                                    <option value="patrullaje" <?= isSelected($form_data, 'servicio', 'patrullaje') ?>>Patrullaje</option>
+                                    <option value="monitoreo" <?= isSelected($form_data, 'servicio', 'monitoreo') ?>>Monitoreo 24/7</option>
+                                    <option value="analisis" <?= isSelected($form_data, 'servicio', 'analisis') ?>>Análisis de Riesgos</option>
+                                    <option value="control" <?= isSelected($form_data, 'servicio', 'control') ?>>Control de Acceso</option>
+                                    <option value="consultoria" <?= isSelected($form_data, 'servicio', 'consultoria') ?>>Consultoría</option>
+                                    <option value="otro" <?= isSelected($form_data, 'servicio', 'otro') ?>>Otro</option>
                                 </select>
                             </div>
 
@@ -405,7 +415,7 @@ ob_start();
                                     required
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors resize-vertical <?= isset($form_errors['mensaje']) ? 'border-red-500' : '' ?>"
                                     placeholder="Cuéntanos sobre tus necesidades de seguridad..."
-                                ><?= htmlspecialchars($form_data['mensaje'] ?? '') ?></textarea>
+                                ><?= htmlspecialchars(getValue($form_data, 'mensaje')) ?></textarea>
                                 <?php if (isset($form_errors['mensaje'])): ?>
                                     <p class="mt-1 text-sm text-red-600"><?= htmlspecialchars($form_errors['mensaje']) ?></p>
                                 <?php endif; ?>

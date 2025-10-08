@@ -10,7 +10,7 @@ require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../includes/functions.php';
 
 // Set default SEO data if not provided
-$seo = $seo ?? [];
+$seo = isset($seo) ? $seo : array();
 
 ?>
 <!DOCTYPE html>

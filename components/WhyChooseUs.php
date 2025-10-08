@@ -338,6 +338,14 @@ $reasons = [
                                 <img src="<?= publicUrl('images/mg.svg') ?>" alt="MG" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">MG</span>
                             </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/hd_electronics.png') ?>" alt="HD Electronics" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">HD Electronics</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/elgo.png') ?>" alt="Elgo" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Elgo</span>
+                            </div>
                             
                             <!-- Set 2 (Duplicado para loop infinito) -->
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
@@ -383,6 +391,14 @@ $reasons = [
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
                                 <img src="<?= publicUrl('images/mg.svg') ?>" alt="MG" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">MG</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/hd_electronics.png') ?>" alt="HD Electronics" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">HD Electronics</span>
+                            </div>
+                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                <img src="<?= publicUrl('images/elgo.png') ?>" alt="Elgo" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <span class="text-gold-300 text-xs sm:text-sm font-medium">Elgo</span>
                             </div>
                         </div>
                     </div>

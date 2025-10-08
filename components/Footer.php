@@ -103,7 +103,7 @@ $quickLinks = [
             </div>
             <div>
               <a href="tel:<?= CONTACT_PHONE ?>" class="text-gray-300 hover:text-gold-400 transition-colors">
-                (899) 113-5304
+                (899) 107-7423
               </a>
               <p class="text-sm text-gray-400">Disponible 24/7</p>
             </div>

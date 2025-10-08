@@ -8,7 +8,7 @@
 /**
  * Include component file
  */
-function includeComponent($componentName, $data = []) {
+function includeComponent($componentName, $data = array()) {
     $componentFile = COMPONENTS_PATH . '/' . $componentName . '.php';
     if (file_exists($componentFile)) {
         // Extract data array to variables
@@ -22,7 +22,7 @@ function includeComponent($componentName, $data = []) {
 /**
  * Render SEO meta tags
  */
-function renderSeoMeta($seo = []) {
+function renderSeoMeta($seo = array()) {
     global $seoDefaults;
     
     // Merge with defaults
@@ -120,8 +120,8 @@ function getPageTitle($customTitle = null) {
  * Validate and sanitize contact form data
  */
 function validateContactForm($data) {
-    $errors = [];
-    $sanitized = [];
+    $errors = array();
+    $sanitized = array();
     
     // Nombre - Required
     if (empty($data['nombre'])) {
@@ -187,7 +187,7 @@ function validateContactForm($data) {
 function sendContactEmail($data) {
     try {
         // Use configuration from config.php
-        $to = CONTACT_EMAIL;
+        $to = CONTACT_EMAIL . ', gerencia@segurec.com.mx'; // Enviar a ambos correos
         $subject = 'Nueva consulta desde el sitio web - SEGUREC';
         
         // Get sender information
@@ -393,7 +393,7 @@ function isDevelopmentEnvironment() {
     $isCLI = php_sapi_name() === 'cli';
     
     // Check for localhost in various ways
-    $isLocalhost = in_array($_SERVER['HTTP_HOST'] ?? '', [
+    $isLocalhost = in_array(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '', [
         'localhost',
         '127.0.0.1',
         'localhost:8000',
@@ -402,13 +402,13 @@ function isDevelopmentEnvironment() {
     ]);
     
     // Check server name
-    $isLocalServer = in_array($_SERVER['SERVER_NAME'] ?? '', [
+    $isLocalServer = in_array(isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : '', [
         'localhost',
         '127.0.0.1'
     ]);
     
     // Check for Railway deployment (should NOT be considered development)
-    $isRailway = strpos($_SERVER['HTTP_HOST'] ?? '', '.up.railway.app') !== false;
+    $isRailway = strpos(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '', '.up.railway.app') !== false;
     
     // Force development mode for local testing only
     $isLocalDevelopment = ($isCLI || $isLocalhost || $isLocalServer || 
@@ -505,7 +505,7 @@ function sendConfirmationEmail($data) {
             <ul>
                 <li><strong>Teléfono:</strong> " . CONTACT_PHONE . "</li>
                 <li><strong>Email:</strong> " . CONTACT_EMAIL . "</li>
-                <li><strong>WhatsApp:</strong> <a href='https://wa.me/+5218991248906'>+52 1 899 124 8906</a></li>
+                <li><strong>WhatsApp:</strong> <a href='https://wa.me/+528991077423'>+52 899 107 7423</a></li>
             </ul>
             
             <p>Gracias por confiar en SEGUREC para sus necesidades de seguridad.</p>
@@ -570,7 +570,12 @@ function generateCSRFToken() {
     }
     
     if (!isset($_SESSION['csrf_token'])) {
-        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        // Generar token CSRF compatible con PHP 5.6
+        $token = '';
+        for ($i = 0; $i < 32; $i++) {
+            $token .= dechex(mt_rand(0, 15));
+        }
+        $_SESSION['csrf_token'] = $token;
     }
     
     return $_SESSION['csrf_token'];
@@ -599,7 +604,7 @@ function checkRateLimit($identifier, $maxAttempts = 5, $timeWindow = 300) {
     $now = time();
     
     if (!isset($_SESSION[$key])) {
-        $_SESSION[$key] = [];
+        $_SESSION[$key] = array();
     }
     
     // Remove old attempts outside time window
@@ -636,7 +641,7 @@ function getClientIP() {
         }
     }
     
-    return $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+    return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'unknown';
 }
 
 /**
@@ -689,12 +694,12 @@ function validateHoneypot($honeypotValue) {
 /**
  * Log security incidents
  */
-function logSecurityIncident($type, $details = []) {
+function logSecurityIncident($type, $details = array()) {
     try {
         $logData = [
             'timestamp' => date('Y-m-d H:i:s'),
             'ip' => getClientIP(),
-            'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'unknown',
+            'user_agent' => isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'unknown',
             'type' => $type,
             'details' => $details
         ];
