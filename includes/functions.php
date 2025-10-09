@@ -339,20 +339,6 @@ function sendContactEmail($data) {
         // Send email using mail() function like original version
         $success = @mail($to, $subject, $message, $headers, $returnpath);
         
-        // Enhanced logging for debugging
-        if (!isDevelopmentEnvironment()) {
-            error_log("Email attempt - To: $to, From: $fromEmail, Reply-To: $replyToEmail");
-            error_log("Mail function result: " . ($success ? 'SUCCESS' : 'FAILED'));
-            if (!$success) {
-                error_log("Last PHP error: " . print_r(error_get_last(), true));
-                error_log("Mail configuration check:");
-                error_log("- SMTP: " . ini_get('SMTP'));
-                error_log("- smtp_port: " . ini_get('smtp_port'));
-                error_log("- sendmail_from: " . ini_get('sendmail_from'));
-                error_log("- sendmail_path: " . ini_get('sendmail_path'));
-            }
-        }
-        
         // Log email attempt
         if ($success) {
             error_log("Contact email sent successfully to: $to");
@@ -363,9 +349,7 @@ function sendContactEmail($data) {
             
             // If mail() fails in production, save to file as backup
             if (!isDevelopmentEnvironment()) {
-                error_log("Attempting to save email to file as backup...");
                 $fileSuccess = saveEmailToFile($to, $subject, $message, $data, 'failed_emails');
-                error_log("File backup result: " . ($fileSuccess ? 'SUCCESS' : 'FAILED'));
                 
                 // For now, return true if we at least saved to file
                 // This prevents the user from seeing an error when hosting doesn't support mail()
@@ -374,11 +358,6 @@ function sendContactEmail($data) {
         }
         
         return $success;
-    } catch (Exception $e) {
-        error_log("Exception in sendContactEmail: " . $e->getMessage());
-        return false;
-        return $success;
-        
     } catch (Exception $e) {
         error_log("Exception in sendContactEmail: " . $e->getMessage());
         return false;
@@ -412,8 +391,7 @@ function isDevelopmentEnvironment() {
     
     // Force development mode for local testing only
     $isLocalDevelopment = ($isCLI || $isLocalhost || $isLocalServer || 
-                          strpos(__DIR__, 'localhost') !== false ||
-                          strpos(__DIR__, 'DevHub') !== false) && !$isRailway;
+                          strpos(__DIR__, 'localhost') !== false) && !$isRailway;
     
     return $isLocalDevelopment;
 }

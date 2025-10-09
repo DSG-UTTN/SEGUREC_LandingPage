@@ -14,7 +14,7 @@ $seo = [
     'title' => 'SEGUREC',
     'description' => 'Empresa líder en servicios de seguridad privada en Reynosa, Tamaulipas. Ofrecemos guardias capacitados, patrullaje, monitoreo 24/7 y soluciones integrales de protección.',
     'keywords' => SITE_KEYWORDS,
-    'image' => publicUrl('images/portada.png')
+    'image' => publicUrl('images/logo.svg')
 ];
 
 // Start output buffering to capture page content
@@ -53,7 +53,6 @@ ob_start();
     <!-- Call to Action - Contact -->
     <section class="py-20 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
         <!-- Background Elements -->
-        <div class="absolute inset-0 bg-[url('<?= publicUrl('images/fondo_servicios.jpg') ?>')] bg-cover bg-center opacity-20"></div>
         <div class="absolute inset-0 bg-gradient-to-br from-navy-900/95 via-navy-800/90 to-navy-900/95"></div>
         
         <!-- Floating geometric shapes -->

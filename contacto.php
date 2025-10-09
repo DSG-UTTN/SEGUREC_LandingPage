@@ -56,14 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'honeypot' => validateHoneypot(isset($_POST['website']) ? $_POST['website'] : '') // Hidden honeypot field
         );
         
-        // Debug logging for Railway (can be removed later)
-        if (!isDevelopmentEnvironment()) {
-            error_log("Security checks results: " . json_encode($security_checks));
-            error_log("HTTP_HOST: " . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'not set'));
-            error_log("HTTP_REFERER: " . (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'not set'));
-            error_log("Client IP: " . $clientIP);
-        }
-        
         // Check security validations
         if (!$security_checks['csrf']) {
             $form_errors['csrf'] = 'Token de seguridad inválido. Por favor, intenta nuevamente.';
@@ -177,8 +169,8 @@ $csrf_token = generateCSRFToken();
 $seo = [
     'title' => 'SEGUREC',
     'description' => 'Contáctanos para solicitar una cotización gratuita de nuestros servicios de seguridad privada en Reynosa, Tamaulipas. Respuesta garantizada en 24 horas.',
-    'keywords' => 'contacto seguridad reynosa, cotización seguridad privada, SEGUREC contacto, servicios seguridad tamaulipas',
-    'image' => publicUrl('images/contacto.jpg')
+    'keywords' => 'contacto seguridad reynosa, cotización seguridad privada, SEGUREC contacto, servicios seguridad tamaulipas, seguridad privada reynosa, seguridad empresarial, seguridad residencial, guardias de seguridad, monitoreo 24/7, análisis de riesgos, control de acceso, consultoría de seguridad',
+    'image' => publicUrl('images/logo.svg')
 ];
 
 // Start output buffering to capture page content
@@ -324,7 +316,7 @@ ob_start();
                             <div style="display: none;">
                                 <label for="website">Website (leave blank):</label>
                                 <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                            </div>>
+                            </div>
                             
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
