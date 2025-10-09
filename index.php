@@ -10,12 +10,12 @@ require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/includes/functions.php';
 
 // Page-specific SEO data
-$seo = [
+$seo = array(
     'title' => 'SEGUREC',
     'description' => 'Empresa líder en servicios de seguridad privada en Reynosa, Tamaulipas. Ofrecemos guardias capacitados, patrullaje, monitoreo 24/7 y soluciones integrales de protección.',
     'keywords' => SITE_KEYWORDS,
     'image' => publicUrl('images/logo.svg')
-];
+);
 
 // Start output buffering to capture page content
 ob_start();

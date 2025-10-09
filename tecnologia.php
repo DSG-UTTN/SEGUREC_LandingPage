@@ -10,12 +10,12 @@ require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/includes/functions.php';
 
 // Page-specific SEO data
-$seo = [
+$seo = array(
     'title' => 'SEGUREC',
     'description' => 'Conoce el departamento de desarrollo de software y tecnología de SEGUREC. Innovamos creando herramientas que mejoran y facilitan el trabajo de nuestros guardias de seguridad.',
     'keywords' => 'desarrollo software seguridad, tecnología SEGUREC, innovación seguridad privada, herramientas guardias, Track Vigilante, departamento tecnología',
     'image' => publicUrl('images/logo.svg')
-];
+);
 
 // Start output buffering to capture page content
 ob_start();

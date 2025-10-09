@@ -127,7 +127,7 @@ function validateContactForm($data) {
     if (empty($data['nombre'])) {
         $errors['nombre'] = 'El nombre es obligatorio';
     } else {
-        $sanitized['nombre'] = trim(filter_var($data['nombre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $sanitized['nombre'] = trim(filter_var($data['nombre'], FILTER_SANITIZE_SPECIAL_CHARS));
         if (strlen($sanitized['nombre']) < 2) {
             $errors['nombre'] = 'El nombre debe tener al menos 2 caracteres';
         }
@@ -154,16 +154,16 @@ function validateContactForm($data) {
     }
     
     // Empresa - Optional
-    $sanitized['empresa'] = !empty($data['empresa']) ? trim(filter_var($data['empresa'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) : '';
+    $sanitized['empresa'] = !empty($data['empresa']) ? trim(filter_var($data['empresa'], FILTER_SANITIZE_SPECIAL_CHARS)) : '';
     
     // Servicio - Optional
-    $sanitized['servicio'] = !empty($data['servicio']) ? trim(filter_var($data['servicio'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) : '';
+    $sanitized['servicio'] = !empty($data['servicio']) ? trim(filter_var($data['servicio'], FILTER_SANITIZE_SPECIAL_CHARS)) : '';
     
     // Mensaje - Required
     if (empty($data['mensaje'])) {
         $errors['mensaje'] = 'El mensaje es obligatorio';
     } else {
-        $sanitized['mensaje'] = trim(filter_var($data['mensaje'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $sanitized['mensaje'] = trim(filter_var($data['mensaje'], FILTER_SANITIZE_SPECIAL_CHARS));
         if (strlen($sanitized['mensaje']) < 10) {
             $errors['mensaje'] = 'El mensaje debe tener al menos 10 caracteres';
         }
@@ -174,11 +174,11 @@ function validateContactForm($data) {
         $errors['acepto'] = 'Debes aceptar la política de privacidad';
     }
     
-    return [
+    return array(
         'errors' => $errors,
         'data' => $sanitized,
         'valid' => empty($errors)
-    ];
+    );
 }
 
 /**
@@ -339,6 +339,20 @@ function sendContactEmail($data) {
         // Send email using mail() function like original version
         $success = @mail($to, $subject, $message, $headers, $returnpath);
         
+        // Enhanced logging for debugging
+        if (!isDevelopmentEnvironment()) {
+            error_log("Email attempt - To: $to, From: $fromEmail, Reply-To: $replyToEmail");
+            error_log("Mail function result: " . ($success ? 'SUCCESS' : 'FAILED'));
+            if (!$success) {
+                error_log("Last PHP error: " . print_r(error_get_last(), true));
+                error_log("Mail configuration check:");
+                error_log("- SMTP: " . ini_get('SMTP'));
+                error_log("- smtp_port: " . ini_get('smtp_port'));
+                error_log("- sendmail_from: " . ini_get('sendmail_from'));
+                error_log("- sendmail_path: " . ini_get('sendmail_path'));
+            }
+        }
+        
         // Log email attempt
         if ($success) {
             error_log("Contact email sent successfully to: $to");
@@ -349,7 +363,9 @@ function sendContactEmail($data) {
             
             // If mail() fails in production, save to file as backup
             if (!isDevelopmentEnvironment()) {
+                error_log("Attempting to save email to file as backup...");
                 $fileSuccess = saveEmailToFile($to, $subject, $message, $data, 'failed_emails');
+                error_log("File backup result: " . ($fileSuccess ? 'SUCCESS' : 'FAILED'));
                 
                 // For now, return true if we at least saved to file
                 // This prevents the user from seeing an error when hosting doesn't support mail()
@@ -358,6 +374,11 @@ function sendContactEmail($data) {
         }
         
         return $success;
+    } catch (Exception $e) {
+        error_log("Exception in sendContactEmail: " . $e->getMessage());
+        return false;
+        return $success;
+        
     } catch (Exception $e) {
         error_log("Exception in sendContactEmail: " . $e->getMessage());
         return false;
@@ -391,7 +412,8 @@ function isDevelopmentEnvironment() {
     
     // Force development mode for local testing only
     $isLocalDevelopment = ($isCLI || $isLocalhost || $isLocalServer || 
-                          strpos(__DIR__, 'localhost') !== false) && !$isRailway;
+                          strpos(__DIR__, 'localhost') !== false ||
+                          strpos(__DIR__, 'DevHub') !== false) && !$isRailway;
     
     return $isLocalDevelopment;
 }
@@ -567,7 +589,22 @@ function validateCSRFToken($token) {
         session_start();
     }
     
-    return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
+    // Compatible con PHP 5.6 - implementación manual de hash_equals
+    if (!isset($_SESSION['csrf_token'])) {
+        return false;
+    }
+    
+    $expected = $_SESSION['csrf_token'];
+    if (strlen($expected) !== strlen($token)) {
+        return false;
+    }
+    
+    $result = 0;
+    for ($i = 0; $i < strlen($expected); $i++) {
+        $result |= ord($expected[$i]) ^ ord($token[$i]);
+    }
+    
+    return $result === 0;
 }
 
 /**
@@ -605,9 +642,9 @@ function checkRateLimit($identifier, $maxAttempts = 5, $timeWindow = 300) {
  * Get client IP address
  */
 function getClientIP() {
-    $ipKeys = ['HTTP_CF_CONNECTING_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 
+    $ipKeys = array('HTTP_CF_CONNECTING_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 
                'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 
-               'REMOTE_ADDR'];
+               'REMOTE_ADDR');
     
     foreach ($ipKeys as $key) {
         if (array_key_exists($key, $_SERVER) === true) {
@@ -626,7 +663,7 @@ function getClientIP() {
  * Validate referrer for additional security
  */
 function validateReferrer() {
-    $validDomains = [
+    $validDomains = array(
         'segurec.com.mx',
         'www.segurec.com.mx',
         'localhost',
@@ -634,7 +671,7 @@ function validateReferrer() {
         'localhost:8000',
         'localhost:8080',
         'localhost:3000'
-    ];
+    );
     
     // Add Railway domain pattern (Railway generates URLs like: project-name.up.railway.app)
     $railwayPattern = '/\.up\.railway\.app$/';
@@ -674,13 +711,13 @@ function validateHoneypot($honeypotValue) {
  */
 function logSecurityIncident($type, $details = array()) {
     try {
-        $logData = [
+        $logData = array(
             'timestamp' => date('Y-m-d H:i:s'),
             'ip' => getClientIP(),
             'user_agent' => isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'unknown',
             'type' => $type,
             'details' => $details
-        ];
+        );
         
         $logEntry = date('Y-m-d H:i:s') . " [SECURITY] " . json_encode($logData) . "\n";
         

@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Check security validations
         if (!$security_checks['csrf']) {
             $form_errors['csrf'] = 'Token de seguridad inválido. Por favor, intenta nuevamente.';
-            logSecurityIncident('csrf_validation_failed', ['ip' => $clientIP]);
+            logSecurityIncident('csrf_validation_failed', array('ip' => $clientIP));
         }
         
         if (!$security_checks['rate_limit']) {
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                     
                     // Log email send failure
-                    logSecurityIncident('email_send_failed', ['ip' => $clientIP]);
+                    logSecurityIncident('email_send_failed', array('ip' => $clientIP));
                 }
             } else {
                 $response_message = 'Por favor, corrige los errores en el formulario.';
@@ -166,12 +166,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $csrf_token = generateCSRFToken();
 
 // Page-specific SEO data
-$seo = [
+$seo = array(
     'title' => 'SEGUREC',
     'description' => 'Contáctanos para solicitar una cotización gratuita de nuestros servicios de seguridad privada en Reynosa, Tamaulipas. Respuesta garantizada en 24 horas.',
     'keywords' => 'contacto seguridad reynosa, cotización seguridad privada, SEGUREC contacto, servicios seguridad tamaulipas, seguridad privada reynosa, seguridad empresarial, seguridad residencial, guardias de seguridad, monitoreo 24/7, análisis de riesgos, control de acceso, consultoría de seguridad',
     'image' => publicUrl('images/logo.svg')
-];
+);
 
 // Start output buffering to capture page content
 ob_start();
