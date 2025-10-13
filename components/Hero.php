@@ -58,77 +58,77 @@
             <div id="credentials-track" class="flex space-x-3 sm:space-x-6 animate-scroll-credentials" style="width: max-content;">
               <!-- Set completo 1 (con imágenes) -->
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/repse.svg') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/repse.webp') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">REPSE</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/amesp.svg') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/amesp.webp') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">AMESP</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/iso_9001.svg') ?>" alt="ISO 9001" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/iso_9001.webp') ?>" alt="ISO 9001" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">ISO 9001</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/ctpat.svg') ?>" alt="CTPAT" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/ctpat.webp') ?>" alt="CTPAT" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">CTPAT</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/oea.svg') ?>" alt="OEA" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/oea.webp') ?>" alt="OEA" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">OEA</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/policia.svg') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/policia.webp') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Federal</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/stps.svg') ?>" alt="STPS" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/stps.webp') ?>" alt="STPS" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">STPS</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/imss.svg') ?>" alt="IMSS" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/imss.webp') ?>" alt="IMSS" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">IMSS</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/infonavit.svg') ?>" alt="INFONAVIT" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/infonavit.webp') ?>" alt="INFONAVIT" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">INFONAVIT</span>
               </div>
               
               <!-- Set completo 2 (duplicado para loop infinito) -->
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/repse.svg') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/repse.webp') ?>" alt="Registro REPSE" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">REPSE</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/amesp.svg') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/amesp.webp') ?>" alt="AMESP" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">AMESP</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/policia.svg') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/policia.webp') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Federal</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/oea.svg') ?>" alt="OEA" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/oea.webp') ?>" alt="OEA" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">OEA</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/ctpat.svg') ?>" alt="CTPAT" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/ctpat.webp') ?>" alt="CTPAT" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">CTPAT</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/iso_9001.svg') ?>" alt="ISO 9001" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/iso_9001.webp') ?>" alt="ISO 9001" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">ISO 9001</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/stps.svg') ?>" alt="STPS" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/stps.webp') ?>" alt="STPS" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">STPS</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/imss.svg') ?>" alt="IMSS" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/imss.webp') ?>" alt="IMSS" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">IMSS</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
-                <img src="<?= publicUrl('images/infonavit.svg') ?>" alt="INFONAVIT" class="h-10 w-auto mb-2" loading="lazy" />
+                <img src="<?= publicUrl('images/infonavit.webp') ?>" alt="INFONAVIT" class="h-10 w-auto mb-2" loading="lazy" />
                 <span class="text-gold-300 text-xs sm:text-sm font-medium">INFONAVIT</span>
               </div>
             </div>
@@ -159,7 +159,7 @@
       <div class="lg:col-span-4 hidden lg:flex lg:items-center lg:justify-center" data-animate="slide-right">
         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-16 border border-white/20">
           <img 
-            src="<?= publicUrl('images/logo_completo.svg') ?>" 
+            src="<?= publicUrl('images/logo_completo.webp') ?>" 
             alt="SEGUREC Seguridad Privada" 
             class="w-96 lg:w-[28rem] xl:w-[32rem] h-auto filter drop-shadow-lg"
           />

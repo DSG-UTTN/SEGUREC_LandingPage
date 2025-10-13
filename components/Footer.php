@@ -27,7 +27,7 @@ $quickLinks = [
       <!-- Company info -->
       <div class="lg:col-span-2">
         <div class="mb-6">
-          <img src="<?= publicUrl('images/logo.svg') ?>" alt="SEGUREC Logo" class="h-16 w-auto mb-4" />
+          <img src="<?= publicUrl('images/logo.webp') ?>" alt="SEGUREC Logo" class="h-16 w-auto mb-4" />
           <h3 class="text-2xl font-bold text-gold-400 mb-4">SEGUREC</h3>
           <p class="text-gray-300 leading-relaxed max-w-md">
             Con más de 10 años de experiencia 

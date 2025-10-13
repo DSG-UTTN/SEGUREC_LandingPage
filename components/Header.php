@@ -37,7 +37,7 @@
       <!-- Logo -->
       <div class="flex items-center">
         <a href="<?= url() ?>" class="flex items-center">
-          <img src="<?= publicUrl('images/logo.svg') ?>" alt="SEGUREC Logo" class="h-12 w-auto">
+          <img src="<?= publicUrl('images/logo.webp') ?>" alt="SEGUREC Logo" class="h-12 w-auto">
         </a>
       </div>
 

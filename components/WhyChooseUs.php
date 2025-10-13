@@ -295,109 +295,109 @@ $reasons = [
                         <div id="clients-track" class="flex space-x-6 animate-scroll-clients" style="width: max-content;">
                             <!-- Set 1 (Original) -->
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/smp.svg') ?>" alt="SMP" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/smp.webp') ?>" alt="SMP" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">SMP</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/logimex.svg') ?>" alt="Logimex" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/logimex.webp') ?>" alt="Logimex" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Logimex</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/almacenes_ibarra.svg') ?>" alt="Almacenes Ibarra" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/almacenes_ibarra.webp') ?>" alt="Almacenes Ibarra" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Almacenes Ibarra</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/kenworth.svg') ?>" alt="Kenworth" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/kenworth.webp') ?>" alt="Kenworth" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Kenworth</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/su_bodega.svg') ?>" alt="Su Bodega" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/su_bodega.webp') ?>" alt="Su Bodega" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Su Bodega</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/maseca.svg') ?>" alt="Maseca" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/maseca.webp') ?>" alt="Maseca" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Maseca</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/de_coss.svg') ?>" alt="De Coss" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/de_coss.webp') ?>" alt="De Coss" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">De Coss</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/jac.svg') ?>" alt="JAC" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/jac.webp') ?>" alt="JAC" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">JAC</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/mazda.svg') ?>" alt="Mazda" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/mazda.webp') ?>" alt="Mazda" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Mazda</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/chirey.svg') ?>" alt="Chirey" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/chirey.webp') ?>" alt="Chirey" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Chirey</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/mg.svg') ?>" alt="MG" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/mg.webp') ?>" alt="MG" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">MG</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/hd_electronics.png') ?>" alt="HD Electronics" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/hd_electronics.webp') ?>" alt="HD Electronics" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">HD Electronics</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/elgo.png') ?>" alt="Elgo" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/elgo.webp') ?>" alt="Elgo" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Elgo</span>
                             </div>
                             
                             <!-- Set 2 (Duplicado para loop infinito) -->
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/smp.svg') ?>" alt="SMP" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/smp.webp') ?>" alt="SMP" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">SMP</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/logimex.svg') ?>" alt="Logimex" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/logimex.webp') ?>" alt="Logimex" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Logimex</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/almacenes_ibarra.svg') ?>" alt="Almacenes Ibarra" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/almacenes_ibarra.webp') ?>" alt="Almacenes Ibarra" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Almacenes Ibarra</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/kenworth.svg') ?>" alt="Kenworth" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/kenworth.webp') ?>" alt="Kenworth" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Kenworth</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/su_bodega.svg') ?>" alt="Su Bodega" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/su_bodega.webp') ?>" alt="Su Bodega" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Su Bodega</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/maseca.svg') ?>" alt="Maseca" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/maseca.webp') ?>" alt="Maseca" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Maseca</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/de_coss.svg') ?>" alt="De Coss" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/de_coss.webp') ?>" alt="De Coss" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">De Coss</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/jac.svg') ?>" alt="JAC" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/jac.webp') ?>" alt="JAC" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">JAC</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/mazda.svg') ?>" alt="Mazda" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/mazda.webp') ?>" alt="Mazda" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Mazda</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/chirey.svg') ?>" alt="Chirey" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/chirey.webp') ?>" alt="Chirey" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Chirey</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/mg.svg') ?>" alt="MG" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/mg.webp') ?>" alt="MG" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">MG</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/hd_electronics.png') ?>" alt="HD Electronics" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/hd_electronics.webp') ?>" alt="HD Electronics" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">HD Electronics</span>
                             </div>
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
-                                <img src="<?= publicUrl('images/elgo.png') ?>" alt="Elgo" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
+                                <img src="<?= publicUrl('images/elgo.webp') ?>" alt="Elgo" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
                                 <span class="text-gold-300 text-xs sm:text-sm font-medium">Elgo</span>
                             </div>
                         </div>

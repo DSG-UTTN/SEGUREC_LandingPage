@@ -17,7 +17,7 @@
               <!-- Imagen 1 - SEGUREC about1 -->
               <div class="carousel-slide active absolute inset-0 w-full h-full">
                 <img 
-                  src="<?= publicUrl('images/about1.jpeg') ?>" 
+                  src="<?= publicUrl('images/about1.webp') ?>" 
                   alt="Servicios de seguridad SEGUREC - Personal en acción" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -27,7 +27,7 @@
               <!-- Imagen 2 - SEGUREC about2 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about2.jpeg') ?>" 
+                  src="<?= publicUrl('images/about2.webp') ?>" 
                   alt="Equipo de seguridad SEGUREC profesional" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -37,7 +37,7 @@
               <!-- Imagen 3 - SEGUREC about3 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about3.jpeg') ?>" 
+                  src="<?= publicUrl('images/about3.webp') ?>" 
                   alt="Tecnología y monitoreo SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -47,7 +47,7 @@
               <!-- Imagen 4 - SEGUREC about4 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about4.jpeg') ?>" 
+                  src="<?= publicUrl('images/about4.webp') ?>" 
                   alt="Servicios de patrullaje SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -57,7 +57,7 @@
               <!-- Imagen 5 - SEGUREC about5 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about5.jpeg') ?>" 
+                  src="<?= publicUrl('images/about5.webp') ?>" 
                   alt="Personal certificado SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -67,7 +67,7 @@
               <!-- Imagen 6 - SEGUREC about6 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about6.png') ?>" 
+                  src="<?= publicUrl('images/about6.webp') ?>" 
                   alt="Instalaciones y equipo SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -77,7 +77,7 @@
               <!-- Imagen 7 - SEGUREC about7 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about7.png') ?>" 
+                  src="<?= publicUrl('images/about7.webp') ?>" 
                   alt="Operaciones de seguridad SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -87,7 +87,7 @@
               <!-- Imagen 8 - SEGUREC about8 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about8.jpg') ?>" 
+                  src="<?= publicUrl('images/about8.webp') ?>" 
                   alt="Control y monitoreo SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -97,7 +97,7 @@
               <!-- Imagen 9 - SEGUREC about10 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about10.png') ?>" 
+                  src="<?= publicUrl('images/about10.webp') ?>" 
                   alt="Sistemas de seguridad SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -107,7 +107,7 @@
               <!-- Imagen 10 - SEGUREC about11 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about11.png') ?>" 
+                  src="<?= publicUrl('images/about11.webp') ?>" 
                   alt="Capacitación y entrenamiento SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -117,7 +117,7 @@
               <!-- Imagen 11 - SEGUREC about12 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about12.png') ?>" 
+                  src="<?= publicUrl('images/about12.webp') ?>" 
                   alt="Servicios especializados SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -127,7 +127,7 @@
               <!-- Imagen 12 - SEGUREC about14 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about14.jpg') ?>" 
+                  src="<?= publicUrl('images/about14.webp') ?>" 
                   alt="Personal de élite SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -137,7 +137,7 @@
               <!-- Imagen 13 - SEGUREC about15 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                 <img 
-                  src="<?= publicUrl('images/about15.svg') ?>" 
+                  src="<?= publicUrl('images/about15.webp') ?>" 
                   alt="Certificaciones y reconocimientos SEGUREC" 
                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -294,7 +294,7 @@
                 <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 w-full max-w-xs sm:max-w-sm border border-white/20">
                   <div class="rounded-lg p-4 sm:p-6 mb-3 sm:mb-4">
                     <img 
-                      src="<?= publicUrl('images/track_vigilante.svg') ?>" 
+                      src="<?= publicUrl('images/track_vigilante.webp') ?>" 
                       alt="Track Vigilante - Software de Seguridad Privada" 
                       class="w-full h-auto"
                       loading="lazy"
@@ -323,50 +323,50 @@
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch max-w-4xl mx-auto px-4">
         <!-- Primera fila -->
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/ctpat.svg') ?>" alt="CTPAT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/ctpat.webp') ?>" alt="CTPAT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">CTPAT</span>
         </div>
 
          <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/oea.svg') ?>" alt="OEA" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/oea.webp') ?>" alt="OEA" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">OEA</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/policia.svg') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/policia.webp') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">Policía Federal</span>
         </div>
         
         <!-- Segunda fila -->
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/repse.svg') ?>" alt="Registro REPSE" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/repse.webp') ?>" alt="Registro REPSE" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">REPSE</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/amesp.svg') ?>" alt="AMESP" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/amesp.webp') ?>" alt="AMESP" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">AMESP</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/iso_9001.svg') ?>" alt="ISO 9001" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/iso_9001.webp') ?>" alt="ISO 9001" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">ISO 9001</span>
         </div>
         
         <!-- Tercera fila -->
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/stps.svg') ?>" alt="STPS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/stps.webp') ?>" alt="STPS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">STPS</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/imss.svg') ?>" alt="IMSS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/imss.webp') ?>" alt="IMSS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">IMSS</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/infonavit.svg') ?>" alt="INFONAVIT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <img src="<?= publicUrl('images/infonavit.webp') ?>" alt="INFONAVIT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           <span class="text-xs text-gold-300 font-medium text-center">INFONAVIT</span>
         </div>
 
