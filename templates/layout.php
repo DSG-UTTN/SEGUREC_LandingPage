@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Main Layout Template
  * 
@@ -16,7 +16,7 @@ $seo = isset($seo) ? $seo : array();
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <!-- Meta Tags BÃ¡sicos -->
+    <!-- Meta Tags Básicos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="SEGUREC PHP Landing Page" />
@@ -27,7 +27,7 @@ $seo = isset($seo) ? $seo : array();
     <!-- Favicons -->
     <?php renderFavicons(); ?>
     
-    <!-- Preconnect para optimizaciÃ³n -->
+    <!-- Preconnect para optimización -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -44,10 +44,10 @@ $seo = isset($seo) ? $seo : array();
         "@context": "https://schema.org",
         "@type": "SecurityCompany",
         "name": "SEGUREC",
-        "description": "SEGUREC es una empresa nacional originaria de la ciudad Reynosa, Tamps; con más de 10 años de experiencia, dedicada a la prestación de servicios de Seguridad Integral.",
+        "description": "SEGUREC es una empresa nacional originaria de la ciudad Reynosa, Tamps; con m�s de 10 a�os de experiencia, dedicada a la prestaci�n de servicios de Seguridad Integral.",
         "url": "<?= SITE_URL ?>",
-        "logo": "<?= SITE_URL ?>/public/images/logo.svg",
-        "image": "<?= SITE_URL ?>/public/images/logo.svg",
+        "logo": "<?= SITE_URL ?>/public/images/logo.webp",
+        "image": "<?= SITE_URL ?>/public/images/logo.webp",
         "telephone": "<?= CONTACT_PHONE ?>",
         "email": "<?= CONTACT_EMAIL ?>",
         "address": {
@@ -94,7 +94,7 @@ $seo = isset($seo) ? $seo : array();
     
     <!-- Script para animaciones scroll -->
     <script>
-        // Observador de intersecciÃ³n para animaciones
+        // Observador de intersección para animaciones
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -109,7 +109,7 @@ $seo = isset($seo) ? $seo : array();
             });
         }, observerOptions);
 
-        // Observar elementos cuando el DOM estÃ© listo
+        // Observar elementos cuando el DOM esté listo
         document.addEventListener('DOMContentLoaded', () => {
             const animatedElements = document.querySelectorAll('[data-animate]');
             animatedElements.forEach(el => observer.observe(el));
@@ -125,7 +125,7 @@ $seo = isset($seo) ? $seo : array();
             }
         });
 
-        // Scroll suave para navegaciÃ³n
+        // Scroll suave para navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

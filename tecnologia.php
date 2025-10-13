@@ -14,7 +14,7 @@ $seo = array(
     'title' => 'SEGUREC',
     'description' => 'Conoce el departamento de desarrollo de software y tecnología de SEGUREC. Innovamos creando herramientas que mejoran y facilitan el trabajo de nuestros guardias de seguridad.',
     'keywords' => 'desarrollo software seguridad, tecnología SEGUREC, innovación seguridad privada, herramientas guardias, Track Vigilante, departamento tecnología',
-    'image' => publicUrl('images/logo.svg')
+    'image' => publicUrl('images/logo.webp')
 );
 
 // Start output buffering to capture page content
@@ -136,7 +136,7 @@ ob_start();
                                     <div class="flex flex-col items-center group">
                                         <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-100 rounded-lg p-2 mb-2 shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
                                             <img 
-                                                src="<?= publicUrl('images/python.svg') ?>" 
+                                                src="<?= publicUrl('images/python.webp') ?>" 
                                                 alt="Python" 
                                                 class="w-full h-full object-contain"
                                                 loading="lazy"
@@ -148,7 +148,7 @@ ob_start();
                                     <div class="flex flex-col items-center group">
                                         <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-100 rounded-lg p-2 mb-2 shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
                                             <img 
-                                                src="<?= publicUrl('images/tailwindcss.svg') ?>" 
+                                                src="<?= publicUrl('images/tailwindcss.webp') ?>" 
                                                 alt="Tailwind CSS" 
                                                 class="w-full h-full object-contain"
                                                 loading="lazy"
@@ -160,7 +160,7 @@ ob_start();
                                     <div class="flex flex-col items-center group">
                                         <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-100 rounded-lg p-2 mb-2 shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
                                             <img 
-                                                src="<?= publicUrl('images/fastapi.svg') ?>" 
+                                                src="<?= publicUrl('images/fastapi.webp') ?>" 
                                                 alt="FastAPI" 
                                                 class="w-full h-full object-contain"
                                                 loading="lazy"
@@ -172,7 +172,7 @@ ob_start();
                                     <div class="flex flex-col items-center group">
                                         <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-100 rounded-lg p-2 mb-2 shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
                                             <img 
-                                                src="<?= publicUrl('images/react.svg') ?>" 
+                                                src="<?= publicUrl('images/react.webp') ?>" 
                                                 alt="React" 
                                                 class="w-full h-full object-contain"
                                                 loading="lazy"
@@ -240,7 +240,7 @@ ob_start();
                             <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
                                 <div class="rounded-lg p-6 mb-4">
                                     <img 
-                                        src="<?= publicUrl('images/track_vigilante.svg') ?>" 
+                                        src="<?= publicUrl('images/track_vigilante.webp') ?>" 
                                         alt="Track Vigilante" 
                                         class="w-full h-auto max-w-xs"
                                         loading="lazy"

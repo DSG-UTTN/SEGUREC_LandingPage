@@ -45,7 +45,7 @@ $seoDefaults = array(
     'title' => 'SEGUREC - Servicios Integrales de Seguridad en Reynosa, Tamaulipas',
     'description' => 'Empresa líder en servicios de seguridad privada en Reynosa, Tamaulipas. Ofrecemos guardias capacitados, patrullaje, monitoreo 24/7 y soluciones integrales de protección.',
     'keywords' => SITE_KEYWORDS,
-    'image' => PUBLIC_URL . '/images/portada.jpg',
+    'image' => PUBLIC_URL . '/images/portada.webp',
     'author' => 'SEGUREC - Servicios de Seguridad Privada',
     'locale' => 'es_MX'
 );

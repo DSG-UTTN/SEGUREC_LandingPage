@@ -170,7 +170,7 @@ $seo = array(
     'title' => 'SEGUREC',
     'description' => 'Contáctanos para solicitar una cotización gratuita de nuestros servicios de seguridad privada en Reynosa, Tamaulipas. Respuesta garantizada en 24 horas.',
     'keywords' => 'contacto seguridad reynosa, cotización seguridad privada, SEGUREC contacto, servicios seguridad tamaulipas, seguridad privada reynosa, seguridad empresarial, seguridad residencial, guardias de seguridad, monitoreo 24/7, análisis de riesgos, control de acceso, consultoría de seguridad',
-    'image' => publicUrl('images/logo.svg')
+    'image' => publicUrl('images/logo.webp')
 );
 
 // Start output buffering to capture page content
