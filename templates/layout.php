@@ -58,8 +58,7 @@ $seo = isset($seo) ? $seo : array();
             "addressCountry": "MX"
         },
         "openingHours": [
-            "Mo-Fr 08:00-18:00",
-            "Sa 09:00-14:00"
+            "Lun-Dom 07:00-19:00"
         ],
         "serviceArea": {
             "@type": "State",
@@ -69,14 +68,14 @@ $seo = isset($seo) ? $seo : array();
         "slogan": "Protegemos tu empresa"
     }
     </script>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11522033873"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-46C59H79GS"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-11522033873');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-46C59H79GS');
     </script>
 </head>
 
