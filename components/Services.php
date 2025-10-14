@@ -42,7 +42,7 @@ $services = [
                 </div>
                 <h3 class="text-xl font-bold text-navy-900 mb-4"><?= e($service['title']) ?></h3>
                 <p class="text-gray-600 leading-relaxed mb-6"><?= e($service['description']) ?></p>
-                <a href="<?= url('contacto.php') ?>" class="text-gold-600 hover:text-gold-700 font-semibold flex items-center group">
+                <a href="<?= url('contacto') ?>" class="text-gold-600 hover:text-gold-700 font-semibold flex items-center group">
                     Más información
                     <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -51,21 +51,4 @@ $services = [
             </div>
         <?php endforeach; ?>
     </div>
-
-    <!-- CTA Section -->
-    <!-- <div class="mt-16 text-center" data-animate="fade-in">
-        <div class="bg-gradient-to-r from-gold-50 to-gold-100 p-8 rounded-2xl border border-gold-200">
-            <h3 class="text-2xl font-bold text-navy-900 mb-4">¿Necesitas un servicio personalizado?</h3>
-            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-                Diseñamos soluciones de seguridad a medida según las necesidades específicas de tu empresa o evento.
-            </p>
-            <a href="<?= url('contacto.php') ?>" class="btn-primary">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                </svg>
-                Solicitar Cotización Personalizada
-            </a>
-        </div>
-    </div> -->
 </div>

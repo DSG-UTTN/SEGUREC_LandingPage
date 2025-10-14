@@ -55,17 +55,17 @@
         <a href="<?= url('#por-que-elegirnos') ?>" class="nav-link text-gray-700 hover:text-gold-600 font-medium transition-colors">
           ¿Por qué elegirnos?
         </a>
-        <a href="<?= url('tecnologia.php') ?>" class="nav-link text-gray-700 hover:text-gold-600 font-medium transition-colors">
+        <a href="<?= url('tecnologia') ?>" class="nav-link text-gray-700 hover:text-gold-600 font-medium transition-colors">
           Tecnología
         </a>
-        <a href="<?= url('contacto.php') ?>" class="nav-link text-gray-700 hover:text-gold-600 font-medium transition-colors">
+        <a href="<?= url('contacto') ?>" class="nav-link text-gray-700 hover:text-gold-600 font-medium transition-colors">
           Contacto
         </a>
       </div>
 
       <!-- Botón de contacto -->
       <div class="hidden lg:flex items-center">
-        <a href="<?= url('contacto.php') ?>" class="btn-primary">
+        <a href="<?= url('contacto') ?>" class="btn-primary">
           <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
@@ -105,14 +105,14 @@
         <a href="<?= url('#por-que-elegirnos') ?>" class="block px-3 py-2 text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md font-medium mobile-menu-link">
           ¿Por qué elegirnos?
         </a>
-        <a href="<?= url('tecnologia.php') ?>" class="block px-3 py-2 text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md font-medium mobile-menu-link">
+        <a href="<?= url('tecnologia') ?>" class="block px-3 py-2 text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md font-medium mobile-menu-link">
           Tecnología
         </a>
-        <a href="<?= url('contacto.php') ?>" class="block px-3 py-2 text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md font-medium mobile-menu-link">
+        <a href="<?= url('contacto') ?>" class="block px-3 py-2 text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md font-medium mobile-menu-link">
           Contacto
         </a>
         <div class="pt-4 pb-2">
-          <a href="<?= url('contacto.php') ?>" class="btn-primary w-full justify-center">
+          <a href="<?= url('contacto') ?>" class="btn-primary w-full justify-center">
             <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>

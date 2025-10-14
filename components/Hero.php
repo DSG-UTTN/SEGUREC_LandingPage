@@ -137,7 +137,7 @@
 
         <!-- Call to Actions corporativos -->
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 w-full max-w-full overflow-hidden" data-animate="slide-left">
-          <a href="<?= url('contacto.php') ?>" class="bg-gold-500 text-navy-900 px-3 sm:px-4 py-3 sm:py-4 rounded-lg font-semibold text-center hover:bg-gold-400 transition-all shadow-lg flex items-center justify-center group text-sm sm:text-base w-full sm:flex-1 min-w-0">
+          <a href="<?= url('contacto') ?>" class="bg-gold-500 text-navy-900 px-3 sm:px-4 py-3 sm:py-4 rounded-lg font-semibold text-center hover:bg-gold-400 transition-all shadow-lg flex items-center justify-center group text-sm sm:text-base w-full sm:flex-1 min-w-0">
             <svg class="w-4 h-4 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>

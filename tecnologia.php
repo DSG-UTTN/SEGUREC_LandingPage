@@ -326,7 +326,7 @@ ob_start();
                 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="slide-up">
-                    <a href="<?= url('contacto.php') ?>" class="bg-gold-500 text-navy-900 px-8 py-4 rounded-xl font-semibold text-lg text-center hover:bg-gold-400 transition-all shadow-lg flex items-center justify-center group">
+                    <a href="<?= url('contacto') ?>" class="bg-gold-500 text-navy-900 px-8 py-4 rounded-xl font-semibold text-lg text-center hover:bg-gold-400 transition-all shadow-lg flex items-center justify-center group">
                         <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
