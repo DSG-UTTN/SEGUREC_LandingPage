@@ -11,9 +11,9 @@ require_once __DIR__ . '/includes/functions.php';
 
 // Page-specific SEO data
 $seo = array(
-    'title' => 'SEGUREC',
-    'description' => 'Empresa líder en servicios de seguridad privada en Reynosa, Tamaulipas. Ofrecemos guardias capacitados, patrullaje, monitoreo 24/7 y soluciones integrales de protección.',
-    'keywords' => SITE_KEYWORDS,
+    'title' => 'SEGUREC - Empresa de Seguridad Privada en Reynosa, Tamaulipas | Guardias y Monitoreo 24/7',
+    'description' => 'SEGUREC es la empresa líder en seguridad privada en Reynosa, Tamaulipas. Más de 10 años protegiendo empresas con guardias certificados, monitoreo 24/7, patrullaje y control de acceso. ¡Cotiza ahora!',
+    'keywords' => 'seguridad privada reynosa, empresa seguridad tamaulipas, guardias seguridad reynosa, monitoreo 24 horas tamaulipas, seguridad maquiladoras, patrullaje vehicular reynosa, control acceso empresarial, vigilancia privada tamaulipas, guardias certificados reynosa, servicios seguridad industrial',
     'image' => publicUrl('images/logo.webp')
 );
 

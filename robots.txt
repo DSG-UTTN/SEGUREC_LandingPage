@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://segurec.com.mx/sitemap.xml
+
+# Disallow sensitive directories
+Disallow: /config/
+Disallow: /includes/
+Disallow: /templates/
+Disallow: /logs/
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.htaccess
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Allow specific public directories
+Allow: /public/
+Allow: /assets/
+Allow: /favicon.ico
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
