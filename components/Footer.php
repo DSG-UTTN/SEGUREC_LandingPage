@@ -162,15 +162,13 @@ $quickLinks = [
   <!-- Bottom bar -->
   <div class="relative z-10 border-t border-white/10">
     <div class="section-container py-6">
-      <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+        <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
         <div class="mb-4 md:mb-0">
           <p>&copy; <?= date('Y') ?> SEGUREC. Todos los derechos reservados.</p>
         </div>
-        <!-- <div class="flex items-center space-x-6">
-          <a href="#" class="hover:text-gold-400 transition-colors">Política de Privacidad</a>
-          <span class="text-gold-500">•</span>
-          <a href="#" class="hover:text-gold-400 transition-colors">Términos de Servicio</a>
-        </div> -->
+        <div class="flex items-center space-x-6">
+          <a href="<?= url('aviso-privacidad') ?>" class="hover:text-gold-400 transition-colors">Aviso de Privacidad</a>
+        </div>
       </div>
     </div>
   </div>

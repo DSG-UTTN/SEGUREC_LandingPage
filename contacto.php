@@ -422,7 +422,7 @@ ob_start();
                                     class="mt-1 w-4 h-4 text-gold-600 border-gray-300 rounded focus:ring-gold-500 <?= isset($form_errors['acepto']) ? 'border-red-500' : '' ?>"
                                 >
                                 <label for="acepto" class="ml-3 text-sm text-gray-600">
-                                    Acepto la <a href="#" class="text-gold-600 hover:text-gold-700">política de privacidad</a> 
+                                    Acepto el <a href="<?= url('aviso-privacidad') ?>" target="_blank" class="text-gold-600 hover:text-gold-700 underline">aviso de privacidad</a> 
                                     y autorizo el tratamiento de mis datos personales *
                                 </label>
                             </div>
