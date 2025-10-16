@@ -16,132 +16,184 @@
             <div class="segurec-carousel relative w-full h-80 md:h-96">
               <!-- Imagen 1 - SEGUREC about1 -->
               <div class="carousel-slide active absolute inset-0 w-full h-full">
-                <img 
-                  src="<?= publicUrl('images/about1.webp') ?>" 
-                  alt="Servicios de seguridad SEGUREC - Personal en acción" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about1-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about1-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about1-large.webp') ?>" 
+                    alt="Servicios de seguridad SEGUREC - Personal en acción" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               
               <!-- Imagen 2 - SEGUREC about2 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about2.webp') ?>" 
-                  alt="Equipo de seguridad SEGUREC profesional" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about2-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about2-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about2-large.webp') ?>" 
+                    alt="Equipo de seguridad SEGUREC profesional" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               
               <!-- Imagen 3 - SEGUREC about3 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about3.webp') ?>" 
-                  alt="Tecnología y monitoreo SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about3-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about3-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about3-large.webp') ?>" 
+                    alt="Tecnología y monitoreo SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               
               <!-- Imagen 4 - SEGUREC about4 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about4.webp') ?>" 
-                  alt="Servicios de patrullaje SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about4-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about4-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about4-large.webp') ?>" 
+                    alt="Servicios de patrullaje SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <!-- Imagen 5 - SEGUREC about5 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about5.webp') ?>" 
-                  alt="Personal certificado SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about5-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about5-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about5-large.webp') ?>" 
+                    alt="Personal certificado SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <!-- Imagen 6 - SEGUREC about6 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about6.webp') ?>" 
-                  alt="Instalaciones y equipo SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about6-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about6-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about6-large.webp') ?>" 
+                    alt="Instalaciones y equipo SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <!-- Imagen 7 - SEGUREC about7 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about7.webp') ?>" 
-                  alt="Operaciones de seguridad SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about7-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about7-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about7-large.webp') ?>" 
+                    alt="Operaciones de seguridad SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <!-- Imagen 8 - SEGUREC about8 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about8.webp') ?>" 
-                  alt="Control y monitoreo SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about8-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about8-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about8-large.webp') ?>" 
+                    alt="Control y monitoreo SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <!-- Imagen 9 - SEGUREC about10 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about10.webp') ?>" 
-                  alt="Sistemas de seguridad SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about10-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about10-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about10-large.webp') ?>" 
+                    alt="Sistemas de seguridad SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <!-- Imagen 10 - SEGUREC about11 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about11.webp') ?>" 
-                  alt="Capacitación y entrenamiento SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about11-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about11-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about11-large.webp') ?>" 
+                    alt="Capacitación y entrenamiento SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <!-- Imagen 11 - SEGUREC about12 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about12.webp') ?>" 
-                  alt="Servicios especializados SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about12-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about12-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about12-large.webp') ?>" 
+                    alt="Servicios especializados SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <!-- Imagen 12 - SEGUREC about14 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about14.webp') ?>" 
-                  alt="Personal de élite SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about14-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about14-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about14-large.webp') ?>" 
+                    alt="Personal de élite SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <!-- Imagen 13 - SEGUREC about15 -->
               <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                <img 
-                  src="<?= publicUrl('images/about15.webp') ?>" 
-                  alt="Certificaciones y reconocimientos SEGUREC" 
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                <picture>
+                  <source media="(max-width: 480px)" srcset="<?= publicUrl('images/about15-small.webp') ?>">
+                  <source media="(max-width: 768px)" srcset="<?= publicUrl('images/about15-medium.webp') ?>">
+                  <img 
+                    src="<?= publicUrl('images/about15-large.webp') ?>" 
+                    alt="Certificaciones y reconocimientos SEGUREC" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               
               <!-- Controles del carrusel -->
