@@ -146,12 +146,14 @@
               
               <!-- Controles del carrusel -->
               <div class="absolute top-4 right-4 flex space-x-2">
-                <button id="prev-slide" class="bg-black/40 backdrop-blur-md hover:bg-black/60 text-white p-3 rounded-full transition-all duration-300 shadow-lg border border-white/20 hover:border-white/40 hover:scale-110">
+                <button id="prev-slide" class="bg-black/40 backdrop-blur-md hover:bg-black/60 text-white p-3 rounded-full transition-all duration-300 shadow-lg border border-white/20 hover:border-white/40 hover:scale-110" aria-label="Imagen anterior de nosotros">
+                  <span class="sr-only">Imagen anterior</span>
                   <svg class="w-4 h-4 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
                   </svg>
                 </button>
-                <button id="next-slide" class="bg-black/40 backdrop-blur-md hover:bg-black/60 text-white p-3 rounded-full transition-all duration-300 shadow-lg border border-white/20 hover:border-white/40 hover:scale-110">
+                <button id="next-slide" class="bg-black/40 backdrop-blur-md hover:bg-black/60 text-white p-3 rounded-full transition-all duration-300 shadow-lg border border-white/20 hover:border-white/40 hover:scale-110" aria-label="Siguiente imagen de nosotros">
+                  <span class="sr-only">Siguiente imagen</span>
                   <svg class="w-4 h-4 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                   </svg>
@@ -160,19 +162,19 @@
               
               <!-- Indicadores -->
               <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 bg-black/30 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
-                <button class="slide-indicator active w-3 h-3 rounded-full bg-white shadow-md transition-all duration-300 hover:scale-125" data-slide="0"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="1"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="2"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="3"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="4"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="5"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="6"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="7"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="8"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="9"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="10"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="11"></button>
-                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="12"></button>
+                <button class="slide-indicator active w-3 h-3 rounded-full bg-white shadow-md transition-all duration-300 hover:scale-125" data-slide="0" aria-label="Ver imagen 1" title="Imagen 1"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="1" aria-label="Ver imagen 2" title="Imagen 2"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="2" aria-label="Ver imagen 3" title="Imagen 3"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="3" aria-label="Ver imagen 4" title="Imagen 4"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="4" aria-label="Ver imagen 5" title="Imagen 5"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="5" aria-label="Ver imagen 6" title="Imagen 6"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="6" aria-label="Ver imagen 7" title="Imagen 7"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="7" aria-label="Ver imagen 8" title="Imagen 8"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="8" aria-label="Ver imagen 9" title="Imagen 9"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="9" aria-label="Ver imagen 10" title="Imagen 10"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="10" aria-label="Ver imagen 11" title="Imagen 11"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="11" aria-label="Ver imagen 12" title="Imagen 12"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 shadow-md transition-all duration-300 hover:scale-125" data-slide="12" aria-label="Ver imagen 13" title="Imagen 13"></button>
               </div>
             </div>
           </div>
@@ -201,7 +203,7 @@
             <span class="gradient-text block">SEGUREC</span>
           </h2>
           <!-- Descripción -->
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
             <strong class="text-navy-900">SEGUREC</strong> es una empresa nacional originaria de la ciudad 
             Reynosa, Tamaulipas, con más de <strong class="text-gold-600">10 años de experiencia</strong>, 
             dedicada a la prestación de servicios de seguridad integral con una amplia gama de servicios 

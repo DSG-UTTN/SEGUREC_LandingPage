@@ -299,7 +299,7 @@ ob_start();
                 <div class="lg:col-span-2" data-animate="slide-left">
                     <div class="bg-gray-50 p-8 rounded-2xl">
                         <h2 class="text-3xl font-bold text-navy-900 mb-2">Solicita tu Cotización</h2>
-                        <p class="text-gray-600 mb-8">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
+                        <p class="text-gray-700 mb-8">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
                         
                         <!-- Success/Error Messages -->
                         <?php if ($form_submitted): ?>

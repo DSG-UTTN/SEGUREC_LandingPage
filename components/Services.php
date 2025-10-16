@@ -27,7 +27,7 @@ $services = [
         <h2 class="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
             Nuestros <span class="text-gold-600">Servicios</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
             Brindamos servicios de seguridad de la más alta calidad, con personal altamente capacitado para cada cliente.
         </p>
     </div>
@@ -41,9 +41,10 @@ $services = [
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-navy-900 mb-4"><?= e($service['title']) ?></h3>
-                <p class="text-gray-600 leading-relaxed mb-6"><?= e($service['description']) ?></p>
-                <a href="<?= url('contacto') ?>" class="text-gold-600 hover:text-gold-700 font-semibold flex items-center group">
-                    Más información
+                <p class="text-gray-700 leading-relaxed mb-6"><?= e($service['description']) ?></p>
+                <a href="<?= url('contacto') ?>" class="text-gold-600 hover:text-gold-700 font-semibold flex items-center group" 
+                   aria-label="Solicitar información sobre <?= e($service['title']) ?> - SEGUREC">
+                    Contratar <?= e($service['title']) ?>
                     <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>

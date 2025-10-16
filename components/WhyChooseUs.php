@@ -42,7 +42,7 @@ $reasons = [
         <h2 class="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
             ¿Por qué elegir <span class="text-gold-600">SEGUREC</span>?
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
             El objetivo principal de nuestro trabajo responde a la necesidad de prevenir todo daño a inmuebles, 
             así como la sustracción de bienes materiales y todo tipo de actos delictivos.
         </p>
@@ -84,9 +84,11 @@ $reasons = [
                             loop
                             playsinline
                             preload="metadata"
+                            aria-label="Video demostrativo de servicios de seguridad SEGUREC"
                         >
                             <source src="<?= publicUrl('images/video.mp4') ?>" type="video/mp4">
-                            <p class="text-gray-600">Tu navegador no soporta video HTML5.</p>
+                            <track kind="captions" src="<?= publicUrl('images/video-captions.vtt') ?>" srclang="es" label="Español" default>
+                            <p class="text-gray-800">Tu navegador no soporta video HTML5. Este video muestra los servicios de seguridad de SEGUREC.</p>
                         </video>
                         
                         <!-- Video overlay -->
@@ -135,9 +137,11 @@ $reasons = [
                             loop
                             playsinline
                             preload="metadata"
+                            aria-label="Video demostrativo móvil de servicios de seguridad SEGUREC"
                         >
                             <source src="<?= publicUrl('images/video.mp4') ?>" type="video/mp4">
-                            <p class="text-gray-600">Tu navegador no soporta video HTML5.</p>
+                            <track kind="captions" src="<?= publicUrl('images/video-captions.vtt') ?>" srclang="es" label="Español" default>
+                            <p class="text-gray-800">Tu navegador no soporta video HTML5. Este video muestra los servicios de seguridad de SEGUREC.</p>
                         </video>
                         
                         <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-navy-900/20 pointer-events-none"></div>
@@ -188,12 +192,14 @@ $reasons = [
                     <!-- Carousel Container -->
                     <div id="linkedin-container" class="relative">
                         <!-- Navigation Buttons -->
-                        <button id="linkedin-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+                        <button id="linkedin-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110" aria-label="Ver cliente anterior">
+                            <span class="sr-only">Cliente anterior</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                             </svg>
                         </button>
-                        <button id="linkedin-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+                        <button id="linkedin-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110" aria-label="Ver siguiente cliente">
+                            <span class="sr-only">Siguiente cliente</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                             </svg>
@@ -264,9 +270,9 @@ $reasons = [
 
                         <!-- Indicators -->
                         <div class="linkedin-indicators-container flex justify-center mt-8 mb-4 space-x-2">
-                            <button class="linkedin-indicator w-3 h-3 rounded-full bg-gold-500 transition-all duration-300" data-slide="0"></button>
-                            <button class="linkedin-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gold-400 transition-all duration-300" data-slide="1"></button>
-                            <button class="linkedin-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gold-400 transition-all duration-300" data-slide="2"></button>
+                            <button class="linkedin-indicator w-3 h-3 rounded-full bg-gold-500 transition-all duration-300" data-slide="0" aria-label="Ver grupo de clientes 1" title="Grupo 1"></button>
+                            <button class="linkedin-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gold-400 transition-all duration-300" data-slide="1" aria-label="Ver grupo de clientes 2" title="Grupo 2"></button>
+                            <button class="linkedin-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gold-400 transition-all duration-300" data-slide="2" aria-label="Ver grupo de clientes 3" title="Grupo 3"></button>
                         </div>
                     </div>
                 </div>
@@ -405,11 +411,11 @@ $reasons = [
                 </div>
             </div>
             
-            <a href="<?= url('contacto') ?>" class="btn-primary">
+            <a href="<?= url('contacto') ?>" class="btn-primary" aria-label="Conocer por qué elegir SEGUREC como empresa de seguridad">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
                 </svg>
-                Solicitar Información
+                Únete a Nuestros Clientes
             </a>
         </div>
     </div>
