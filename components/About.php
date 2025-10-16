@@ -347,12 +347,15 @@
               <div class="flex justify-center lg:justify-end order-1 lg:order-2">
                 <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 w-full max-w-xs sm:max-w-sm border border-white/20">
                   <div class="rounded-lg p-4 sm:p-6 mb-3 sm:mb-4">
-                    <img 
-                      src="<?= publicUrl('images/track_vigilante.webp') ?>" 
-                      alt="Track Vigilante - Software de Seguridad Privada" 
-                      class="w-full h-auto"
-                      loading="lazy"
-                    />
+                    <picture>
+                      <source media="(max-width: 768px)" srcset="<?= publicUrl('images/track_vigilante-small.webp') ?>">
+                      <img 
+                        src="<?= publicUrl('images/track_vigilante-large.webp') ?>" 
+                        alt="Track Vigilante - Software de Seguridad Privada" 
+                        class="w-full h-auto"
+                        loading="lazy"
+                      />
+                    </picture>
                   </div>
                   <div class="text-center">
                     <p class="text-gray-300 text-xs sm:text-sm font-medium">Software de Gestión</p>
