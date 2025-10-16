@@ -212,11 +212,15 @@
       <!-- Logo grande corporativo para desktop -->
       <div class="lg:col-span-4 hidden lg:flex lg:items-center lg:justify-center" data-animate="slide-right">
         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-16 border border-white/20">
-          <img 
-            src="<?= publicUrl('images/logo_completo.webp') ?>" 
-            alt="SEGUREC Seguridad Privada" 
-            class="w-96 lg:w-[28rem] xl:w-[32rem] h-auto filter drop-shadow-lg"
-          />
+          <picture>
+            <source media="(max-width: 1024px)" srcset="<?= publicUrl('images/logo_completo-small.webp') ?>">
+            <img 
+              src="<?= publicUrl('images/logo_completo-large.webp') ?>" 
+              alt="SEGUREC Seguridad Privada" 
+              class="w-96 lg:w-[28rem] xl:w-[32rem] h-auto filter drop-shadow-lg"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </div>
     </div>

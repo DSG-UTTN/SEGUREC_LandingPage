@@ -380,50 +380,77 @@
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch max-w-4xl mx-auto px-4">
         <!-- Primera fila -->
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/ctpat.webp') ?>" alt="CTPAT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/ctpat-small.webp') ?>">
+            <img src="<?= publicUrl('images/ctpat-large.webp') ?>" alt="CTPAT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          </picture>
           <span class="text-xs text-gold-300 font-medium text-center">CTPAT</span>
         </div>
 
          <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/oea.webp') ?>" alt="OEA" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/oea-small.webp') ?>">
+            <img src="<?= publicUrl('images/oea-large.webp') ?>" alt="OEA" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          </picture>
           <span class="text-xs text-gold-300 font-medium text-center">OEA</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/policia.webp') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/policia-small.webp') ?>">
+            <img src="<?= publicUrl('images/policia-large.webp') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          </picture>
           <span class="text-xs text-gold-300 font-medium text-center">Policía Federal</span>
         </div>
         
         <!-- Segunda fila -->
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/repse.webp') ?>" alt="Registro REPSE" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/repse-small.webp') ?>">
+            <img src="<?= publicUrl('images/repse-large.webp') ?>" alt="Registro REPSE" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          </picture>
           <span class="text-xs text-gold-300 font-medium text-center">REPSE</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/amesp.webp') ?>" alt="AMESP" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/amesp-small.webp') ?>">
+            <img src="<?= publicUrl('images/amesp-large.webp') ?>" alt="AMESP" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          </picture>
           <span class="text-xs text-gold-300 font-medium text-center">AMESP</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/iso_9001.webp') ?>" alt="ISO 9001" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/iso_9001-small.webp') ?>">
+            <img src="<?= publicUrl('images/iso_9001-large.webp') ?>" alt="ISO 9001" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          </picture>
           <span class="text-xs text-gold-300 font-medium text-center">ISO 9001</span>
         </div>
         
         <!-- Tercera fila -->
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/stps.webp') ?>" alt="STPS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/stps-small.webp') ?>">
+            <img src="<?= publicUrl('images/stps-large.webp') ?>" alt="STPS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          </picture>
           <span class="text-xs text-gold-300 font-medium text-center">STPS</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/imss.webp') ?>" alt="IMSS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/imss-small.webp') ?>">
+            <img src="<?= publicUrl('images/imss-large.webp') ?>" alt="IMSS" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          </picture>
           <span class="text-xs text-gold-300 font-medium text-center">IMSS</span>
         </div>
         
         <div class="flex flex-col items-center p-4 bg-navy-900 rounded-xl opacity-75 hover:opacity-100 hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 w-full h-32 sm:h-36 justify-center">
-          <img src="<?= publicUrl('images/infonavit.webp') ?>" alt="INFONAVIT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/infonavit-small.webp') ?>">
+            <img src="<?= publicUrl('images/infonavit-large.webp') ?>" alt="INFONAVIT" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
+          </picture>
           <span class="text-xs text-gold-300 font-medium text-center">INFONAVIT</span>
         </div>
 
