@@ -251,7 +251,7 @@ ob_start();
                         </p>
                         <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
                             Nos comprometemos a mantenerlo informado sobre los cambios que pueda sufrir el presente aviso de 
-                            privacidad, a través de actualizaciones en nuestro sitio web: <strong class="break-all sm:break-normal">https://segurec.com.mx/aviso-privacidad></strong>
+                            privacidad, a través de actualizaciones en nuestro sitio web: <strong class="break-all sm:break-normal">https://segurec.com.mx/aviso-privacidad</strong>
                         </p>
                     </div>
                 </div>
