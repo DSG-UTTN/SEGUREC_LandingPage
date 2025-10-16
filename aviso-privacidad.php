@@ -256,10 +256,10 @@ ob_start();
                     </div>
                 </div>
 
-                <!-- 11. Consentimiento -->
+                <!-- 8. Consentimiento -->
                 <div class="mb-6 sm:mb-8">
                     <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-navy-900 mb-3 sm:mb-4 border-l-4 border-gold-500 pl-3 sm:pl-4">
-                        11. CONSENTIMIENTO DE TRATAMIENTO DE DATOS PERSONALES
+                        8. CONSENTIMIENTO DE TRATAMIENTO DE DATOS PERSONALES
                     </h2>
                     <div class="bg-navy-50 p-4 sm:p-6 rounded-lg border-l-4 border-navy-500">
                         <p class="text-sm sm:text-base text-gray-700 font-medium leading-relaxed">
