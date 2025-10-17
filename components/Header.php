@@ -37,7 +37,10 @@
       <!-- Logo -->
       <div class="flex items-center">
         <a href="<?= url() ?>" class="flex items-center">
-          <img src="<?= publicUrl('images/logo.webp') ?>" alt="SEGUREC Logo" class="h-12 w-auto">
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/logo-small.webp') ?>">
+            <img src="<?= publicUrl('images/logo-large.webp') ?>" alt="SEGUREC Logo" class="h-12 w-auto" loading="lazy" />
+          </picture>
         </a>
       </div>
 
