@@ -16,9 +16,14 @@ $seo = isset($seo) ? $seo : array();
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <!-- Meta Tags Básicos -->
-    <meta charset="UTF-8" />
+    <!-- Metadatos para Control de Caché y SEO -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="last-modified" content="2025-10-17" />
+    <meta name="expires" content="never" />
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="pragma" content="no-cache" />
     <meta name="generator" content="SEGUREC PHP Landing Page" />
     
     <!-- SEO Meta Tags -->
@@ -31,10 +36,10 @@ $seo = isset($seo) ? $seo : array();
     <link rel="preload" href="/public/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/public/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/public/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/public/css/fonts-local.css" rel="stylesheet">
+    <link href="/public/css/fonts-local.css<?= ASSET_VERSION_QUERY ?>" rel="stylesheet">
     
     <!-- TailwindCSS - Local Build -->
-    <link href="/public/css/tailwind.css" rel="stylesheet">
+    <link href="/public/css/tailwind.css<?= ASSET_VERSION_QUERY ?>" rel="stylesheet">
     
     <!-- Schema.org JSON-LD -->
 

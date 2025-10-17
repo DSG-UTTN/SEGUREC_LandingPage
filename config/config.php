@@ -40,6 +40,10 @@ define('BASE_URL', rtrim($baseUrl, '/'));
 define('ASSETS_URL', BASE_URL . '/assets');
 define('PUBLIC_URL', BASE_URL . '/public');
 
+// Asset Versioning for Cache Busting
+define('ASSET_VERSION', '2025-10-17-fonts-optimization');
+define('ASSET_VERSION_QUERY', '?v=' . ASSET_VERSION);
+
 // SEO Defaults - Compatible con PHP 5.6
 $seoDefaults = array(
     'title' => 'SEGUREC - Servicios Integrales de Seguridad en Reynosa, Tamaulipas',

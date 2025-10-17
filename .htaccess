@@ -80,6 +80,7 @@ DirectoryIndex index.php index.html
     Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
     Header set Pragma "no-cache"
     Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
+    Header set X-Content-Type-Options "nosniff"
 </FilesMatch>
 
 # JSON - Cache corto (1 hora)
