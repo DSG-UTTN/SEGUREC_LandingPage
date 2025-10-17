@@ -217,7 +217,8 @@ $reasons = [
                                         frameborder="0" 
                                         allowfullscreen="" 
                                         title="Publicación SEGUREC LinkedIn"
-                                        class="rounded-2xl">
+                                        class="rounded-2xl"
+                                        loading="lazy">
                                     </iframe>
                                 </div>
                             </div>
@@ -232,7 +233,8 @@ $reasons = [
                                       frameborder="0" 
                                       allowfullscreen="" 
                                       title="Publicación SEGUREC LinkedIn"
-                                      class="rounded-2xl">
+                                      class="rounded-2xl"
+                                      loading="lazy">
                                     </iframe>
                                 </div>
                             </div>
@@ -247,7 +249,8 @@ $reasons = [
                                     frameborder="0" 
                                     allowfullscreen="" 
                                     title="Publicación SEGUREC LinkedIn" 
-                                    class="rounded-2xl">
+                                    class="rounded-2xl"
+                                    loading="lazy">
                                   </iframe>
                                 </div>
                             </div>
@@ -262,7 +265,8 @@ $reasons = [
                                   frameborder="0" 
                                   allowfullscreen="" 
                                   title="Publicación SEGUREC LinkedIn"
-                                  class="rounded-2xl">
+                                  class="rounded-2xl"
+                                  loading="lazy">
                                 </iframe>
                                 </div>
                             </div>
@@ -352,11 +356,7 @@ $reasons = [
                             <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
                                 <picture>
                                   <source media="(max-width: 768px)" srcset="<?= publicUrl('images/jac-small.webp') ?>">
-                                  <img src="<?= publicUrl('images/jac-large.webp') ?>" alt="JAC" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
-                                </picture>
-                                <span class="text-gold-300 text-xs sm:text-sm font-medium">JAC</span>
-                            </div>
-                            <div class="client-item flex-shrink-0 flex flex-col items-center justify-center bg-white/10 rounded-lg p-3 min-w-max hover:bg-white/20 transition-all duration-300">
+                                 
                                 <picture>
                                   <source media="(max-width: 768px)" srcset="<?= publicUrl('images/mazda-small.webp') ?>">
                                   <img src="<?= publicUrl('images/mazda-large.webp') ?>" alt="Mazda" class="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 mb-2" loading="lazy" />
