@@ -540,6 +540,13 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 if (data.success) {
+                    // Trigger Google Ads conversion event
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'conversion_event_contact_1', {
+                            // <event_parameters>
+                        });
+                    }
+                    
                     showMessage(data.message, 'success');
                     form.reset();
                 } else {

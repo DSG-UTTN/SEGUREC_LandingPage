@@ -81,6 +81,25 @@ $seo = isset($seo) ? $seo : array();
       gtag('js', new Date());
       gtag('config', 'G-46C59H79GS');
     </script>
+
+    <!-- Google tag (gtag.js) event - delayed navigation helper -->
+    <script>
+      // Helper function to delay opening a URL until a gtag event is sent.
+      // Call it in response to an action that should navigate to a URL.
+      function gtagSendEvent(url) {
+        var callback = function () {
+          if (typeof url === 'string') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion_event_contact_1', {
+          'event_callback': callback,
+          'event_timeout': 2000,
+          // <event_parameters>
+        });
+        return false;
+      }
+    </script>
 </head>
 
 <body class="font-sans antialiased bg-white text-gray-900">
