@@ -27,12 +27,11 @@ $seo = isset($seo) ? $seo : array();
     <!-- Favicons -->
     <?php renderFavicons(); ?>
     
-    <!-- Preconnect para optimizaciÃ³n -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Fuentes Locales Optimizadas -->
+    <link rel="preload" href="/public/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/public/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/public/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/public/css/fonts-local.css" rel="stylesheet">
     
     <!-- TailwindCSS - Local Build -->
     <link href="/public/css/tailwind.css" rel="stylesheet">
@@ -44,7 +43,7 @@ $seo = isset($seo) ? $seo : array();
         "@context": "https://schema.org",
         "@type": "SecurityCompany",
         "name": "SEGUREC",
-        "description": "SEGUREC es una empresa nacional originaria de la ciudad Reynosa, Tamps; con más de 10 años de experiencia, dedicada a la prestación de servicios de Seguridad Integral.",
+        "description": "SEGUREC es una empresa nacional originaria de la ciudad Reynosa, Tamps; con mï¿½s de 10 aï¿½os de experiencia, dedicada a la prestaciï¿½n de servicios de Seguridad Integral.",
         "url": "<?= SITE_URL ?>",
         "logo": "<?= SITE_URL ?>/public/images/logo.webp",
         "image": "<?= SITE_URL ?>/public/images/logo.webp",
