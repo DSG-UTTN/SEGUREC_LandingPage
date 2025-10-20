@@ -135,48 +135,64 @@ ob_start();
                                 <div class="grid grid-cols-2 gap-4 max-w-xs mx-auto">
                                     <div class="flex flex-col items-center group">
                                         <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-100 rounded-lg p-2 mb-2 shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
-                                            <img 
-                                                src="<?= publicUrl('images/python.webp') ?>" 
-                                                alt="Python" 
-                                                class="w-full h-full object-contain"
-                                                loading="lazy"
-                                            />
+                                            <picture>
+                                                <source media="(max-width: 480px)" srcset="<?= publicUrl('images/python-small.webp') ?>">
+                                                <source media="(max-width: 768px)" srcset="<?= publicUrl('images/python-medium.webp') ?>">
+                                                <img 
+                                                    src="<?= publicUrl('images/python-large.webp') ?>" 
+                                                    alt="Python - Lenguaje de programación para Track Vigilante" 
+                                                    class="w-full h-full object-contain"
+                                                    loading="lazy"
+                                                />
+                                            </picture>
                                         </div>
                                         <span class="text-xs font-medium text-gray-300 group-hover:text-gold-300 transition-colors">Python</span>
                                     </div>
                                     
                                     <div class="flex flex-col items-center group">
                                         <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-100 rounded-lg p-2 mb-2 shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
-                                            <img 
-                                                src="<?= publicUrl('images/tailwindcss.webp') ?>" 
-                                                alt="Tailwind CSS" 
-                                                class="w-full h-full object-contain"
-                                                loading="lazy"
-                                            />
+                                            <picture>
+                                                <source media="(max-width: 480px)" srcset="<?= publicUrl('images/tailwindcss-small.webp') ?>">
+                                                <source media="(max-width: 768px)" srcset="<?= publicUrl('images/tailwindcss-medium.webp') ?>">
+                                                <img 
+                                                    src="<?= publicUrl('images/tailwindcss-large.webp') ?>" 
+                                                    alt="Tailwind CSS - Framework de diseño para interfaz web" 
+                                                    class="w-full h-full object-contain"
+                                                    loading="lazy"
+                                                />
+                                            </picture>
                                         </div>
                                         <span class="text-xs font-medium text-gray-300 group-hover:text-gold-300 transition-colors">Tailwind</span>
                                     </div>
                                     
                                     <div class="flex flex-col items-center group">
                                         <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-100 rounded-lg p-2 mb-2 shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
-                                            <img 
-                                                src="<?= publicUrl('images/fastapi.webp') ?>" 
-                                                alt="FastAPI" 
-                                                class="w-full h-full object-contain"
-                                                loading="lazy"
-                                            />
+                                            <picture>
+                                                <source media="(max-width: 480px)" srcset="<?= publicUrl('images/fastapi-small.webp') ?>">
+                                                <source media="(max-width: 768px)" srcset="<?= publicUrl('images/fastapi-medium.webp') ?>">
+                                                <img 
+                                                    src="<?= publicUrl('images/fastapi-large.webp') ?>" 
+                                                    alt="FastAPI - Framework backend para APIs de seguridad" 
+                                                    class="w-full h-full object-contain"
+                                                    loading="lazy"
+                                                />
+                                            </picture>
                                         </div>
                                         <span class="text-xs font-medium text-gray-300 group-hover:text-gold-300 transition-colors">FastAPI</span>
                                     </div>
                                     
                                     <div class="flex flex-col items-center group">
                                         <div class="w-12 h-12 bg-gradient-to-br from-white to-gray-100 rounded-lg p-2 mb-2 shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
-                                            <img 
-                                                src="<?= publicUrl('images/react.webp') ?>" 
-                                                alt="React" 
-                                                class="w-full h-full object-contain"
-                                                loading="lazy"
-                                            />
+                                            <picture>
+                                                <source media="(max-width: 480px)" srcset="<?= publicUrl('images/react-small.webp') ?>">
+                                                <source media="(max-width: 768px)" srcset="<?= publicUrl('images/react-medium.webp') ?>">
+                                                <img 
+                                                    src="<?= publicUrl('images/react-large.webp') ?>" 
+                                                    alt="React - Biblioteca JavaScript para interfaz de usuario" 
+                                                    class="w-full h-full object-contain"
+                                                    loading="lazy"
+                                                />
+                                            </picture>
                                         </div>
                                         <span class="text-xs font-medium text-gray-300 group-hover:text-gold-300 transition-colors">React</span>
                                     </div>
@@ -239,12 +255,16 @@ ob_start();
                         <div class="flex justify-center lg:justify-end" data-animate="slide-right">
                             <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
                                 <div class="rounded-lg p-6 mb-4">
-                                    <img 
-                                        src="<?= publicUrl('images/track_vigilante.webp') ?>" 
-                                        alt="Track Vigilante" 
-                                        class="w-full h-auto max-w-xs"
-                                        loading="lazy"
-                                    />
+                                    <picture>
+                                        <source media="(max-width: 480px)" srcset="<?= publicUrl('images/track_vigilante-small.webp') ?>">
+                                        <source media="(max-width: 768px)" srcset="<?= publicUrl('images/track_vigilante-medium.webp') ?>">
+                                        <img 
+                                            src="<?= publicUrl('images/track_vigilante-large.webp') ?>" 
+                                            alt="Track Vigilante - Software líder en gestión de seguridad privada" 
+                                            class="w-full h-auto max-w-xs"
+                                            loading="lazy"
+                                        />
+                                    </picture>
                                 </div>
                                 <div class="text-center text-white">
                                     <p class="font-semibold">Software de Gestión de Seguridad</p>
