@@ -97,7 +97,7 @@
                   <source media="(max-width: 768px)" srcset="<?= publicUrl('images/policia-small.webp') ?>">
                   <img src="<?= publicUrl('images/policia-large.webp') ?>" alt="Registro Policía" class="h-10 w-auto mb-2" loading="lazy" />
                 </picture>
-                <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Federal</span>
+                <span class="text-gold-300 text-xs sm:text-sm font-medium">Policía Estatal</span>
               </div>
               <div class="credential-item flex-shrink-0 flex flex-col items-center bg-white/10 rounded-lg p-3 sm:p-4 min-w-max">
                 <picture>

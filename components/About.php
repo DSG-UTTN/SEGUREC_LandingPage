@@ -400,7 +400,7 @@
             <source media="(max-width: 768px)" srcset="<?= publicUrl('images/policia-small.webp') ?>">
             <img src="<?= publicUrl('images/policia-large.webp') ?>" alt="Registro Policía" class="h-12 sm:h-14 w-auto mb-2" loading="lazy" />
           </picture>
-          <span class="text-xs text-gold-300 font-medium text-center">Policía Federal</span>
+          <span class="text-xs text-gold-300 font-medium text-center">Policía Estatal</span>
         </div>
         
         <!-- Segunda fila -->

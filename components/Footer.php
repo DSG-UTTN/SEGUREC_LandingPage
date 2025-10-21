@@ -27,7 +27,10 @@ $quickLinks = [
       <!-- Company info -->
       <div class="lg:col-span-2">
         <div class="mb-6">
-          <img src="<?= publicUrl('images/logo.webp') ?>" alt="SEGUREC Logo" class="h-16 w-auto mb-4" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="<?= publicUrl('images/logo-small.webp') ?>">
+            <img src="<?= publicUrl('images/logo-large.webp') ?>" alt="SEGUREC Logo" class="h-12 w-auto" loading="lazy" />
+          </picture>
           <h3 class="text-2xl font-bold text-gold-400 mb-4">SEGUREC</h3>
           <p class="text-gray-300 leading-relaxed max-w-md">
             Con más de 10 años de experiencia 
@@ -40,7 +43,7 @@ $quickLinks = [
           <div class="text-xs">
             <div class="text-gold-400 font-semibold">CERTIFICACIONES:</div>
             <div class="text-gray-400">REPSE: AR163168/2024</div>
-            <div class="text-gray-400">Policía: 28-242-2024</div>
+            <div class="text-gray-400">Policía Estatal Tamaulipas: 28-242-2024</div>
           </div>
         </div>
 
