@@ -86,16 +86,19 @@ $seo = isset($seo) ? $seo : array();
     <script>
       // Helper function to delay opening a URL until a gtag event is sent.
       // Call it in response to an action that should navigate to a URL.
-      function gtagSendEvent(url) {
+      // eventName parameter allows custom event names for better tracking in Google Ads
+      function gtagSendEvent(url, eventName) {
+        eventName = eventName || 'conversion_contact_generic';
         var callback = function () {
           if (typeof url === 'string') {
             window.location = url;
           }
         };
-        gtag('event', 'conversion_event_contact_1', {
+        gtag('event', eventName, {
           'event_callback': callback,
           'event_timeout': 2000,
-          // <event_parameters>
+          'event_category': 'Contact',
+          'event_label': url
         });
         return false;
       }

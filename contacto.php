@@ -540,10 +540,12 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 if (data.success) {
-                    // Trigger Google Ads conversion event
+                    // Trigger Google Ads conversion event with descriptive name
                     if (typeof gtag === 'function') {
-                        gtag('event', 'conversion_event_contact_1', {
-                            // <event_parameters>
+                        gtag('event', 'conversion_form_submit_success', {
+                            'event_category': 'Contact Form',
+                            'event_label': 'Formulario Contacto Enviado',
+                            'value': 1
                         });
                     }
                     

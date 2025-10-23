@@ -68,7 +68,7 @@
 
       <!-- Botón de contacto -->
       <div class="hidden lg:flex items-center">
-        <a href="<?= url('contacto') ?>" class="btn-primary" aria-label="Solicitar cotización de servicios de seguridad SEGUREC" onclick="return gtagSendEvent('<?= url('contacto') ?>')">
+        <a href="<?= url('contacto') ?>" class="btn-primary" aria-label="Solicitar cotización de servicios de seguridad SEGUREC" onclick="return gtagSendEvent('<?= url('contacto') ?>', 'conversion_header_cotizar_desktop')">
           <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
@@ -115,7 +115,7 @@
           Contacto
         </a>
         <div class="pt-4 pb-2">
-          <a href="<?= url('contacto') ?>" class="btn-primary w-full justify-center" aria-label="Contactar a SEGUREC para solicitar información" onclick="return gtagSendEvent('<?= url('contacto') ?>')">
+          <a href="<?= url('contacto') ?>" class="btn-primary w-full justify-center" aria-label="Contactar a SEGUREC para solicitar información" onclick="return gtagSendEvent('<?= url('contacto') ?>', 'conversion_header_contactar_mobile')">
             <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
